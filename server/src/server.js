@@ -11,20 +11,30 @@ server.route({
     method : 'GET',
     path : '/',
     handler : (request, reply)=>{
-        reply('<h1>10k_Portfolio!</h1>');
+        reply('<h1 style="color:red; font-size:36px;">10k Portfolio</h1>');
+    }
+});
+
+server.route({
+    method : 'GET',
+    path : '/data',
+    handler : (request, reply)=>{
+        // get static JSON in here
+        let d = {
+            '10k' : 'portfolio'
+        }
+        reply(d);
     }
 });
 
 server.register(Inert, (err)=>{
-
     server.route({
         method : 'GET',
         path : '/index',
         handler : (request, reply)=>{
-            reply.file('./public/index.html');
+            reply.file('./client/public/index.html');
         }
     });
-
 });
 
 server.register({

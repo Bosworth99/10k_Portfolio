@@ -4,7 +4,7 @@
   "description": "Demo project, this is a react / redux app that runs a portfolio section on a brand site.",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node pipe.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,17 +18,28 @@
   },
   "homepage": "https://github.com/Bosworth99/10k_Portfolio#readme",
   "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2016": "^6.0.11",
+    "enzyme": "^2.3.0",
     "eslint": "^2.13.0",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-plugin-import": "^1.8.1",
     "eslint-plugin-jsx-a11y": "^1.5.3",
     "eslint-plugin-react": "^5.2.2",
-    "hapi": "^13.4.1"
+    "hapi": "^13.4.1",
+    "mocha": "^2.5.3",
+    "react": "^15.1.0",
+    "react-addons-test-utils": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
     "good": "^7.0.1",
     "good-console": "^6.1.2",
     "good-squeeze": "^4.0.0",
-    "inert": "^4.0.0"
+    "inert": "^4.0.0",
+    "piping": "^1.0.0-rc.2"
   }
 }
