@@ -1,5 +1,7 @@
 'use strict';
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 const Hapi = require('hapi');
 const Good = require('good');
 const Inert = require('inert');
@@ -9,15 +11,7 @@ server.connection({port:3000});
 
 server.route({
     method : 'GET',
-    path : '/',
-    handler : (request, reply)=>{
-        reply('<h1 style="color:red; font-size:36px;">10k Portfolio</h1>');
-    }
-});
-
-server.route({
-    method : 'GET',
-    path : '/data',
+    path : '/get-data',
     handler : (request, reply)=>{
         // get static JSON in here
         let d = {
@@ -30,12 +24,20 @@ server.route({
 server.register(Inert, (err)=>{
     server.route({
         method : 'GET',
-        path : '/index',
+        path : '/',
         handler : (request, reply)=>{
-            reply.file('./client/public/index.html');
+            reply.file('./public/index.html');
         }
     });
 });
+
+// server.route({
+//     method : 'GET',
+//     path : '/',
+//     handler : (request, reply)=>{
+//         reply('<h1>10k Portfolio</h1>');
+//     }
+// });
 
 server.register({
     register : Good,
