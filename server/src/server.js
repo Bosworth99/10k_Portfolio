@@ -2,26 +2,28 @@
 
 const isProduction = process.env.NODE_ENV === 'production';
 
+////////////////////////////////////////////////////////////////////////////////
+// HAPI
+////////////////////////////////////////////////////////////////////////////////
+
 const Hapi = require('hapi');
 const Good = require('good');
 const Inert = require('inert');
+const path = require('path');
 
 const server = new Hapi.Server();
 server.connection({port:3000});
 
-server.route({
-    method : 'GET',
-    path : '/get-data',
-    handler : (request, reply)=>{
-        // get static JSON in here
-        let d = {
-            '10k' : 'portfolio'
-        }
-        reply(d);
-    }
-});
-
 server.register(Inert, (err)=>{
+
+    server.route({
+        method : 'GET',
+        path : '/api/portfolio',
+        handler : (request, reply)=>{
+            reply.file('./data/portfolio.json');
+        }
+    });
+
     server.route({
         method : 'GET',
         path : '/',
@@ -29,15 +31,19 @@ server.register(Inert, (err)=>{
             reply.file('./public/index.html');
         }
     });
-});
 
-// server.route({
-//     method : 'GET',
-//     path : '/',
-//     handler : (request, reply)=>{
-//         reply('<h1>10k Portfolio</h1>');
-//     }
-// });
+    server.route({
+        method: 'GET',
+        path: '/{param*}',
+        handler: {
+            directory: {
+                path: 'public',
+                listing: true
+            }
+        }
+    });
+
+});
 
 server.register({
     register : Good,
@@ -57,6 +63,7 @@ server.register({
             ]
         }
     }
+
 }, (err)=>{
     if (err){
         throw err;
@@ -67,3 +74,28 @@ server.register({
         }
     });
 });
+
+////////////////////////////////////////////////////////////////////////////////
+// HRM
+////////////////////////////////////////////////////////////////////////////////
+
+var webpack = require('webpack');
+var WebpackDevServer = require('webpack-dev-server');
+var config = require('../../webpack.config.js')
+
+if (!isProduction){
+    new WebpackDevServer(webpack(config), {
+        hot:true,
+        historyApiFallback : true,
+        proxy : {
+            "*" : 'http://localhost:3000'
+        },
+        quiet : false,
+        stats : {colors : true}
+    }).listen(3001, 'localhost', function(err, result){
+        if (err){
+            console.log(err);
+        }
+        console.log('WebpackDevServer[localhost::3001]')
+    });
+}

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-export default React.createClass({
-    render : ()=>{
-        return <div className="react-app">
-            React::APP
-        </div>
+export default class App extends Component {
+    render(){
+        return (
+            <div className="react-app">
+                React::APP {this.props.msg}!
+            </div>
+        )
     }
-})
+};
