@@ -16,22 +16,21 @@ module.exports = {
         loaders : [{
             test : /\.jsx?$/,
             exclude : [nodeModPath],
-            loaders : ["react-hot-loader", "babel-loader"]
-        }
-        // ,{
-        //     test : /\.css$/,
-        //     loader : [style!css]
-        // }
-        ]
+            loader : 'react-hot!babel'
+        },{
+            test: /\.scss$/,
+            loaders: ['style', 'css', 'sass']
+        }]
     },
 
     resolve : {
-        extensions : ['', '.js', '.jsx']
+        extensions : ['', '.js', '.jsx'],
+        root : path.resolve(__dirname, 'client', 'src')
     },
 
     output : {
         path : buildPath,
-        publicPath : 'http://localhost:3001/',
+        publicPath : '/',
         filename : 'bundle.js'
     },
 

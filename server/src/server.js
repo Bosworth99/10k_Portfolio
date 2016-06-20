@@ -88,7 +88,7 @@ if (!isProduction){
         hot:true,
         historyApiFallback : true,
         proxy : {
-            "/api/*" : 'http://localhost:3000'
+            "*" : 'http://localhost:3000'
         },
         quiet : false,
         stats : {colors : true}
