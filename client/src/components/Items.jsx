@@ -10,13 +10,13 @@ export default class Items extends React.Component {
 
     render (){
         return (
-            <table>
-                <tbody>
+            <div className="items">
+                <ul>
                     { this.getProps().map( (item, i)  =>
                         <Item item={item} key={i}  />
                     )}
-                </tbody>
-            </table>
+                </ul>
+            </div>
         )
     }
 };

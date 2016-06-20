@@ -1,37 +1,35 @@
-
 import React from 'react';
+import { connect } from 'react-redux';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
+import { fetchItems } from 'actions.js';
+
 import Items from 'components/Items';
-import styles from 'styles/styles.scss';
+import styles from 'styles.scss';
 
-export default class Portfolio extends React.Component {
+// define dumb component
+// not sure if this is the right way to build a presentational component
+class Portfolio extends React.Component {
 
+    // define an empty portfolio array
     constructor(props){
         super(props);
-        this.state = {time :(new Date()).getTime()};
+
+        this.state = {
+            portfolio : []
+        };
     }
 
-    // componentDidMount(){
-    //     console.log('Portfolio::fetch [before]');
-    //
-    //     let self = this;
-    //     fetch('/api/portfolio')
-    //         .then((res)=>{
-    //             let items = res.get('items');
-    //             console.log('Portfolio::fetch [success] %o', items);
-    //             self.setState({
-    //                 portfolio : items
-    //             })
-    //         })
-    //         .catch((err)=>{
-    //             console.log('Portfolio::fetch [fail]', err);
-    //         });
-    // }
+    // need to add PureRenderMixin here
+
+    componentWillMount(){
+        console.log('Portfolio::componentWillMount');
+        this.props.dispatch(fetchItems());
+    }
 
     getProps(){
-        console.log('this.props.portfolio %o', this.props.portfolio);
-        return this.props.portfolio || [];
+        console.log('Portfolio::this.state %o', this.state);
+        return this.state || [];
     }
 
     render(){
@@ -43,3 +41,13 @@ export default class Portfolio extends React.Component {
         )
     }
 };
+
+// now - generate a container taht we're going use to connect the application state to
+
+// assign props to connect
+function mapStateToProps(state){
+    return { portfolio : state.items }
+}
+
+// connect container to dumb component
+export default connect(mapStateToProps)(Portfolio);
