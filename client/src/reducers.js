@@ -2,7 +2,8 @@ import { combineReducers } from 'redux';
 
 const initialState = {
     fetching : false,
-    items : []
+    items : [],
+    item : {}
 };
 
 function setState(state, newState){
@@ -20,22 +21,22 @@ function setItems(state, newState){
     console.log('Reducers::setItems', state, newState);
     return Object.assign({}, state, {
         fetching : false,
-        items : newState.items
+        items : newState
     });
 }
 
 function reducerItems(state = initialState, action){
-    console.log('Reducers::reducerItems', state, action);
+    console.log('Reducers', state, action);
 
     switch (action.type) {
         case 'SET_STATE':
             return setState(state, action.state);
 
         case 'REQUEST_ITEMS' :
-            return requestItems(state, action.state)
+            return requestItems(state)
 
         case 'RECEIVED_ITEMS' :
-            return setItems(state, action.state);
+            return setItems(state, action.items);
     }
 
     return state;

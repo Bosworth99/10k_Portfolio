@@ -1,4 +1,3 @@
-
 ////////////////////////////////////////////////////////////////////////////////
 //  Actions
 ////////////////////////////////////////////////////////////////////////////////
@@ -7,6 +6,7 @@ export const SET_STATE = 'SET_STATE'
 export const REQUEST_ITEMS = 'REQUEST_ITEMS';
 export const RECEIVED_ITEMS = 'RECEIVED_ITEMS';
 
+// modify url for dev/production
 const ROOT_URL = location.href.indexOf('localhost') > 0 ? 'http://localhost:3001/api' : '/api';
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -28,24 +28,26 @@ export function requestItems(){
     }
 }
 
-export function receivedItems(state){
-    console.log('Actions::receivedItems %o', state);
+// action to emit when json data has been recieved
+export function receivedItems(items){
+    console.log('Actions::receivedItems %o', items);
     return {
         type : RECEIVED_ITEMS,
-        state : state
+        items : items
     }
 }
 
+// async action made available via redux-thunk as middleware
 export function fetchItems(req) {
     console.log('Actions::fetchItems');
 
     return dispatch => {
         // let anyone whos listening know we are performing an async
         dispatch(requestItems(req));
-        return fetch( ROOT_URL + '/portfolio', {
-                method : 'GET'
-            })
+
+        // perform the async operation
+        return fetch( ROOT_URL + '/portfolio', { method : 'GET' })
             .then(response => response.json())
-            .then(json => dispatch( receivedItems(json)))
+            .then(json => dispatch(receivedItems(json)))
     }
 }

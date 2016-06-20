@@ -14,10 +14,6 @@ class Portfolio extends React.Component {
     // define an empty portfolio array
     constructor(props){
         super(props);
-
-        this.state = {
-            portfolio : []
-        };
     }
 
     // need to add PureRenderMixin here
@@ -27,18 +23,26 @@ class Portfolio extends React.Component {
         this.props.dispatch(fetchItems());
     }
 
-    getProps(){
-        console.log('Portfolio::this.state %o', this.state);
-        return this.state || [];
+    componentWillReceiveProps(nextProps) {
+        console.log('Portfolio::componentWillReceiveProps %o', nextProps);
+
+        this.setState({
+            portfolio: nextProps.portfolio
+        });
     }
 
     render(){
-        return (
-            <div className={styles.portfolio}>
-                <h1 className={styles.title}>10k Portfolio</h1>
-                <Items items={this.getProps()} />
-            </div>
-        )
+        console.log('Portfolio::render %o', this.state, this.props );
+        if (this.state.portfolio){
+            return (
+                <div className={styles.portfolio}>
+                    <h1 className={styles.title}>10k Portfolio</h1>
+                    <Items items={this.state.portfolio} />
+                </div>
+            )
+        } else {
+            return <div>Loading...</div>
+        }
     }
 };
 
@@ -46,7 +50,10 @@ class Portfolio extends React.Component {
 
 // assign props to connect
 function mapStateToProps(state){
-    return { portfolio : state.items }
+    console.log('Portfolio::mapStateToProps', state);
+    return {
+        portfolio : state.reducerItems.items
+    };
 }
 
 // connect container to dumb component
