@@ -6,7 +6,7 @@ import PortfolioContainer from 'components/portfolio';
 // import Single from 'components/Single';
 
 export default (
-    <Route path="/" component={App}>
+    <Route path="/" component={App} >
         <IndexRoute component={PortfolioContainer} />
         <Route path="/portfolio" component={PortfolioContainer} />
     </Route>

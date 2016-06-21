@@ -4,6 +4,8 @@
         "sourceType": "module",
         "no-console": [ 0 ],
         "prop-types" : [ 0 ],
+        "indent" : [ 0 ],
+        "jsx-indent" : [ 0 ],
         "ecmaFeatures": {
             "jsx": 1,
         }
@@ -15,7 +17,9 @@
     "rules": {
         "comma-dangle" : 0,
         "no-console": [ 0 ],
-        "prop-types" : [ 0 ]
+        "prop-types" : [ 0 ],
+        "indent" : [ 0 ],
+        "jsx-indent" : [ 0 ]
     },
     "settings": {
         "react": {
