@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import * as actionCreators from 'actions.js';
-import Portfolio from 'components/Portfolio';
+import Portfolio from 'components/Portfolio/Portfolio';
 
 class PortfolioContainer extends React.Component {
 
@@ -14,6 +14,7 @@ class PortfolioContainer extends React.Component {
         this.props.dispatch(actionCreators.fetchItems());
     }
 
+    // called when the application state updates
     componentWillReceiveProps(nextProps) {
         console.log('PortfolioContainer::componentWillReceiveProps', nextProps);
         const items = nextProps.portfolio;
@@ -23,6 +24,7 @@ class PortfolioContainer extends React.Component {
         });
     }
 
+    // not sure if this is stall required. I need to establish a loaded value
     setInitialState() {
         console.log('PortfolioContainer::setInitialState %o', this);
         this.setState({
@@ -30,6 +32,7 @@ class PortfolioContainer extends React.Component {
         });
     }
 
+    // is the required data loaded from the api?
     checkIfLoaded() {
         console.log('PortfolioContainer::checkIfLoaded', this.state);
         return (this.state && this.state.loaded) || false;
@@ -43,16 +46,21 @@ class PortfolioContainer extends React.Component {
     }
 }
 
+PortfolioContainer.propTypes = {
+    portfolio: React.PropTypes.array
+};
+
+// wire up interaction handlers
 const mapDispatchToProps = (dispatch, props) => {
     console.log('Portfolio::mapDispatchToProps props:%o', props);
     return {}
 };
 
 // assign props to connect
-const mapStateToProps = (state) => {
-    console.log('Portfolio::mapStateToProps store:%o', state);
+const mapStateToProps = (props) => {
+    console.log('Portfolio::mapStateToProps props:%o', props);
     return {
-        portfolio: state.itemState.items,
+        portfolio: props.itemState.items,
     };
 };
 

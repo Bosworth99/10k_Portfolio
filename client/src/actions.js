@@ -4,7 +4,7 @@ export const REQUEST_ITEMS = 'REQUEST_ITEMS';
 export const RECEIVED_ITEMS = 'RECEIVED_ITEMS';
 
 // modify url for dev/production
-const ROOT_URL = location.href.indexOf('localhost') > 0 ? 'http://localhost:3001/api' : '/api';
+//const ROOT_URL = location.href.indexOf('localhost') > 0 ? 'http://localhost:3001/api' : '/api';
 
 //  Action Creators
 // useful for a loader screen, for example
@@ -33,7 +33,7 @@ export function fetchItems(req) {
         dispatch(requestItems(req));
 
         // perform the async operation
-        return fetch( ROOT_URL + '/portfolio', { method : 'GET' } )
+        return fetch('/api/portfolio', { method: 'GET' })
             .then(response => response.json())
             .then(json => dispatch(receivedItems(json)));
     };

@@ -2,10 +2,8 @@
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-////////////////////////////////////////////////////////////////////////////////
-// HAPI
-////////////////////////////////////////////////////////////////////////////////
 
+// HAPI Backend server
 const Hapi = require('hapi');
 const Good = require('good');
 const Inert = require('inert');
@@ -17,17 +15,17 @@ server.connection({port:3000});
 server.register(Inert, (err)=>{
 
     server.route({
-        method : 'GET',
-        path : '/api/portfolio',
-        handler : (request, reply)=>{
+        method: 'GET',
+        path: '/api/portfolio',
+        handler: (request, reply) => {
             reply.file('./data/portfolio.json');
         }
     });
 
     server.route({
-        method : 'GET',
-        path : '/',
-        handler : (request, reply)=>{
+        method: 'GET',
+        path: '/',
+        handler: (request, reply) => {
             reply.file('./public/index.html');
         }
     });
@@ -42,57 +40,54 @@ server.register(Inert, (err)=>{
             }
         }
     });
-
 });
 
 server.register({
-    register : Good,
-    options : {
-        reporters : {
+    register: Good,
+    options: {
+        reporters: {
             console: [{
-                module : 'good-squeeze',
-                name : 'Squeeze',
-                args : [{
-                    response : '*',
-                    log : '*'
+                module: 'good-squeeze',
+                name: 'Squeeze',
+                args: [{
+                    response: '*',
+                    log: '*'
                 }]
-            },{
-                module : 'good-console',
+            }, {
+                module: 'good-console',
             },
             'stdout'
             ]
         }
     }
 
-}, (err)=>{
-    if (err){
+}, (err) => {
+    if (err) {
         throw err;
     }
-    server.start((err)=>{
-        if (err){
+    server.start((err) => {
+        if (err) {
             server.log('info', 'Server running at:' + server.info.url);
         }
     });
 });
 
-////////////////////////////////////////////////////////////////////////////////
-// HRM
-////////////////////////////////////////////////////////////////////////////////
 
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-var config = require('../../webpack.config.js')
+// Dev server / HMR
+const webpack = require('webpack');
+const WebpackDevServer = require('webpack-dev-server');
+const config = require('../../webpack.config.js')
 
 if (!isProduction){
     new WebpackDevServer(webpack(config), {
-        hot:true,
-        historyApiFallback : true,
-        proxy : {
-            "*" : 'http://localhost:3000'
+        hot: true,
+        historyApiFallback: true,
+        proxy: {
+            "*": 'http://localhost:3000'
         },
-        quiet : false,
-        stats : {colors : true}
-    }).listen(3001, 'localhost', function(err, result){
+        quiet: false,
+        stats: { colors: true }
+    }).listen(3001, 'localhost', (err, result) => {
         if (err){
             console.log(err);
         }
