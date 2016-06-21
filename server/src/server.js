@@ -10,7 +10,7 @@ const Inert = require('inert');
 const path = require('path');
 
 const server = new Hapi.Server();
-server.connection({port:3000});
+server.connection({ port: 3000 });
 
 server.register(Inert, (err)=>{
 
@@ -60,12 +60,12 @@ server.register({
             ]
         }
     }
-
 }, (err) => {
     if (err) {
         throw err;
     }
-    server.start((err) => {
+
+    server.start(() => {
         if (err) {
             server.log('info', 'Server running at:' + server.info.url);
         }
