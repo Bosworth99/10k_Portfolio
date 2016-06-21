@@ -25,7 +25,6 @@ function setItems(state, newState) {
 // Item Reducers
 function itemState(state = initialState, action) {
     console.log('Reducers::itemState', state, action);
-
     switch (action.type) {
         case 'REQUEST_ITEMS' :
             return requestItems(state);

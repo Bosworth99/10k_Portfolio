@@ -25,7 +25,7 @@ export default class Item extends React.Component {
 
     render() {
         console.log('Item:render this.props.item:%o', this.props.item);
-        if ( this.props.item.active ){
+        if (this.props.item.active){
             return (
                 <div style={activeStyle} >
                     <div    className="item"
