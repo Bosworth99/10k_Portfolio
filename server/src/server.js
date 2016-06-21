@@ -2,7 +2,6 @@
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-
 // HAPI Backend server
 const Hapi = require('hapi');
 const Good = require('good');

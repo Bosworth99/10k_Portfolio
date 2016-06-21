@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import * as actionCreators from 'actions.js';
-import Portfolio from 'components/Portfolio/Portfolio';
+import Portfolio from 'components/Portfolio/Portfolio.jsx';
 
 class PortfolioContainer extends React.Component {
 

@@ -8,14 +8,14 @@ const initialState = {
 
 //  Reducer methods
 function requestItems(state, newState) {
-    console.log('Reducers::requestItems', state, newState);
+    console.log('Reducers::requestItems %o %o', state, newState);
     return Object.assign({}, state, {
         fetching: true
     });
 }
 
 function setItems(state, newState) {
-    console.log('Reducers::setItems', state, newState);
+    console.log('Reducers::setItems %o %o', state, newState);
     return Object.assign({}, state, {
         fetching: false,
         items: newState
@@ -23,7 +23,7 @@ function setItems(state, newState) {
 }
 
 function selectSingle(state, itemId) {
-    console.log('Reducers::selectSingle', state, itemId);
+    console.log('Reducers::selectSingle %o %o', state, itemId);
     const single = state.items.filter((item) => {
         return item.ID === itemId;
     })[0];
