@@ -31,8 +31,11 @@ module.exports = {
     output : {
         path : buildPath,
         publicPath : '/',
-        filename : 'bundle.js'
+        filename : 'bundle.js',
+        sourceMapFilename: "bundle.map"
     },
+
+    devtool: '#source-map',
 
     devServer : {
         contentBase : contentPath,

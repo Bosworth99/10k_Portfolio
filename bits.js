@@ -90,3 +90,42 @@ ReactDOM.render(
     <Portfolio portfolio={data} />,
     document.getElementById('app')
 );
+
+
+// not sure if this is the right way to build a presentational component
+class Portfolio extends React.Component {
+
+    // define an empty portfolio array
+    constructor(props){
+        super(props);
+    }
+
+    // need to add PureRenderMixin here
+
+    componentWillMount(){
+        console.log('Portfolio::componentWillMount');
+        this.props.dispatch(fetchItems());
+    }
+
+    componentWillReceiveProps(nextProps) {
+        console.log('Portfolio::componentWillReceiveProps %o', nextProps);
+
+        this.setState({
+            portfolio: nextProps.portfolio
+        });
+    }
+
+    render(){
+        console.log('Portfolio::render %o', this.state, this.props );
+        if (this.state.portfolio){
+            return (
+                <div className={styles.portfolio}>
+                    <h1 className={styles.title}>10k Portfolio</h1>
+                    <Items items={this.state.portfolio} />
+                </div>
+            )
+        } else {
+            return <div>Loading...</div>
+        }
+    }
+};

@@ -7,54 +7,91 @@ import { fetchItems } from 'actions.js';
 import Items from 'components/Items';
 import styles from 'styles.scss';
 
-// define dumb component
-// not sure if this is the right way to build a presentational component
+// the Presentational Component
 class Portfolio extends React.Component {
-
-    // define an empty portfolio array
-    constructor(props){
-        super(props);
-    }
-
-    // need to add PureRenderMixin here
-
-    componentWillMount(){
-        console.log('Portfolio::componentWillMount');
-        this.props.dispatch(fetchItems());
-    }
-
-    componentWillReceiveProps(nextProps) {
-        console.log('Portfolio::componentWillReceiveProps %o', nextProps);
-
-        this.setState({
-            portfolio: nextProps.portfolio
-        });
-    }
-
     render(){
         console.log('Portfolio::render %o', this.state, this.props );
-        if (this.state.portfolio){
+
+        if (this.props.loaded){
             return (
                 <div className={styles.portfolio}>
                     <h1 className={styles.title}>10k Portfolio</h1>
-                    <Items items={this.state.portfolio} />
+                    <Items items={this.props.portfolio} />
                 </div>
             )
         } else {
             return <div>Loading...</div>
         }
     }
-};
+}
 
-// now - generate a container taht we're going use to connect the application state to
+// Or - the pure functional way
+// - only if the sole method is render()
+const StatelessPortfolioComponent = (props)=>{
+    console.log('StatelessPortfolioComponent::render %o', props );
+    if (props.loaded){
+        return (
+            <div className={styles.portfolio}>
+                <h1 className={styles.title}>10k Portfolio</h1>
+                <Items items={props.portfolio} />
+            </div>
+        )
+    } else {
+        return <div>Loading...</div>
+    }
+}
+
+// Portfolio Container
+const PortfolioContainer = React.createClass({
+
+    getInitialState : ()=>{
+        console.log('PortfolioContainer::getInitialState');
+        return {
+            portfolio : [],
+            loaded : false
+        }
+    },
+
+    componentWillMount : ()=>{
+        console.log('PortfolioContainer::componentWillMount');
+        this.props.dispatch(fetchItems());
+    },
+
+    componentWillReceiveProps : (nextProps) => {
+        console.log('PortfolioContainer::componentWillReceiveProps', nextProps);
+        const items = nextProps;
+        this.setState({
+            portfolio : items,
+            loaded : true
+        });
+    },
+
+    render : ()=>{
+        console.log('PortfolioContainer::render', this);
+        return (
+            <div>Hello stupid</div>
+        )
+    }
+});
+
+//             <Portfolio portfolio={this.state.portfolio} loaded={this.state.loaded} />
+
+// if we need to dispatch an action
+const mapDispatchToProps = (dispatch, props) => {
+    console.log('Portfolio::mapDispatchToProps dispatch:%o props:%o', dispatch, props);
+    return {}
+}
 
 // assign props to connect
-function mapStateToProps(state){
-    console.log('Portfolio::mapStateToProps', state);
+const mapStateToProps = (store) => {
+    console.log('Portfolio::mapStateToProps store:%o', store);
     return {
-        portfolio : state.reducerItems.items
+        portfolio : store.itemState.items
     };
 }
 
-// connect container to dumb component
-export default connect(mapStateToProps)(Portfolio);
+// connect container to presentational / functional component
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(PortfolioContainer);

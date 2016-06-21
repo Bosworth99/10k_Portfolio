@@ -13,13 +13,6 @@ const ROOT_URL = location.href.indexOf('localhost') > 0 ? 'http://localhost:3001
 //  Action Creators
 ////////////////////////////////////////////////////////////////////////////////
 
-export function setState(state){
-    return {
-        type : SET_STATE,
-        state : state
-    }
-}
-
 // useful for a loader screen, for example
 export function requestItems(){
     console.log('Actions::requestItems');

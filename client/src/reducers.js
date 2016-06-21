@@ -6,9 +6,9 @@ const initialState = {
     item : {}
 };
 
-function setState(state, newState){
-    return state.merge(newState);
-}
+////////////////////////////////////////////////////////////////////////////////
+//  Reducer methods
+////////////////////////////////////////////////////////////////////////////////
 
 function requestItems(state, newState){
     console.log('Reducers::requestItems', state, newState);
@@ -25,25 +25,26 @@ function setItems(state, newState){
     });
 }
 
-function reducerItems(state = initialState, action){
-    console.log('Reducers', state, action);
+////////////////////////////////////////////////////////////////////////////////
+// Item Reducers
+////////////////////////////////////////////////////////////////////////////////
+
+function itemState(state = initialState, action){
+    console.log('Reducers::itemState', state, action);
 
     switch (action.type) {
-        case 'SET_STATE':
-            return setState(state, action.state);
-
         case 'REQUEST_ITEMS' :
             return requestItems(state)
 
         case 'RECEIVED_ITEMS' :
             return setItems(state, action.items);
     }
-
     return state;
 }
 
+// destructuered object
 const rootReducer = combineReducers({
-    reducerItems
+    itemState
 });
 
 export default rootReducer;
