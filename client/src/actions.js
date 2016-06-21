@@ -2,6 +2,7 @@
 // - could split these into their own file
 export const REQUEST_ITEMS = 'REQUEST_ITEMS';
 export const RECEIVED_ITEMS = 'RECEIVED_ITEMS';
+export const SELECT_SINGLE = 'SELECT_SINGLE';
 
 // modify url for dev/production
 //const ROOT_URL = location.href.indexOf('localhost') > 0 ? 'http://localhost:3001/api' : '/api';
@@ -20,7 +21,15 @@ export function receivedItems(items) {
     console.log('Actions::receivedItems %o', items);
     return {
         type: RECEIVED_ITEMS,
-        items
+        items,
+    };
+}
+
+export function selectSingle(itemId) {
+    console.log('Actions::selectSingle %s', itemId);
+    return {
+        type: SELECT_SINGLE,
+        itemId
     };
 }
 

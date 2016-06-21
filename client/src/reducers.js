@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 const initialState = {
     fetching: false,
     items: [],
-    item: {}
+    single: {}
 };
 
 //  Reducer methods
@@ -22,6 +22,14 @@ function setItems(state, newState) {
     });
 }
 
+function selectSingle(state, itemId) {
+    console.log('Reducers::selectSingle', state, itemId);
+    const single = state.items.filter((item) => {
+        return item.ID === itemId;
+    })[0];
+    return Object.assign({}, state, { single });
+}
+
 // Item Reducers
 function itemState(state = initialState, action) {
     console.log('Reducers::itemState', state, action);
@@ -30,7 +38,10 @@ function itemState(state = initialState, action) {
             return requestItems(state);
         case 'RECEIVED_ITEMS' :
             return setItems(state, action.items);
+        case 'SELECT_SINGLE' :
+            return selectSingle(state, action.itemId);
         default:
+            console.log('Reducers::itemState [%s] Not Handled!', action.type);
     }
     return state;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
-import Items from 'components/Portfolio/Items';
+import Items from 'components/Portfolio/Items.jsx';
 import styles from 'styles.scss';
 
 // the Presentational Component

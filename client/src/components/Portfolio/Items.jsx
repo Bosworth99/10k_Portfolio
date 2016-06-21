@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemContainer from 'containers/Portfolio/Item';
+import ItemContainer from 'containers/Portfolio/Item.jsx';
 
 export default class Items extends React.Component {
     render() {
