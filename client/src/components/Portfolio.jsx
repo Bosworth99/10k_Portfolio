@@ -7,17 +7,17 @@ import styles from 'styles.scss';
 // the Presentational Component
 export default class Portfolio extends React.Component {
     render() {
-        console.log('Portfolio::render this:%o', this);
-        if (this.props.loaded){
-            return (
-                <div className={styles.portfolio} >
-                    <h1 className={styles.title}>10k Portfolio</h1>
-                    <Items items={this.props.portfolio} />
-                </div>
-            );
-        } else {
-            return <div>Loading...</div>;
-        }
+        console.log('Portfolio::render %o', this);
+        return (
+            <div className={styles.portfolio}>
+                <h1 className={styles.title}>10k Portfolio</h1>
+                {
+                    (this.props.loaded)
+                    ? <Items items={this.props.portfolio} />
+                    : <div>Loading...</div>
+                }
+            </div>
+        );
     }
 }
 

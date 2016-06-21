@@ -4,45 +4,15 @@ import { connect } from 'react-redux';
 
 import * as actionCreators from 'actions.js';
 import Portfolio from 'components/Portfolio';
-import { store } from 'store';
 
-// class PortfolioContainer extends React.Component {
-//
-//     componentDidMount() {
-//         console.log('PortfolioContainer::componentDidMount this:%o', this);
-//         dispatch(actionCreators.fetchItems());
-//     }
-//
-//     componentWillReceiveProps(nextProps) {
-//         console.log('PortfolioContainer::componentWillReceiveProps', nextProps);
-//         const items = nextProps;
-//         this.setState({
-//             portfolio: items,
-//             loaded: true
-//         });
-//     }
-//
-//     setInitialState() {
-//         console.log('PortfolioContainer::setInitialState %o', this);
-//         this.setState({
-//             portfolio : [],
-//             loaded : false
-//         });
-//     }
-//
-//     render() {
-//         console.log('PortfolioContainer::render', this);
-//         return (
-//           <Portfolio portfolio={this.props.portfolio} loaded={this.props.loaded} />
-//         );
-//     }
-// }
+import configureStore from 'store.js';
+const store = configureStore();
 
 class PortfolioContainer extends React.Component {
 
     componentDidMount() {
-        console.log('PortfolioContainer::componentDidMount this:%o', this);
-        dispatch(actionCreators.fetchItems());
+        console.log('PortfolioContainer::componentDidMount this:%o', this, store);
+        store.dispatch(actionCreators.fetchItems());
     }
 
     componentWillReceiveProps(nextProps) {
@@ -57,7 +27,6 @@ class PortfolioContainer extends React.Component {
     setInitialState() {
         console.log('PortfolioContainer::setInitialState %o', this);
         this.setState({
-            portfolio : [],
             loaded : false
         });
     }
@@ -82,7 +51,7 @@ const mapDispatchToProps = (dispatch, props) => {
 const mapStateToProps = (store) => {
     console.log('Portfolio::mapStateToProps store:%o', store);
     return {
-        portfolio: store.itemState.items
+        portfolio: store.itemState.items,
     };
 };
 
@@ -91,38 +60,3 @@ export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(PortfolioContainer);
-
-
-// Portfolio Container
-//
-// const PortfolioContainer = React.createClass({
-//
-//     getInitialState: () => {
-//         console.log('PortfolioContainer::getInitialState');
-//         return {
-//             portfolio: [],
-//             loaded: false
-//         };
-//     },
-//
-//     componentWillMount: () => {
-//         console.log('PortfolioContainer::componentWillMount', this.state, this.state.dispatch);
-//         this.state.dispatch(fetchItems());
-//     },
-//
-//     componentWillReceiveProps: (nextProps) => {
-//         console.log('PortfolioContainer::componentWillReceiveProps', nextProps);
-//         const items = nextProps;
-//         this.setState({
-//             portfolio: items,
-//             loaded: true
-//         });
-//     },
-//
-//     render: () => {
-//         console.log('PortfolioContainer::render', this);
-//         return (
-//           <Portfolio portfolio={this.state.portfolio} loaded={this.state.loaded} />
-//         );
-//     }
-// });
