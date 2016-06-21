@@ -7,7 +7,7 @@ import styles from 'styles.scss';
 // the Presentational Component
 export default class Portfolio extends React.Component {
     render() {
-        console.log('Portfolio::render %o', this.props );
+        console.log('Portfolio::render %o', this.props);
         if (this.props.loaded){
             return (
                 <div className={styles.portfolio} >

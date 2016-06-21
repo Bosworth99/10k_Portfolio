@@ -10,4 +10,4 @@ export default (
         <IndexRoute component={PortfolioContainer} />
         <Route path="/portfolio" component={PortfolioContainer} />
     </Route>
-)
+);
