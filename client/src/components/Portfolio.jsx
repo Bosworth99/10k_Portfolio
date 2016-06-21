@@ -7,7 +7,7 @@ import styles from 'styles.scss';
 // the Presentational Component
 export default class Portfolio extends React.Component {
     render() {
-        console.log('Portfolio::render %o', this.props);
+        console.log('Portfolio::render this:%o', this);
         if (this.props.loaded){
             return (
                 <div className={styles.portfolio} >
@@ -25,14 +25,14 @@ export default class Portfolio extends React.Component {
 // - only if the sole method is render()
 // export default function Portfolio(props) {
 //     console.log('Portfolio::render %o', props);
-//     if (props.loaded){
-//         return (
-//           <div className={styles.portfolio}>
+//     return (
+//         <div className={styles.portfolio}>
 //             <h1 className={styles.title}>10k Portfolio</h1>
-//             <Items items={props.portfolio} />
-//           </div>
-//         );
-//     } else {
-//         return <div>Loading...</div>;
-//     }
+//             {
+//                 (props.loaded)
+//                 ? <Items items={props.portfolio} />
+//                 : <div>Loading...</div>
+//             }
+//         </div>
+//     );
 // }

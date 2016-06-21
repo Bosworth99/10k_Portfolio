@@ -1,10 +1,14 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
+import thunkMiddleware from 'redux-thunk';
+import createLogger from 'redux-logger';
 import rootReducer from './reducers';
 
-export default function configureStore() {
+export default function configureStore(initialState) {
     const finalCreateStore = compose(
-        applyMiddleware(thunk)
+        applyMiddleware(
+            thunkMiddleware,
+            createLogger
+        )
     )(createStore);
     const store = finalCreateStore(rootReducer);
     // Enable Webpack hot module replacement for reducers
