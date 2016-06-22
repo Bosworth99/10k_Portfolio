@@ -1,8 +1,8 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
-import Items from 'components/Portfolio/Items.jsx';
-import styles from 'styles.scss';
+import Items from '/components/Portfolio/Items.jsx';
+import styles from '/styles.scss';
 
 // the Presentational Component
 // export default class Portfolio extends React.Component {

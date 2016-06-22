@@ -6,8 +6,8 @@ import ReactDOM from 'react-dom';
 import { Router, browserHistory, hashHistory } from 'react-router';
 import { Provider } from 'react-redux';
 
-import routes from './routes';
-import configureStore from './store';
+import routes from 'routes.js';
+import configureStore from 'store.js';
 
 // not sure what initialState should be here
 // - passing an empty object instead

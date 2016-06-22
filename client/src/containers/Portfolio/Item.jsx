@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { hashHistory } from 'react-router';
 
-import * as actionCreators from 'actions';
-import Item from 'components/Portfolio/Item.jsx';
+import * as actionCreators from '/actions';
+import Item from '/components/Portfolio/Item.jsx';
 
 // set up our container component
 class ItemContainer extends React.Component {
