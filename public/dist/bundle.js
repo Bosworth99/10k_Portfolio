@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "1fcfc1bce080eee63f81"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "d3290a7c0573436faebd"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -8200,7 +8200,7 @@
 	
 	var _routes2 = _interopRequireDefault(_routes);
 	
-	var _store = __webpack_require__(539);
+	var _store = __webpack_require__(540);
 	
 	var _store2 = _interopRequireDefault(_store);
 	
@@ -8221,7 +8221,7 @@
 	    _react2.default.createElement(_reactRouter.Router, { history: _reactRouter.browserHistory, routes: _routes2.default })
 	), document.getElementById('app'));
 	
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(527); if (makeExportsHot(module, __webpack_require__(150))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(528); if (makeExportsHot(module, __webpack_require__(150))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
@@ -35785,15 +35785,15 @@
 	
 	var _App2 = _interopRequireDefault(_App);
 	
-	var _Layout = __webpack_require__(530);
+	var _Layout = __webpack_require__(531);
 	
 	var _Layout2 = _interopRequireDefault(_Layout);
 	
-	var _Layout3 = __webpack_require__(535);
+	var _Layout3 = __webpack_require__(536);
 	
 	var _Layout4 = _interopRequireDefault(_Layout3);
 	
-	var _Layout5 = __webpack_require__(537);
+	var _Layout5 = __webpack_require__(538);
 	
 	var _Layout6 = _interopRequireDefault(_Layout5);
 	
@@ -35812,7 +35812,7 @@
 	// <Route path="/portfolio" component={PortfolioContainer} />
 	// <Route path="/single/:id" component={Single} />
 
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(527); if (makeExportsHot(module, __webpack_require__(150))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "routes.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(528); if (makeExportsHot(module, __webpack_require__(150))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "routes.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
@@ -35841,6 +35841,10 @@
 	
 	var _layout2 = _interopRequireDefault(_layout);
 	
+	var _base = __webpack_require__(527);
+	
+	var _base2 = _interopRequireDefault(_base);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35868,15 +35872,15 @@
 	      console.log('App::render %o', this);
 	      return _react2.default.createElement(
 	        'div',
-	        { className: _layout2.default.layout },
+	        { className: _layout2.default.appLayout },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'header' },
+	          { className: _layout2.default.appHeader },
 	          this.props.header
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'main' },
+	          { className: _layout2.default.appMain },
 	          this.props.main
 	        )
 	      );
@@ -35888,7 +35892,7 @@
 	
 	exports.default = (0, _reactCssModules2.default)(App, _layout2.default);
 	
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(527); if (makeExportsHot(module, __webpack_require__(150))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "App.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(528); if (makeExportsHot(module, __webpack_require__(150))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "App.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
@@ -42442,17 +42446,23 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"layout":"layout__layout___1mX3L"};
+	module.exports = {"appLayout":"layout__appLayout___1-8-W","appHeader":"layout__appHeader___2wgYi","appMain":"layout__appMain___2rX2v"};
 
 /***/ },
 /* 526 */,
 /* 527 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 528 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var isReactClassish = __webpack_require__(528),
-	    isReactElementish = __webpack_require__(529);
+	var isReactClassish = __webpack_require__(529),
+	    isReactElementish = __webpack_require__(530);
 	
 	function makeExportsHot(m, React) {
 	  if (isReactElementish(m.exports, React)) {
@@ -42506,7 +42516,7 @@
 
 
 /***/ },
-/* 528 */
+/* 529 */
 /***/ function(module, exports) {
 
 	function hasRender(Class) {
@@ -42556,10 +42566,10 @@
 	module.exports = isReactClassish;
 
 /***/ },
-/* 529 */
+/* 530 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isReactClassish = __webpack_require__(528);
+	var isReactClassish = __webpack_require__(529);
 	
 	function isReactElementish(obj, React) {
 	  if (!obj) {
@@ -42573,7 +42583,7 @@
 	module.exports = isReactElementish;
 
 /***/ },
-/* 530 */
+/* 531 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -42594,15 +42604,15 @@
 	
 	var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 	
-	var _Nav = __webpack_require__(531);
+	var _Nav = __webpack_require__(532);
 	
 	var _Nav2 = _interopRequireDefault(_Nav);
 	
-	var _k_325x131_wht = __webpack_require__(533);
+	var _k_325x131_wht = __webpack_require__(534);
 	
 	var _k_325x131_wht2 = _interopRequireDefault(_k_325x131_wht);
 	
-	var _header = __webpack_require__(534);
+	var _header = __webpack_require__(535);
 	
 	var _header2 = _interopRequireDefault(_header);
 	
@@ -42649,11 +42659,11 @@
 	
 	exports.default = (0, _reactCssModules2.default)(HeaderLayout, _header2.default);
 	
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(527); if (makeExportsHot(module, __webpack_require__(150))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Layout.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(528); if (makeExportsHot(module, __webpack_require__(150))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Layout.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 531 */
+/* 532 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -42676,7 +42686,7 @@
 	
 	var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 	
-	var _Nav = __webpack_require__(532);
+	var _Nav = __webpack_require__(533);
 	
 	var _Nav2 = _interopRequireDefault(_Nav);
 	
@@ -42712,7 +42722,7 @@
 	            null,
 	            _react2.default.createElement(
 	              _reactRouter.Link,
-	              { to: '/' },
+	              { className: 'link', to: '/' },
 	              'Home'
 	            )
 	          ),
@@ -42721,7 +42731,7 @@
 	            null,
 	            _react2.default.createElement(
 	              _reactRouter.Link,
-	              { to: '/work' },
+	              { className: 'link', to: '/work' },
 	              'Work'
 	            )
 	          )
@@ -42735,30 +42745,30 @@
 	
 	exports.default = (0, _reactCssModules2.default)(NavLayout, _Nav2.default);
 	
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(527); if (makeExportsHot(module, __webpack_require__(150))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Nav.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(528); if (makeExportsHot(module, __webpack_require__(150))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Nav.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 532 */
+/* 533 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 533 */
+/* 534 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "/images/10k_325x131_wht.png";
 
 /***/ },
-/* 534 */
+/* 535 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"header":"header__header___25qHu","headerhover":"header__headerhover___1Ps_w","brand":"header__brand___13oBX","logo":"header__logo___38jz6","navigation":"header__navigation___2fl8h"};
+	module.exports = {"header":"header__header___25qHu","brand":"header__brand___13oBX","logo":"header__logo___38jz6","navigation":"header__navigation___2fl8h"};
 
 /***/ },
-/* 535 */
+/* 536 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -42775,13 +42785,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactRouter = __webpack_require__(253);
-	
 	var _reactCssModules = __webpack_require__(336);
 	
 	var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 	
-	var _home = __webpack_require__(536);
+	var _home = __webpack_require__(537);
 	
 	var _home2 = _interopRequireDefault(_home);
 	
@@ -42808,7 +42816,7 @@
 	      console.log('HomeLayout::render this:%o', this);
 	      return _react2.default.createElement(
 	        'h1',
-	        { className: _home2.default.title },
+	        { className: 'page-title' },
 	        'Home'
 	      );
 	    }
@@ -42819,18 +42827,17 @@
 	
 	exports.default = (0, _reactCssModules2.default)(HomeLayout, _home2.default);
 	
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(527); if (makeExportsHot(module, __webpack_require__(150))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Layout.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(528); if (makeExportsHot(module, __webpack_require__(150))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Layout.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 536 */
+/* 537 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"title":"home__title___1ClQu"};
 
 /***/ },
-/* 537 */
+/* 538 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -42847,13 +42854,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactRouter = __webpack_require__(253);
-	
 	var _reactCssModules = __webpack_require__(336);
 	
 	var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 	
-	var _work = __webpack_require__(538);
+	var _work = __webpack_require__(539);
 	
 	var _work2 = _interopRequireDefault(_work);
 	
@@ -42880,7 +42885,7 @@
 	      console.log('WorkLayout::render this:%o', this);
 	      return _react2.default.createElement(
 	        'h1',
-	        { className: _work2.default.title },
+	        { className: 'page-title' },
 	        'work'
 	      );
 	    }
@@ -42891,18 +42896,17 @@
 	
 	exports.default = (0, _reactCssModules2.default)(WorkLayout, _work2.default);
 	
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(527); if (makeExportsHot(module, __webpack_require__(150))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Layout.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(528); if (makeExportsHot(module, __webpack_require__(150))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Layout.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 538 */
+/* 539 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"title":"work__title___1_qiv"};
 
 /***/ },
-/* 539 */
+/* 540 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -42916,11 +42920,11 @@
 	
 	var _redux = __webpack_require__(321);
 	
-	var _reduxThunk = __webpack_require__(540);
+	var _reduxThunk = __webpack_require__(541);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
-	var _reducers = __webpack_require__(541);
+	var _reducers = __webpack_require__(542);
 	
 	var _reducers2 = _interopRequireDefault(_reducers);
 	
@@ -42934,8 +42938,8 @@
 	
 	    // Enable Webpack hot module replacement for reducers
 	    if (true) {
-	        module.hot.accept(541, function () {
-	            var nextReducer = __webpack_require__(541);
+	        module.hot.accept(542, function () {
+	            var nextReducer = __webpack_require__(542);
 	            store.replaceReducer(nextReducer);
 	        });
 	    }
@@ -42943,11 +42947,11 @@
 	    return store;
 	}
 	
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(527); if (makeExportsHot(module, __webpack_require__(150))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "store.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(528); if (makeExportsHot(module, __webpack_require__(150))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "store.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 540 */
+/* 541 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -42975,7 +42979,7 @@
 	exports['default'] = thunk;
 
 /***/ },
-/* 541 */
+/* 542 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -43044,7 +43048,7 @@
 	
 	exports.default = rootReducer;
 	
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(527); if (makeExportsHot(module, __webpack_require__(150))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "reducers.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(528); if (makeExportsHot(module, __webpack_require__(150))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "reducers.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ }

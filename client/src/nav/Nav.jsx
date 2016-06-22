@@ -10,8 +10,8 @@ class NavLayout extends React.Component {
     return (
       <nav>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/work">Work</Link></li>
+          <li><Link className="link" to="/">Home</Link></li>
+          <li><Link className="link" to="/work">Work</Link></li>
         </ul>
       </nav>
     );

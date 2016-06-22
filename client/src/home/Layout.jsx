@@ -1,14 +1,16 @@
 import React from 'react';
-import { hashHistory } from 'react-router';
 import CSSModules from 'react-css-modules';
 
 import styles from 'home/home.scss';
 
 class HomeLayout extends React.Component {
   render() {
-    console.log('HomeLayout::render this:%o', this);
+    //console.log('HomeLayout::render this:%o', this);
     return (
-      <h1 className={styles.title}>Home</h1>
+      <section className="module-layout">
+        <h1 className="page-title">Handcrafted Internet</h1>
+        <p>Airtight code. Rock-solid markup. Stylesheets that hum.</p>
+      </section>
     );
   }
 }

@@ -8,7 +8,7 @@ import styles from 'header/header.scss';
 
 class HeaderLayout extends React.Component {
   render() {
-    console.log('HeaderLayout::render this:%o', this);
+    //console.log('HeaderLayout::render this:%o', this);
     return (
       <header className={styles.header}>
         <div className={styles.brand}>
