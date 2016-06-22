@@ -33,11 +33,9 @@
     "eslint-plugin-jsx-a11y": "^1.5.3",
     "eslint-plugin-react": "^5.2.2",
     "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.8.5",
     "hapi": "^13.4.1",
     "loader": "^2.1.1",
     "mocha": "^2.5.3",
-    "react": "^15.1.0",
     "react-addons-pure-render-mixin": "^15.1.0",
     "react-addons-test-utils": "^15.1.0",
     "react-css-modules": "^3.7.6",
@@ -46,26 +44,28 @@
     "redux-logger": "^2.6.1",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.1.0",
-    "resolve-url": "^0.2.1",
-    "resolve-url-loader": "^1.4.3",
     "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^1.14.1",
+    "webpack-validator": "^2.2.0",
     "csv2json": "^1.1.0",
-    "file": "^0.2.2",
     "good": "^7.0.1",
     "good-console": "^6.1.2",
     "good-squeeze": "^4.0.0",
     "inert": "^4.0.0",
-    "loader": "^2.1.1",
     "piping": "^1.0.0-rc.2",
-    "react": "^15.1.0",
+    "redux-devtools": "^3.3.1"
+  },
+  "dependencies": {
+    "file": "^0.2.2",
+    "loader": "^2.1.1",
     "react-redux": "^4.4.5",
     "react-router": "^2.4.1",
     "redux": "^3.5.2",
-    "redux-devtools": "^3.3.1",
-    "style-loader": "^0.13.1"
+    "react": "^15.1.0",
+    "style-loader": "^0.13.1",
+    "resolve-url": "^0.2.1",
+    "resolve-url-loader": "^1.4.3",
+    "file-loader": "^0.8.5"
   },
   "babel": {
     "presets": [

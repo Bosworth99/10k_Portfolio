@@ -1,17 +1,18 @@
 // imports
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var path = require('path');
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const validate = require('webpack-validator');
+const path = require('path');
 
 // paths
-var rootPath = path.resolve(__dirname, 'client', 'src');
-var buildPath = path.resolve(__dirname, 'public', 'dist');
-var contentPath = path.resolve(__dirname, 'public', 'dist');
-var nodeModPath = path.resolve(__dirname, 'node_modules');
-var entryFile = path.resolve( rootPath, 'index.jsx');
+const rootPath = path.resolve(__dirname, 'client', 'src');
+const buildPath = path.resolve(__dirname, 'public', 'dist');
+const contentPath = path.resolve(__dirname, 'public', 'dist');
+const nodeModPath = path.resolve(__dirname, 'node_modules');
+const entryFile = path.resolve(rootPath, 'index.jsx');
 
 // configger the almighty webpack
-module.exports = {
+const config = {
     entry: [
         'webpack-dev-server/client?http://localhost:3001',
         'webpack/hot/only-dev-server',
@@ -23,7 +24,7 @@ module.exports = {
     },
     output: {
         path: buildPath,
-        publicPath: '/assets/',
+        publicPath: './dist/',
         filename: 'bundle.js',
         sourceMapFilename: 'bundle.map'
     },
@@ -32,18 +33,16 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 exclude: [nodeModPath],
-                loader: 'react-hot!babel'
+                loader: 'react-hot!babel',
+                include: rootPath
             }, {
                 test: /\.s?css$/,
-                loaders: [
-                    'style?sourceMap',
-                    'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
-                    'resolve-url',
-                    'sass?sourceMap'
-                ]
+                loader: ExtractTextPlugin.extract('css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass'),
+                include: rootPath
             }, {
                 test: /\.(png|jpg|gif)$/,
-                loader: 'file?name=/images/[name].[ext]'
+                loader: 'file?name=/images/[name].[ext]',
+                include: rootPath
             }
         ]
     },
@@ -58,3 +57,12 @@ module.exports = {
         new ExtractTextPlugin('styles.css')
     ]
 };
+
+module.exports = validate(config);
+
+// loaders: [
+//     'style?sourceMap',
+//     'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
+//     'resolve-url',
+//     'sass?sourceMap'
+// ]

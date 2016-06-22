@@ -17,7 +17,7 @@ const store = configureStore({});
 // - was getting unfound routes from the hapi dev server
 ReactDOM.render(
     <Provider store={store}>
-        <Router history={hashHistory} routes={routes} />
+        <Router history={browserHistory} routes={routes} />
     </Provider>,
     document.getElementById('app')
 );

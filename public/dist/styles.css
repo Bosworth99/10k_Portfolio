@@ -1,0 +1,73 @@
+.layout__layout___1mX3L {
+  background-image: url("/dist/images/desktop.v3.jpg");
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+  width: 100%; }
+ul {
+  list-style: none; }
+
+li {
+  float: left;
+  display: inline-block;
+  padding: 10px 5px; }
+.header__header___25qHu {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 9; }
+  .header__headerhover___1Ps_w {
+    background-color: darkred; }
+
+.header__brand___13oBX {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 10px 15px 10px 10px;
+  background-color: red;
+  box-shadow: 2px 2px 2px rgba(50, 50, 50, 0.5);
+  transition: all 150ms;
+  max-width: 100px; }
+
+.header__logo___38jz6 {
+  max-width: 100%;
+  height: auto; }
+
+.header__navigation___2fl8h {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 10; }
+.home__title___1ClQu {
+  position: absolute;
+  display: inline-block;
+  margin: auto;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  font-size: 56px;
+  line-height: 1em;
+  height: 1em;
+  width: 250px;
+  text-align: center;
+  font-color: white;
+  font-family: arial; }
+.work__title___1_qiv {
+  position: absolute;
+  display: inline-block;
+  margin: auto;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  font-size: 56px;
+  line-height: 1em;
+  height: 1em;
+  width: 250px;
+  text-align: center;
+  font-color: white;
+  font-family: arial; }
+
+/*# sourceMappingURL=bundle.map*/

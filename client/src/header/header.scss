@@ -1,0 +1,33 @@
+.header{
+  position:fixed;
+  width:100%;
+  top:0px;
+  left:0px;
+  z-index: 9;
+  &hover{
+      background-color:darkred;
+  }
+}
+
+.brand{
+  position:absolute;
+  top:0px;
+  left:0px;
+  padding:10px 15px 10px 10px;
+  background-color:red;
+  box-shadow: 2px 2px 2px rgba(50, 50, 50, .5);
+  transition: all 150ms;
+  max-width: 100px;
+}
+
+.logo{
+  max-width:100%;
+  height:auto;
+}
+
+.navigation{
+  position:absolute;
+  top:0px;
+  right:0px;
+  z-index: 10;
+}
