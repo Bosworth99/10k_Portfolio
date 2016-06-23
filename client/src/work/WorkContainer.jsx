@@ -10,8 +10,12 @@ class WorkContainer extends React.Component {
   // the critical bit here, is taht connect() needs to be wired up
   // properly or dispatch wont get set on the the props
   componentDidMount() {
+
     // console.log('WorkContainer::componentDidMount this:%o', this);
+    // TODO - kinda jeel like these should happen by default at the start
+    // of teh application. Wonder what the best way is to do that?
     this.props.dispatch(actionCreators.fetchItems());
+    this.props.dispatch(actionCreators.fetchImages());
   }
 
   // called when the application state updates
@@ -19,8 +23,10 @@ class WorkContainer extends React.Component {
     // console.log('WorkContainer::componentWillReceiveProps', nextProps);
     // the collection of work items
     const items = nextProps.items;
+    const images = nextProps.images;
     this.setState({
       items,
+      images,
       loaded: true
     });
   }
@@ -64,6 +70,7 @@ const mapStateToProps = (props) => {
   // console.log('WorkContainer::mapStateToProps props:%o', props);
   return {
     items: props.workReducers.items,
+    images: props.workReducers.images
   };
 };
 

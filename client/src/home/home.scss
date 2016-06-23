@@ -30,7 +30,7 @@
   flex: 0 1 960px;
 
   &:hover{
-    background-color:lighten($brand-secondary, 10%);
+    background-color:$color-lightest;
     box-shadow: 2px 0px 15px rgba(50, 50, 50, .8);
   }
 }
@@ -45,7 +45,7 @@
   line-height: 1em;
   height:1em;
   text-align:center;
-  color:$color-lightest;
+  color:$brand-primary;
 }
 
 .text{

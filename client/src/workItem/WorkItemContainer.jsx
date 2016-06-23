@@ -19,16 +19,16 @@ WorkItemContainer.propTypes = {};
 
 // wire up a click handler for the pComponent
 const mapDispatchToProps = (dispatch, props) => {
-    return {
-        dispatch
-    };
+  return {
+    dispatch
+  };
 };
 
 // assign props to connect
 const mapStateToProps = (state, { params }) => {
   console.log('WorkItemContainer::mapStateToProps state:%o params:%o', state, params);
   return {
-    item: state.workReducers.item,
+    item: state.workReducers.item
   };
 };
 

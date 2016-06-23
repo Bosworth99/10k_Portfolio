@@ -5,6 +5,8 @@ import { browserHistory } from 'react-router';
 export const REQUEST_ITEMS = 'REQUEST_ITEMS';
 export const RECEIVED_ITEMS = 'RECEIVED_ITEMS';
 export const SELECT_ITEM = 'SELECT_ITEM';
+export const REQUEST_IMAGES = 'REQUEST_IMAGES';
+export const RECEIVED_IMAGES = 'RECEIVED_IMAGES';
 
 // ACTION  /////////////////////////////////////////////////////////////////////
 
@@ -28,6 +30,21 @@ function _receivedItems(items) {
   };
 }
 
+function _requestImages() {
+  //console.log('WorkActions::_requestImages');
+  return {
+    type: REQUEST_IMAGES
+  };
+}
+
+function _receivedImages(images) {
+  //console.log('WorkActions::_receivedImages %o', images);
+  return {
+    type: RECEIVED_IMAGES,
+    images,
+  };
+}
+
 function _selectItem(itemId) {
   // console.log('WorkActions::_selectItem %s', itemId);
   return {
@@ -39,11 +56,11 @@ function _selectItem(itemId) {
 // THUNK METHODS////////////////////////////////////////////////////////////////
 
 // async action made available via redux-thunk as middleware
-export function fetchItems(req) {
+export function fetchItems() {
   console.log('WorkActions::fetchItems');
   return dispatch => {
     // let anyone whos listening know we are performing an async
-    dispatch(_requestItems(req));
+    dispatch(_requestItems());
 
     // perform the async operation
     return fetch('/api/portfolio', { method: 'GET' })
@@ -51,6 +68,18 @@ export function fetchItems(req) {
       .then(json => dispatch(_receivedItems(json)));
   };
 }
+
+// pick image json
+export function fetchImages() {
+  console.log('WorkActions::fetchImages');
+  return dispatch => {
+    dispatch(_requestImages());
+    return fetch('/api/images', { method: 'GET' })
+      .then(response => response.json())
+      .then(json => dispatch(_receivedImages(json)));
+  };
+}
+
 
 export function selectItem(itemId) {
   console.log('WorkActions::selectItem %s', itemId);

@@ -22,6 +22,14 @@ server.register(Inert, (err) => {
 
   server.route({
     method: 'GET',
+    path: '/api/images',
+    handler: (request, reply) => {
+      reply.file('./data/images.json');
+    }
+  });
+
+  server.route({
+    method: 'GET',
     path: '/',
     handler: (request, reply) => {
       reply.file('./public/index.html');
@@ -34,6 +42,13 @@ server.register(Inert, (err) => {
       reply.file('./public/index.html');
     }
   });
+  // server.route({
+  //   method: 'GET',
+  //   path: '/work/{itemId*}',
+  //   handler: (request, reply) => {
+  //     reply.file('./public/index.html');
+  //   }
+  // });
 
   server.route({
     method: 'GET',
@@ -44,7 +59,7 @@ server.register(Inert, (err) => {
         listing: true
       }
     }
-    });
+  });
 });
 
 server.register({
@@ -79,11 +94,11 @@ server.register({
 // Dev server / HMR
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
-const config = require('../../webpack.config.js')
+const config = require('../../webpack.config.js');
 
 if (!isProduction){
   new WebpackDevServer(webpack(config), {
-    publicPath: '/dist/',
+    publicPath: 'dist',
     hot: true,
     historyApiFallback: true,
     proxy: {

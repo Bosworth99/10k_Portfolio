@@ -10,13 +10,17 @@ import styles from 'work/work.scss';
 class Items extends React.Component {
   render() {
     //console.log('Items::render', this.props);
+
     // filter only the active items
+    // TODO - this should be wrapped in a container i think? or
+    // set by the WorkContainer?
     const filteredItems = this.props.items.filter((item) => (item.Active));
+
     return (
       <div className={styles.workItems}>
           {
             filteredItems.map((item, i) => {
-              return <ItemContainer item={item} key={i} />;
+              return <ItemContainer item={item} key={i} itemId={item.ID} />;
             })
           }
       </div>

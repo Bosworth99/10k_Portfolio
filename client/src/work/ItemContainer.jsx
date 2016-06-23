@@ -7,9 +7,26 @@ import * as actionCreators from 'work/WorkActions';
 import Item from 'work/Item.jsx';
 
 // CLASS ///////////////////////////////////////////////////////////////////////
-const ItemContainer = (props) => {
-  return <Item {...props} />;
-};
+class ItemContainer extends React.Component {
+
+  componentWillMount() {
+    console.log('ItemContainer::componentWillMount', this);
+  }
+
+  // called when the application state updates
+  componentWillReceiveProps(nextProps) {
+    console.log('ItemContainer::componentWillReceiveProps', nextProps, this);
+    const item = nextProps.items;
+    this.setState({
+      item
+    });
+  }
+
+  render() {
+    // console.log('ItemContainer::render', this);
+    return <Item {...this.props} />;
+  }
+}
 
 ItemContainer.propTypes = {
   item: React.PropTypes.object
@@ -21,7 +38,7 @@ const mapDispatchToProps = (dispatch, props) => {
     dispatch,
     onItemClick: (e) => {
       console.log('Item::onItemClick %o %o', props, e);
-
+      // select an id and push it onto the store, where we filter out an item
       const itemId = props.item.ID;
       // @WorkReducers
       dispatch(actionCreators.selectItem(itemId));
@@ -29,9 +46,10 @@ const mapDispatchToProps = (dispatch, props) => {
   };
 };
 
-// assign props to connect
+// assign props to connect the store
+// - not really doing that, because, at this point, picking data from parents
 const mapStateToProps = (state, params) => {
-    return {};
+  return {};
 };
 
 export default connect(

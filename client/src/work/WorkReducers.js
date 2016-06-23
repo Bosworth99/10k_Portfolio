@@ -3,6 +3,7 @@ import * as actionCreators from 'work/WorkActions';
 // reducer stack for work items
 const initialState = {
   fetching: false,
+  images: [],
   items: [],
   item: {}
 };
@@ -20,6 +21,21 @@ function setItems(state, items) {
   return Object.assign({}, state, {
     fetching: false,
     items
+  });
+}
+
+function requestImages(state) {
+  //console.log('WorkReducers::requestImages %o %o', state);
+  return Object.assign({}, state, {
+    fetching: true
+  });
+}
+
+function setImages(state, images) {
+  //console.log('WorkReducers::setImages %o', state);
+  return Object.assign({}, state, {
+    fetching: false,
+    images
   });
 }
 
@@ -43,6 +59,10 @@ function workState(state = initialState, action) {
       return setItems(state, action.items);
     case actionCreators.SELECT_ITEM :
       return setItem(state, action.itemId);
+    case actionCreators.REQUEST_IMAGES :
+      return requestImages(state);
+    case actionCreators.RECEIVED_IMAGES :
+      return setImages(state, action.items);
     default:
   }
   return state;

@@ -1,44 +1,42 @@
 {
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module",
-        "no-console": [0],
-        "prop-types" : [0],
-        "indent" : [0],
-        "ecmaFeatures": {
-            "jsx": 1,
-        }
-    },
-    "plugins": [
-        "react",
-    ],
-    "extends": ["plugin:react/recommended", "airbnb"],
-    "rules": {
-        "comma-dangle" : 0,
-        "no-console": [0],
-        "indent" : [0],
-        "no-unresolved" : [0],
-        "no-underscore-dangle" : [0],
-        "react/jsx-indent" : [0],
-        "react/prop-types" : [0],
-        "react/jsx-indent-props" : [0]
-    },
-    "settings": {
-        "react": {
-            "pragma": "React",
-            "version": "0.14.8"
-        }
-    },
-    "globals": {
-        "global" : 1,
-        "document" : 1,
-        "window" : 1,
-        "require" : 1,
-        "describe" : 1,
-        "it" : 1,
-        "expect" : 1,
-        "module" : 1,
-        "location" : 1,
-        "__dirname" : 1
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "no-console": [0],
+    "prop-types" : [0],
+    "indent" : [0],
+    "ecmaFeatures": {
+      "jsx": 1,
     }
+  },
+  "plugins": [
+    "react",
+  ],
+  "extends": ["plugin:react/recommended", "airbnb"],
+  "rules": {
+    "comma-dangle" : 0,
+    "no-console": [0],
+    "no-unresolved" : [0],
+    "no-underscore-dangle" : [0],
+    "react/prop-types" : [0],
+    "react/jsx-indent-props" : [0]
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "0.14.8"
+    }
+  },
+  "globals": {
+      "global" : 1,
+      "document" : 1,
+      "window" : 1,
+      "require" : 1,
+      "describe" : 1,
+      "it" : 1,
+      "expect" : 1,
+      "module" : 1,
+      "location" : 1,
+      "__dirname" : 1
+  }
 }
