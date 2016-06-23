@@ -17,23 +17,23 @@ HeaderContainer.propTypes = {};
 
 // wire up a click handler for the pComponent
 const mapDispatchToProps = (dispatch, props) => {
-    return {
-        dispatch,
-        handleLogoClick: (e) => {
-            console.log('HeaderContainer::handleLogoClick %o %o', props, e);
-            const path = '/';
-            browserHistory.push(path);
-        }
-    };
+  return {
+    dispatch,
+    handleLogoClick: (e) => {
+      console.log('HeaderContainer::handleLogoClick %o %o', props, e);
+      const path = '/';
+      browserHistory.push(path);
+    }
+  };
 };
 
 // assign props to connect
 const mapStateToProps = (state, { params }) => {
-    return {};
+  return {};
 };
 
 // export a redux-aware container component
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(HeaderContainer);

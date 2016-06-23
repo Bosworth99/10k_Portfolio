@@ -1,5 +1,5 @@
 // set some stuff
-const isProduction = process.env.NODE_ENV === 'production';
+const isProduction = false; // process.env.NODE_ENV === 'production';
 
 // HAPI Backend server
 const Hapi = require('hapi');
@@ -35,6 +35,7 @@ server.register(Inert, (err) => {
       reply.file('./public/index.html');
     }
   });
+
   server.route({
     method: 'GET',
     path: '/work',
@@ -42,13 +43,6 @@ server.register(Inert, (err) => {
       reply.file('./public/index.html');
     }
   });
-  // server.route({
-  //   method: 'GET',
-  //   path: '/work/{itemId*}',
-  //   handler: (request, reply) => {
-  //     reply.file('./public/index.html');
-  //   }
-  // });
 
   server.route({
     method: 'GET',
@@ -60,6 +54,10 @@ server.register(Inert, (err) => {
       }
     }
   });
+
+  if (err) {
+    throw err;
+  }
 });
 
 server.register({

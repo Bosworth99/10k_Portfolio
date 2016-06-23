@@ -1,4 +1,3 @@
-// INCLUDES ////////////////////////////////////////////////////////////////////
 import React from 'react';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
@@ -28,6 +27,8 @@ class ItemContainer extends React.Component {
   }
 }
 
+// PROPS ///////////////////////////////////////////////////////////////////////
+
 ItemContainer.propTypes = {
   item: React.PropTypes.object
 };
@@ -39,9 +40,7 @@ const mapDispatchToProps = (dispatch, props) => {
     onItemClick: (e) => {
       console.log('Item::onItemClick %o %o', props, e);
       // select an id and push it onto the store, where we filter out an item
-      const itemId = props.item.ID;
-      // @WorkReducers
-      dispatch(actionCreators.selectItem(itemId));
+      dispatch(actionCreators.selectItem(props.item.ID));
     }
   };
 };

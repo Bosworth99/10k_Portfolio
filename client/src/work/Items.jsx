@@ -9,9 +9,9 @@ import styles from 'work/work.scss';
 // CLASS ///////////////////////////////////////////////////////////////////////
 class Items extends React.Component {
   render() {
-    //console.log('Items::render', this.props);
+    // console.log('Items::render', this.props);
 
-    // filter only the active items
+    // Filter only the active items
     // TODO - this should be wrapped in a container i think? or
     // set by the WorkContainer?
     const filteredItems = this.props.items.filter((item) => (item.Active));

@@ -17,10 +17,17 @@ class WorkItemContainer extends React.Component {
 // validate prop types
 WorkItemContainer.propTypes = {};
 
+// take clicks on the
+
 // wire up a click handler for the pComponent
 const mapDispatchToProps = (dispatch, props) => {
   return {
-    dispatch
+    dispatch,
+    onClickClose: (e) => {
+      console.log('WorkItem::onClickClose %o %o', props, e);
+      browserHistory.push('/work');
+      // dispatch(actionCreators.selectItem(props.item.ID));
+    }
   };
 };
 
@@ -28,7 +35,8 @@ const mapDispatchToProps = (dispatch, props) => {
 const mapStateToProps = (state, { params }) => {
   console.log('WorkItemContainer::mapStateToProps state:%o params:%o', state, params);
   return {
-    item: state.workReducers.item
+    item: state.workReducers.item,
+    images: state.workReducers.images
   };
 };
 

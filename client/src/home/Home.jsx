@@ -11,6 +11,7 @@ class Home extends React.Component {
         <div className={styles.container}>
           <div className={styles.panel} onClick={this.props.onPanelClick}>
             <h1 className={styles.title}>HANDCRAFTED INTERNET</h1>
+            <p className={styles.text}>View Work</p>
           </div>
         </div>
       </section>

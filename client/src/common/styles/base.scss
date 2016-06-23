@@ -5,8 +5,8 @@
 }
 
 body{
-  font-family: 'arial';
-  font-size:15pt;
+  font-size:15px;
+  font-family: 'News Cycle', sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -49,6 +49,12 @@ ul{
 
 ul > li{
   padding:4px;
+}
+
+img{
+  position:relative;
+  max-width: 100%;
+  height:auto;
 }
 
 :global(.clearfix::after) {

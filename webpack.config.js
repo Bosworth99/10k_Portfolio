@@ -44,7 +44,7 @@ const config = {
   },
   devtool: '#source-map',
   devServer: {
-    contentBase: path.resolve(__dirname, 'public'),
+    contentBase: '/dist/',
     hot: true
   },
   plugins: [
@@ -55,10 +55,3 @@ const config = {
 };
 
 module.exports = validate(config);
-
-// loaders: [
-//     'style?sourceMap',
-//     'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
-//     'resolve-url',
-//     'sass?sourceMap'
-// ]
