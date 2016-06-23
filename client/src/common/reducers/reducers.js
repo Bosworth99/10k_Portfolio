@@ -1,54 +1,31 @@
+// Common Reducers
+// - combine all app reducers, ready to send to store
+
 import { combineReducers } from 'redux';
+import workReducers from 'work/WorkReducers';
 
 const initialState = {
-    fetching: false,
-    items: [],
-    single: {}
+  appName: '10k_Interactive',
+  version: '0.1.0'
 };
 
-//  Reducer methods
-function requestItems(state, newState) {
-    console.log('Reducers::requestItems %o %o', state, newState);
-    return Object.assign({}, state, {
-        fetching: true
-    });
+function commonReducers(state = initialState, action ){
+  // console.log('Reducers::commonReducers', state, action);
+
+  // this is a spot for any common reducer interactions
+  // - the goal is just to set it up for scaling
+  switch (action.type) {
+    // case etc...
+    default:
+  }
+
+  return state;
 }
 
-function setItems(state, newState) {
-    console.log('Reducers::setItems %o %o', state, newState);
-    return Object.assign({}, state, {
-        fetching: false,
-        items: newState
-    });
-}
-
-function selectSingle(state, itemId) {
-    console.log('Reducers::selectSingle %o %o', state, itemId);
-    const single = state.items.filter((item) => {
-        return item.ID === itemId;
-    })[0];
-    return Object.assign({}, state, { single });
-}
-
-// Item Reducers
-function itemState(state = initialState, action) {
-    console.log('Reducers::itemState', state, action);
-    switch (action.type) {
-        case 'REQUEST_ITEMS' :
-            return requestItems(state);
-        case 'RECEIVED_ITEMS' :
-            return setItems(state, action.items);
-        case 'SELECT_SINGLE' :
-            return selectSingle(state, action.itemId);
-        default:
-            console.log('Reducers::itemState [%s] Not Handled!', action.type);
-    }
-    return state;
-}
-
-// destructuered object
+// combine all the reducers
 const rootReducer = combineReducers({
-    itemState
+    commonReducers,
+    workReducers
 });
 
 export default rootReducer;

@@ -4,19 +4,21 @@ import rootReducer from 'common/reducers/reducers.js';
 
 export default function configureStore() {
 
-    const finalCreateStore = compose(
-        applyMiddleware(thunk)
-    )(createStore);
+  // middleware on the store
+  const finalCreateStore = compose(
+    applyMiddleware(thunk)
+  )(createStore);
 
-    const store = finalCreateStore(rootReducer);
+  // export target
+  const store = finalCreateStore(rootReducer);
 
-    // Enable Webpack hot module replacement for reducers
-    if (module.hot) {
-        module.hot.accept('common/reducers/reducers.js', () => {
-            const nextReducer = require('common/reducers/reducers.js');
-            store.replaceReducer(nextReducer);
-        });
-    }
+  // Enable Webpack hot module replacement for reducers
+  if (module.hot) {
+    module.hot.accept('common/reducers/reducers.js', () => {
+      const nextReducer = require('common/reducers/reducers.js');
+      store.replaceReducer(nextReducer);
+    });
+  }
 
-    return store;
+  return store;
 }

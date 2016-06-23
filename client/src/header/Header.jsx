@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import CSSModules from 'react-css-modules';
 
 import Nav from 'nav/Nav.jsx';
@@ -6,12 +7,15 @@ import Nav from 'nav/Nav.jsx';
 import Logo from 'assets/brand/10k_325x131_wht.png';
 import styles from 'header/header.scss';
 
-class HeaderLayout extends React.Component {
+class Header extends React.Component {
   render() {
-    //console.log('HeaderLayout::render this:%o', this);
+    //console.log('Header::render this:%o', this);
     return (
       <header className={styles.header}>
-        <div className={styles.brand}>
+        <div
+          className={styles.brand}
+          onClick={this.props.handleLogoClick}
+        >
           <img className={styles.logo} src={Logo} alt="10k-Interactive Brand" />
         </div>
         <div className={styles.navigation}>
@@ -22,4 +26,4 @@ class HeaderLayout extends React.Component {
   }
 }
 
-export default CSSModules(HeaderLayout, styles);
+export default CSSModules(Header, styles);

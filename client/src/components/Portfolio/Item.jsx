@@ -20,7 +20,8 @@ export default class Item extends React.Component {
             <div style={activeStyle} >
                 <div
                     className="item"
-                    onClick={this.props.handleClick} >
+                    onClick={this.props.handleClick}
+                >
                     {item.ID}
                 </div>
             </div>

@@ -11,6 +11,7 @@ const server = new Hapi.Server();
 server.connection({ port: 3000 });
 
 server.register(Inert, (err) => {
+
   server.route({
     method: 'GET',
     path: '/api/portfolio',
@@ -18,6 +19,7 @@ server.register(Inert, (err) => {
       reply.file('./data/portfolio.json');
     }
   });
+
   server.route({
     method: 'GET',
     path: '/',
@@ -25,6 +27,14 @@ server.register(Inert, (err) => {
       reply.file('./public/index.html');
     }
   });
+  server.route({
+    method: 'GET',
+    path: '/work',
+    handler: (request, reply) => {
+      reply.file('./public/index.html');
+    }
+  });
+
   server.route({
     method: 'GET',
     path: '/{param*}',
@@ -73,7 +83,7 @@ const config = require('../../webpack.config.js')
 
 if (!isProduction){
   new WebpackDevServer(webpack(config), {
-    //publicPath: config.output.publicPath,
+    publicPath: '/dist/',
     hot: true,
     historyApiFallback: true,
     proxy: {

@@ -6,25 +6,21 @@ const path = require('path');
 
 // paths
 const rootPath = path.resolve(__dirname, 'client', 'src');
-const buildPath = path.resolve(__dirname, 'public', 'dist');
-const contentPath = path.resolve(__dirname, 'public', 'dist');
-const nodeModPath = path.resolve(__dirname, 'node_modules');
-const entryFile = path.resolve(rootPath, 'index.jsx');
 
 // configger the almighty webpack
 const config = {
     entry: [
         'webpack-dev-server/client?http://localhost:3001',
         'webpack/hot/only-dev-server',
-        entryFile
+        path.resolve(rootPath, 'index.jsx')
     ],
     resolve: {
         extensions: ['', '.js', '.jsx'],
         root: rootPath
     },
     output: {
-        path: buildPath,
-        publicPath: './dist/',
+        path: path.resolve(__dirname, 'public', 'dist'),
+        publicPath: '/dist/',
         filename: 'bundle.js',
         sourceMapFilename: 'bundle.map'
     },
@@ -32,12 +28,12 @@ const config = {
         loaders: [
             {
                 test: /\.jsx?$/,
-                exclude: [nodeModPath],
+                exclude: [path.resolve(__dirname, 'node_modules')],
                 loader: 'react-hot!babel',
                 include: rootPath
             }, {
-                test: /\.s?css$/,
-                loader: ExtractTextPlugin.extract('css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass'),
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract('css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass?sourceMap'),
                 include: rootPath
             }, {
                 test: /\.(png|jpg|gif)$/,
@@ -48,7 +44,7 @@ const config = {
     },
     devtool: '#source-map',
     devServer: {
-        contentBase: contentPath,
+        contentBase: path.resolve(__dirname, 'public'),
         hot: true
     },
     plugins: [

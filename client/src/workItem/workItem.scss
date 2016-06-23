@@ -15,11 +15,11 @@
 
 .panel{
   background-color:$brand-secondary;
-  cursor:pointer;
+  color:$color-lightest;
   position:relative;
   max-width:calc(100% - 40px);
-  min-height:250px;
-  min-width:450px;
+  min-height:450px;
+  min-width:760px;
   border-radius:3px;
   transition: all 250ms;
   box-shadow: 2px 0px 10px rgba(50, 50, 50, .50);
@@ -33,23 +33,4 @@
     background-color:lighten($brand-secondary, 10%);
     box-shadow: 2px 0px 15px rgba(50, 50, 50, .8);
   }
-}
-
-.title{
-  position:absolute;
-  width:100%;
-  margin:auto;
-  top:0px;
-  bottom:0px;
-  font-size:56px;
-  line-height: 1em;
-  height:1em;
-  text-align:center;
-  color:$color-lightest;
-}
-
-.text{
-  color:#666;
-  padding:20px;
-  text-align: center;
 }

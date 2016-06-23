@@ -1,12 +1,11 @@
+@import "~common/styles/variables";
+
 .header{
-  position:absolute;
+  position:fixed;
   width:100%;
   top:0px;
   left:0px;
-
-  &:hover{
-      background-color:darkred;
-  }
+  z-index: 10;
 }
 
 .brand{
@@ -14,10 +13,16 @@
   top:0px;
   left:0px;
   padding:10px 15px 10px 10px;
-  background-color:red;
-  box-shadow: 2px 2px 2px rgba(50, 50, 50, .5);
+  background-color:$brand-primary;
+  box-shadow: 1px 1px 2px rgba(250, 250, 250, .1);
+  max-width: 150px;
+  cursor:pointer;
   transition: all 150ms;
-  max-width: 100px;
+
+  &:hover{
+    background-color: lighten($brand-primary, 10%);
+    box-shadow: 1px 1px 10px rgba(250, 250, 250, .5);
+  }
 }
 
 .logo{

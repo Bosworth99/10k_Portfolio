@@ -4,9 +4,8 @@ import CSSModules from 'react-css-modules';
 
 import styles from 'nav/Nav.scss';
 
-class NavLayout extends React.Component {
+class Nav extends React.Component {
   render() {
-    console.log('NavLayout::render this:%o', this);
     return (
       <nav>
         <ul>
@@ -18,4 +17,4 @@ class NavLayout extends React.Component {
   }
 }
 
-export default CSSModules(NavLayout, styles);
+export default CSSModules(Nav, styles);

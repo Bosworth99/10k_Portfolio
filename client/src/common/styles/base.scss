@@ -1,5 +1,9 @@
 @import "~common/styles/variables";
 
+*{
+  box-sizing: border-box;
+}
+
 body{
   font-family: 'arial';
   font-size:15pt;
@@ -25,7 +29,7 @@ h5 	{ font-size: 14px; line-height: 1.25em; }
 h6, small { font-size: 13px; line-height: 18px; }
 
 :global(.link){
-  color:$brand-primary;
+  color:$color-lightest;
   font-size:105%;
   text-decoration: none;
   text-shadow: 0px 1px 1px rgba(50,50,50,.5);
@@ -33,7 +37,7 @@ h6, small { font-size: 13px; line-height: 18px; }
 }
 
 :global(.link:hover){
-  color:$color-lightest;
+  color:$brand-primary;
   text-shadow: 0px 2px 2px rgba(0,0,0,1);
 }
 
