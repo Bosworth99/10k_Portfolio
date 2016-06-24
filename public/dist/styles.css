@@ -152,17 +152,19 @@ li {
   left: 4px;
   padding: 10px 12px 8px 8px;
   background-color: #d11e1e;
-  box-shadow: 1px 1px 2px rgba(50, 50, 50, 0.1);
-  max-width: 135px;
+  box-shadow: 1px 1px 2px rgba(50, 50, 50, 0.3);
+  width: 150px;
   cursor: pointer;
-  transition: all 150ms; }
+  transition: all 350ms; }
   .header__brand___13oBX:hover {
     background-color: #e02828;
-    box-shadow: 1px 1px 10px rgba(50, 50, 50, 0.5); }
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8); }
 
-.header__logo___38jz6 {
-  max-width: 100%;
-  height: auto; }
+.header__logoWhite___3EsNb {
+  transition: opacity 350ms;
+  opacity: 1.0; }
+  .header__logoWhite___3EsNb:hover {
+    opacity: 0.9; }
 
 .header__navigation___2fl8h {
   position: absolute;
@@ -208,22 +210,21 @@ li {
   height: 100px;
   text-align: center; }
 
+.home__textBase___1mKvU {
+  text-shadow: 1px 0px 4px rgba(50, 50, 50, 0.2); }
+
 .home__title___1ClQu {
   font-size: 56px;
   color: inherit;
-  margin: 0 0 10px 0;
-  text-shadow: 1px 0px 4px rgba(50, 50, 50, 0.2); }
+  margin: 0 0 10px 0; }
 
 .home__subText___1ws4Q {
-  color: #d11e1e !important;
-  text-shadow: 1px 0px 4px rgba(50, 50, 50, 0.2);
   font-size: 18px;
   font-weight: bold;
   margin: 0; }
 
 .home__bottomText___2qOna {
   position: absolute;
-  text-shadow: 1px 0px 4px rgba(50, 50, 50, 0.2);
   font-weight: bold;
   font-size: 16px;
   bottom: 10px;
@@ -249,7 +250,7 @@ li {
   position: relative;
   height: 400px;
   width: 400px;
-  margin: 5px;
+  margin: 15px;
   cursor: pointer;
   text-align: center;
   overflow: hidden;

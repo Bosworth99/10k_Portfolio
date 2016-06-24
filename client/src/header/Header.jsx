@@ -4,7 +4,8 @@ import CSSModules from 'react-css-modules';
 
 import Nav from 'nav/Nav.jsx';
 
-import Logo from 'assets/brand/10k_325x131_wht.png';
+import LogoWhite from 'assets/brand/10k_325x131_wht.png';
+import LogoRed from 'assets/brand/10k_325x131_red.png';
 import styles from 'header/header.scss';
 
 class Header extends React.Component {
@@ -16,7 +17,7 @@ class Header extends React.Component {
           className={styles.brand}
           onClick={this.props.handleLogoClick}
         >
-          <img className={styles.logo} src={Logo} alt="10k-Interactive Brand" />
+          <img className={styles.logoWhite} src={LogoWhite} alt="10k-Interactive Brand white" />
         </div>
         <div className={styles.navigation}>
           <Nav />

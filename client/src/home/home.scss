@@ -46,24 +46,26 @@
   text-align:center;
 }
 
+.textBase{
+  text-shadow: 1px 0px 4px rgba(50, 50, 50, .2);
+}
+
 .title{
   font-size:56px;
   color:inherit;
   margin:0 0 10px 0;
-  text-shadow: 1px 0px 4px rgba(50, 50, 50, .2);
+  composes:textBase;
 }
 
 .subText{
-  color:$brand-primary !important;
-  text-shadow: 1px 0px 4px rgba(50, 50, 50, .2);
   font-size: 18px;
   font-weight: bold;
   margin:0;
+  composes:textBase;
 }
 
 .bottomText{
   position:absolute;
-  text-shadow: 1px 0px 4px rgba(50, 50, 50, .2);
   font-weight: bold;
   font-size:16px;
   bottom:10px;
@@ -71,4 +73,5 @@
   width:100%;
   text-align: center;
   color:inherit;
+  composes:textBase;
 }
