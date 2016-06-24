@@ -20,42 +20,45 @@
   max-width:calc(100% - 80px);
   height:calc(100% - 200px);
   max-height:680px;
+  overflow: hidden;
 
   transition: all 250ms;
-  box-shadow: 2px 0px 10px rgba(50, 50, 50, .50);
+  box-shadow: 4px 0px 20px rgba(0, 0, 0, .3);
 
   display: flex;
   align-items: top;
   justify-content: center;
   flex-direction:row;
   flex-wrap: wrap;
-  flex: 0 1 1280px;
+  flex: 0 1 1440px;
+
+  &:hover{
+    background-color:$color-lightest;
+    color:$brand-primary;
+    box-shadow: 4px 0px 20px rgba(0, 0, 0, .8);
+  }
 }
 
 .imageBox{
   position:relative;
   display:inline-block;
-  width:40%;
+  width:50%;
   height:100%;
-}
-
-.image{
-  position:absolute;
-  top:0;
-  bottom:0;
-  display:block;
-  margin:auto;
-  border:1px solid $brand-primary;
+  z-index: 1;
 }
 
 .detailsBox{
+  background-color: $color-lightest;
+  box-shadow: 2px 0px 10px rgba(50, 50, 50, .40);
   position:relative;
   display:inline-block;
-  width:60%;
+  width:50%;
+  z-index: 2;
 }
 
 .detail{
   padding:0 20px 20px 20px;
+  color:$color-dark;
 
   &:first-child{
     padding-top:20px;
@@ -76,19 +79,19 @@
 .close{
   position: absolute;
   display:inline-block;
-  background-color: $brand-primary;
+  background-color: lighten($brand-primary, 40%);
   cursor:pointer;
   color:$color-lightest;
   top:0px;
   right:0px;
-  height:30px;
-  width:30px;
+  height:40px;
+  width:40px;
   text-align: center;
-  font-size: 16px;
+  font-size: 24px;
   z-index: 99;
   transition: background-color 150ms;
 
   &:hover{
-    background-color: lighten($brand-primary, 20%);
+    background-color: $brand-primary;
   }
 }

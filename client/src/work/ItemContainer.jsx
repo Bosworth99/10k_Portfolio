@@ -9,12 +9,12 @@ import Item from 'work/Item.jsx';
 class ItemContainer extends React.Component {
 
   componentWillMount() {
-    console.log('ItemContainer::componentWillMount', this);
+    //console.log('ItemContainer::componentWillMount', this);
   }
 
   // called when the application state updates
   componentWillReceiveProps(nextProps) {
-    console.log('ItemContainer::componentWillReceiveProps', nextProps, this);
+    //console.log('ItemContainer::componentWillReceiveProps', nextProps, this);
     const item = nextProps.items;
     this.setState({
       item

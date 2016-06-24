@@ -8,7 +8,11 @@ import WorkItem from 'workItem/WorkItem.jsx';
 class WorkItemContainer extends React.Component {
   render() {
     return (
-      <WorkItem {...this.props} />
+      <WorkItem
+        item={this.props.item}
+        images={this.props.images}
+        onClickClose={this.props.onClickClose}
+       />
     );
   }
 }
@@ -17,23 +21,18 @@ class WorkItemContainer extends React.Component {
 // validate prop types
 WorkItemContainer.propTypes = {};
 
-// take clicks on the
-
 // wire up a click handler for the pComponent
 const mapDispatchToProps = (dispatch, props) => {
   return {
-    dispatch,
     onClickClose: (e) => {
-      console.log('WorkItem::onClickClose %o %o', props, e);
       browserHistory.push('/work');
-      // dispatch(actionCreators.selectItem(props.item.ID));
     }
   };
 };
 
 // assign props to connect
 const mapStateToProps = (state, { params }) => {
-  console.log('WorkItemContainer::mapStateToProps state:%o params:%o', state, params);
+  // console.log('WorkItemContainer::mapStateToProps state:%o params:%o', state, params);
   return {
     item: state.workReducers.item,
     images: state.workReducers.images

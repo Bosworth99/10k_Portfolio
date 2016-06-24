@@ -16,8 +16,8 @@ function requestItems(state) {
   });
 }
 
-function setItems(state, items) {
-  // console.log('WorkReducers::setItems %o %o', state, items);
+function receivedItems(state, items) {
+  // console.log('WorkReducers::receivedItems %o %o', state, items);
   return Object.assign({}, state, {
     fetching: false,
     items
@@ -25,14 +25,14 @@ function setItems(state, items) {
 }
 
 function requestImages(state) {
-  //console.log('WorkReducers::requestImages %o %o', state);
+  // console.log('WorkReducers::requestImages %o %o', state);
   return Object.assign({}, state, {
     fetching: true
   });
 }
 
-function setImages(state, images) {
-  //console.log('WorkReducers::setImages %o', state);
+function receivedImages(state, images) {
+  // console.log('WorkReducers::receivedImages %o images:%o', state, images);
   return Object.assign({}, state, {
     fetching: false,
     images
@@ -51,18 +51,18 @@ function setItem(state, itemId) {
 
 // Work Reducers
 function workState(state = initialState, action) {
-  console.log('WorkReducers::workState %o %o %s', state, action, action.type);
+  console.log('%s %o %o', action.type, state, action);
   switch (action.type) {
     case actionCreators.REQUEST_ITEMS :
       return requestItems(state);
     case actionCreators.RECEIVED_ITEMS :
-      return setItems(state, action.items);
-    case actionCreators.SELECT_ITEM :
-      return setItem(state, action.itemId);
+      return receivedItems(state, action.items);
     case actionCreators.REQUEST_IMAGES :
       return requestImages(state);
     case actionCreators.RECEIVED_IMAGES :
-      return setImages(state, action.items);
+      return receivedImages(state, action.images);
+    case actionCreators.SELECT_ITEM :
+      return setItem(state, action.itemId);
     default:
   }
   return state;

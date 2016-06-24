@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "ee2fe9b049ee40ff922c"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "324ff17ff6f4ba26c42f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -8200,7 +8200,7 @@
 	
 	var _router2 = _interopRequireDefault(_router);
 	
-	var _store = __webpack_require__(550);
+	var _store = __webpack_require__(553);
 	
 	var _store2 = _interopRequireDefault(_store);
 	
@@ -42986,13 +42986,22 @@
 	            'div',
 	            { className: _home2.default.panel, onClick: this.props.onPanelClick },
 	            _react2.default.createElement(
-	              'h1',
-	              { className: _home2.default.title },
-	              'HANDCRAFTED INTERNET'
+	              'div',
+	              { className: _home2.default.panelInner },
+	              _react2.default.createElement(
+	                'h1',
+	                { className: _home2.default.title },
+	                'HANDCRAFTED INTERNET'
+	              ),
+	              _react2.default.createElement(
+	                'p',
+	                { className: _home2.default.subText },
+	                'Airtight code. Rock-solid markup. Stylesheets that hum.'
+	              )
 	            ),
 	            _react2.default.createElement(
 	              'p',
-	              { className: _home2.default.text },
+	              { className: _home2.default.bottomText },
 	              'View Work'
 	            )
 	          )
@@ -43006,8 +43015,6 @@
 	
 	exports.default = (0, _reactCssModules2.default)(Home, _home2.default);
 	
-	//<p className="{styles.text}">Airtight code. Rock-solid markup. Stylesheets that hum.</p>
-
 	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(528); if (makeExportsHot(module, __webpack_require__(150))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Home.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
@@ -43016,7 +43023,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"container":"home__container___2Pol8","panel":"home__panel___1jinI","title":"home__title___1ClQu","text":"home__text___2fb-6"};
+	module.exports = {"container":"home__container___2Pol8","panel":"home__panel___1jinI","panelInner":"home__panelInner___18H5n","title":"home__title___1ClQu","subText":"home__subText___1ws4Q","bottomText":"home__bottomText___2qOna"};
 
 /***/ },
 /* 540 */
@@ -43206,14 +43213,14 @@
 	}
 	
 	function _requestImages() {
-	  //console.log('WorkActions::_requestImages');
+	  //  console.log('WorkActions::_requestImages');
 	  return {
 	    type: REQUEST_IMAGES
 	  };
 	}
 	
 	function _receivedImages(images) {
-	  //console.log('WorkActions::_receivedImages %o', images);
+	  //  console.log('WorkActions::_receivedImages %o', images);
 	  return {
 	    type: RECEIVED_IMAGES,
 	    images: images
@@ -43262,9 +43269,11 @@
 	function selectItem(itemId) {
 	  console.log('WorkActions::selectItem %s', itemId);
 	  return function (dispatch) {
+	
 	    // we already have the item data, just need somethign to filter on
 	    // @WorkReducers
 	    dispatch(_selectItem(itemId));
+	
 	    // navigate to /work/item
 	    _reactRouter.browserHistory.push('/work/' + itemId);
 	    return true;
@@ -43490,16 +43499,16 @@
 	
 	  _createClass(ItemContainer, [{
 	    key: 'componentWillMount',
-	    value: function componentWillMount() {
-	      console.log('ItemContainer::componentWillMount', this);
-	    }
+	    value: function componentWillMount() {}
+	    //console.log('ItemContainer::componentWillMount', this);
+	
 	
 	    // called when the application state updates
 	
 	  }, {
 	    key: 'componentWillReceiveProps',
 	    value: function componentWillReceiveProps(nextProps) {
-	      console.log('ItemContainer::componentWillReceiveProps', nextProps, this);
+	      //console.log('ItemContainer::componentWillReceiveProps', nextProps, this);
 	      var item = nextProps.items;
 	      this.setState({
 	        item: item
@@ -43593,7 +43602,7 @@
 	  _createClass(Item, [{
 	    key: 'render',
 	    value: function render() {
-	      console.log('Item:render this.props.item:%o', this.props.item);
+	      // console.log('Item:render this.props.item:%o', this.props.item);
 	      // the currently selected item
 	      return _react2.default.createElement(
 	        'div',
@@ -43692,7 +43701,11 @@
 	  _createClass(WorkItemContainer, [{
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement(_WorkItem2.default, this.props);
+	      return _react2.default.createElement(_WorkItem2.default, {
+	        item: this.props.item,
+	        images: this.props.images,
+	        onClickClose: this.props.onClickClose
+	      });
 	    }
 	  }]);
 	
@@ -43708,11 +43721,8 @@
 	// wire up a click handler for the pComponent
 	var mapDispatchToProps = function mapDispatchToProps(dispatch, props) {
 	  return {
-	    dispatch: dispatch,
 	    onClickClose: function onClickClose(e) {
-	      console.log('WorkItem::onClickClose %o %o', props, e);
 	      _reactRouter.browserHistory.push('/work');
-	      // dispatch(actionCreators.selectItem(props.item.ID));
 	    }
 	  };
 	};
@@ -43721,9 +43731,10 @@
 	var mapStateToProps = function mapStateToProps(state, _ref) {
 	  var params = _ref.params;
 	
-	  console.log('WorkItemContainer::mapStateToProps state:%o params:%o', state, params);
+	  // console.log('WorkItemContainer::mapStateToProps state:%o params:%o', state, params);
 	  return {
-	    item: state.workReducers.item
+	    item: state.workReducers.item,
+	    images: state.workReducers.images
 	  };
 	};
 	
@@ -43756,6 +43767,10 @@
 	var _workItem = __webpack_require__(549);
 	
 	var _workItem2 = _interopRequireDefault(_workItem);
+	
+	var _ViewerContainer = __webpack_require__(550);
+	
+	var _ViewerContainer2 = _interopRequireDefault(_ViewerContainer);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -43794,7 +43809,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: _workItem2.default.imageBox },
-	          _react2.default.createElement('img', { className: _workItem2.default.image, src: '/dist/images/work/' + props.item.Thumb })
+	          _react2.default.createElement(_ViewerContainer2.default, props)
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -43861,6 +43876,8 @@
 	
 	exports.default = (0, _reactCssModules2.default)(WorkItem, _workItem2.default);
 	
+	//  <img className={styles.image} src={`/dist/images/work/${props.item.Thumb}`} />
+
 	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(528); if (makeExportsHot(module, __webpack_require__(150))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "WorkItem.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
@@ -43869,10 +43886,249 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"container":"workItem__container___OJeF6","panel":"workItem__panel___nIIgV","imageBox":"workItem__imageBox___15XkQ","image":"workItem__image___3mhHn","detailsBox":"workItem__detailsBox___3VqvM","detail":"workItem__detail___2nlQ2","detailTitle":"workItem__detailTitle___V9Yp0","detailTextBox":"workItem__detailTextBox____ZP69","close":"workItem__close___2kQ2D"};
+	module.exports = {"container":"workItem__container___OJeF6","panel":"workItem__panel___nIIgV","imageBox":"workItem__imageBox___15XkQ","detailsBox":"workItem__detailsBox___3VqvM","detail":"workItem__detail___2nlQ2","detailTitle":"workItem__detailTitle___V9Yp0","detailTextBox":"workItem__detailTextBox____ZP69","close":"workItem__close___2kQ2D"};
 
 /***/ },
 /* 550 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(150);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(314);
+	
+	var _reactRouter = __webpack_require__(253);
+	
+	var _Viewer = __webpack_require__(551);
+	
+	var _Viewer2 = _interopRequireDefault(_Viewer);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	// CLASS ///////////////////////////////////////////////////////////////////////
+	
+	var ViewerContainer = function (_React$Component) {
+	  _inherits(ViewerContainer, _React$Component);
+	
+	  function ViewerContainer(props) {
+	    _classCallCheck(this, ViewerContainer);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ViewerContainer).call(this, props));
+	    // console.log('WorkContainer::constructor', props);
+	
+	
+	    _this.state = {
+	      INDEX: 0
+	    };
+	    return _this;
+	  }
+	
+	  _createClass(ViewerContainer, [{
+	    key: 'onClickImg',
+	    value: function onClickImg(e) {
+	      var dir = arguments.length <= 1 || arguments[1] === undefined ? 'next' : arguments[1];
+	
+	      console.log('onClickImg e:%o dir:%s', e, dir);
+	      // capture the Index
+	      var INDEX = this.state.INDEX;
+	      // check out next to decide if we want to increment
+	      INDEX = dir === 'next' ? INDEX += 1 : INDEX -= 1;
+	      if (INDEX >= this.props.viewerCollection.length) {
+	        INDEX = 0;
+	      } else if (INDEX < 0) {
+	        INDEX = this.props.viewerCollection.length;
+	      }
+	      this.setState({ INDEX: INDEX });
+	    }
+	  }, {
+	    key: 'getBigImage',
+	    value: function getBigImage() {
+	      return this.props.viewerCollection[this.state.INDEX];
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      // console.log('ViewerContainer:render this:%o', this);
+	      return _react2.default.createElement(_Viewer2.default, {
+	        bigImage: this.getBigImage(),
+	        onClickImg: this.onClickImg.bind(this)
+	      });
+	    }
+	  }]);
+	
+	  return ViewerContainer;
+	}(_react2.default.Component);
+	
+	// PROPS ///////////////////////////////////////////////////////////////////////
+	// validate prop types
+	
+	
+	ViewerContainer.propTypes = {};
+	
+	// wire up a click handler for the pComponent
+	var mapDispatchToProps = function mapDispatchToProps(dispatch, props) {
+	  return {};
+	};
+	
+	// here, we need to take the itemId that we've been passed and
+	// make an array of objs, and update the presentational components
+	var filterViewerCollection = function filterViewerCollection(images, item) {
+	  // console.log('ViewerContainer::filterViewerCollection', images, item);
+	
+	  // return array of matchies
+	  var imgList = item.Image.split(',');
+	  return images.filter(function (img) {
+	    return imgList.indexOf(img.ID) !== -1;
+	  });
+	};
+	
+	// assign props to connect
+	var mapStateToProps = function mapStateToProps(state, _ref) {
+	  var params = _ref.params;
+	
+	  // console.log('ViewerContainer::mapStateToProps state:%o params:%o', state, params);
+	  return {
+	    viewerCollection: filterViewerCollection(state.workReducers.images, state.workReducers.item),
+	    bigImage: state.workReducers.images[0]
+	  };
+	};
+	
+	// export a redux-aware container component
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(ViewerContainer);
+	
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(528); if (makeExportsHot(module, __webpack_require__(150))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "ViewerContainer.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+
+/***/ },
+/* 551 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(150);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactCssModules = __webpack_require__(336);
+	
+	var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
+	
+	var _viewer = __webpack_require__(552);
+	
+	var _viewer2 = _interopRequireDefault(_viewer);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	// CLASS ///////////////////////////////////////////////////////////////////////
+	
+	var Viewer = function (_React$Component) {
+	  _inherits(Viewer, _React$Component);
+	
+	  function Viewer() {
+	    _classCallCheck(this, Viewer);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Viewer).apply(this, arguments));
+	  }
+	
+	  _createClass(Viewer, [{
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      console.log('Viewer:render this.props:%o', this.props);
+	      // the currently selected item
+	      return _react2.default.createElement(
+	        'div',
+	        { className: _viewer2.default.viewerBox },
+	        _react2.default.createElement(
+	          'div',
+	          {
+	            className: _viewer2.default.clickPrev,
+	            onClick: function onClick(e) {
+	              return _this2.props.onClickImg(e, _this2.props.dir);
+	            },
+	            dir: 'prev'
+	          },
+	          'NEXT'
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: _viewer2.default.viewerImageContainer },
+	          _react2.default.createElement('img', {
+	            className: _viewer2.default.viewerImage,
+	            src: '/dist/images/work/' + this.props.bigImage.Full_URI,
+	            alt: 'Screenshot'
+	          }),
+	          _react2.default.createElement(
+	            'p',
+	            { className: _viewer2.default.viewerDescription },
+	            this.props.bigImage.Description
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          {
+	            className: _viewer2.default.clickNext,
+	            onClick: function onClick(e) {
+	              console.log('Viewer::onClick', _this2);
+	              _this2.props.onClickImg(e, _this2.props.dir);
+	            },
+	            dir: 'next'
+	          },
+	          'NEXT, ALSO'
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Viewer;
+	}(_react2.default.Component);
+	
+	exports.default = (0, _reactCssModules2.default)(Viewer, _viewer2.default);
+	
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(528); if (makeExportsHot(module, __webpack_require__(150))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Viewer.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+
+/***/ },
+/* 552 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"viewerBox":"viewer__viewerBox___33mKV","viewerImageContainer":"viewer__viewerImageContainer___zgG-6","viewerImage":"viewer__viewerImage___3f72P","viewerDescription":"viewer__viewerDescription___1is4r","click":"viewer__click___323Ca","clickPrev":"viewer__clickPrev___3NsCW viewer__click___323Ca","clickNext":"viewer__clickNext____XiVb viewer__click___323Ca"};
+
+/***/ },
+/* 553 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -43886,11 +44142,11 @@
 	
 	var _redux = __webpack_require__(321);
 	
-	var _reduxThunk = __webpack_require__(551);
+	var _reduxThunk = __webpack_require__(554);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
-	var _reducers = __webpack_require__(552);
+	var _reducers = __webpack_require__(555);
 	
 	var _reducers2 = _interopRequireDefault(_reducers);
 	
@@ -43906,8 +44162,8 @@
 	
 	  // Enable Webpack hot module replacement for reducers
 	  if (true) {
-	    module.hot.accept(552, function () {
-	      var nextReducer = __webpack_require__(552);
+	    module.hot.accept(555, function () {
+	      var nextReducer = __webpack_require__(555);
 	      store.replaceReducer(nextReducer);
 	    });
 	  }
@@ -43919,7 +44175,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 551 */
+/* 554 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -43947,7 +44203,7 @@
 	exports['default'] = thunk;
 
 /***/ },
-/* 552 */
+/* 555 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -43960,7 +44216,7 @@
 	
 	var _redux = __webpack_require__(321);
 	
-	var _WorkReducers = __webpack_require__(553);
+	var _WorkReducers = __webpack_require__(556);
 	
 	var _WorkReducers2 = _interopRequireDefault(_WorkReducers);
 	
@@ -44002,7 +44258,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 553 */
+/* 556 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -44035,8 +44291,8 @@
 	  });
 	}
 	
-	function setItems(state, items) {
-	  // console.log('WorkReducers::setItems %o %o', state, items);
+	function receivedItems(state, items) {
+	  // console.log('WorkReducers::receivedItems %o %o', state, items);
 	  return Object.assign({}, state, {
 	    fetching: false,
 	    items: items
@@ -44044,14 +44300,14 @@
 	}
 	
 	function requestImages(state) {
-	  //console.log('WorkReducers::requestImages %o %o', state);
+	  // console.log('WorkReducers::requestImages %o %o', state);
 	  return Object.assign({}, state, {
 	    fetching: true
 	  });
 	}
 	
-	function setImages(state, images) {
-	  //console.log('WorkReducers::setImages %o', state);
+	function receivedImages(state, images) {
+	  // console.log('WorkReducers::receivedImages %o images:%o', state, images);
 	  return Object.assign({}, state, {
 	    fetching: false,
 	    images: images
@@ -44073,18 +44329,18 @@
 	  var state = arguments.length <= 0 || arguments[0] === undefined ? initialState : arguments[0];
 	  var action = arguments[1];
 	
-	  console.log('WorkReducers::workState %o %o %s', state, action, action.type);
+	  console.log('%s %o %o', action.type, state, action);
 	  switch (action.type) {
 	    case actionCreators.REQUEST_ITEMS:
 	      return requestItems(state);
 	    case actionCreators.RECEIVED_ITEMS:
-	      return setItems(state, action.items);
-	    case actionCreators.SELECT_ITEM:
-	      return setItem(state, action.itemId);
+	      return receivedItems(state, action.items);
 	    case actionCreators.REQUEST_IMAGES:
 	      return requestImages(state);
 	    case actionCreators.RECEIVED_IMAGES:
-	      return setImages(state, action.items);
+	      return receivedImages(state, action.images);
+	    case actionCreators.SELECT_ITEM:
+	      return setItem(state, action.itemId);
 	    default:
 	  }
 	  return state;

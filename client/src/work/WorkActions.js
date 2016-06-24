@@ -31,14 +31,14 @@ function _receivedItems(items) {
 }
 
 function _requestImages() {
-  //console.log('WorkActions::_requestImages');
+  //  console.log('WorkActions::_requestImages');
   return {
     type: REQUEST_IMAGES
   };
 }
 
 function _receivedImages(images) {
-  //console.log('WorkActions::_receivedImages %o', images);
+  //  console.log('WorkActions::_receivedImages %o', images);
   return {
     type: RECEIVED_IMAGES,
     images,
@@ -80,15 +80,16 @@ export function fetchImages() {
   };
 }
 
-
 export function selectItem(itemId) {
   console.log('WorkActions::selectItem %s', itemId);
   return dispatch => {
-      // we already have the item data, just need somethign to filter on
-      // @WorkReducers
-      dispatch(_selectItem(itemId));
-      // navigate to /work/item
-      browserHistory.push(`/work/${itemId}`);
-      return true;
+
+    // we already have the item data, just need somethign to filter on
+    // @WorkReducers
+    dispatch(_selectItem(itemId));
+
+    // navigate to /work/item
+    browserHistory.push(`/work/${itemId}`);
+    return true;
   };
 }
