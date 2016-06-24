@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "324ff17ff6f4ba26c42f"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "fd3f599cc8b2c1024c60"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -43245,7 +43245,7 @@
 	    dispatch(_requestItems());
 	
 	    // perform the async operation
-	    return fetch('/api/portfolio', { method: 'GET' }).then(function (response) {
+	    return fetch('/api/portfolio.json', { method: 'GET' }).then(function (response) {
 	      return response.json();
 	    }).then(function (json) {
 	      return dispatch(_receivedItems(json));
@@ -43258,7 +43258,7 @@
 	  console.log('WorkActions::fetchImages');
 	  return function (dispatch) {
 	    dispatch(_requestImages());
-	    return fetch('/api/images', { method: 'GET' }).then(function (response) {
+	    return fetch('/api/images.json', { method: 'GET' }).then(function (response) {
 	      return response.json();
 	    }).then(function (json) {
 	      return dispatch(_receivedImages(json));

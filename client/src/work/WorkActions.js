@@ -63,7 +63,7 @@ export function fetchItems() {
     dispatch(_requestItems());
 
     // perform the async operation
-    return fetch('/api/portfolio', { method: 'GET' })
+    return fetch('/api/portfolio.json', { method: 'GET' })
       .then(response => response.json())
       .then(json => dispatch(_receivedItems(json)));
   };
@@ -74,7 +74,7 @@ export function fetchImages() {
   console.log('WorkActions::fetchImages');
   return dispatch => {
     dispatch(_requestImages());
-    return fetch('/api/images', { method: 'GET' })
+    return fetch('/api/images.json', { method: 'GET' })
       .then(response => response.json())
       .then(json => dispatch(_receivedImages(json)));
   };
