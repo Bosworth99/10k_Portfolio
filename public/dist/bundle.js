@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "b45d915e3ec9f3e6518e"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "9ebf48634ec26ed744ab"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -42730,11 +42730,7 @@
 	          },
 	          _react2.default.createElement('img', { className: _header2.default.logoWhite, src: _k_325x131_wht2.default, alt: '10k-Interactive Brand white' })
 	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: _header2.default.navigation },
-	          _react2.default.createElement(_Nav2.default, null)
-	        )
+	        _react2.default.createElement('div', { className: _header2.default.navigation })
 	      );
 	    }
 	  }]);
@@ -43181,6 +43177,11 @@
 	  value: true
 	});
 	exports.RECEIVED_IMAGES = exports.REQUEST_IMAGES = exports.SELECT_ITEM = exports.RECEIVED_ITEMS = exports.REQUEST_ITEMS = undefined;
+	exports.requestItems = requestItems;
+	exports.receivedItems = receivedItems;
+	exports.requestImages = requestImages;
+	exports.receivedImages = receivedImages;
+	exports._selectItem = _selectItem;
 	exports.fetchItems = fetchItems;
 	exports.fetchImages = fetchImages;
 	exports.selectItem = selectItem;
@@ -43201,31 +43202,31 @@
 	// - or are they consumed outside this class as well?
 	
 	// useful for a loader screen, for example
-	function _requestItems() {
-	  // console.log('WorkActions::_requestItems');
+	function requestItems() {
+	  // console.log('WorkActions::requestItems');
 	  return {
 	    type: REQUEST_ITEMS
 	  };
 	}
 	
 	// action to emit when json data has been recieved
-	function _receivedItems(items) {
-	  // console.log('WorkActions::_receivedItems %o', items);
+	function receivedItems(items) {
+	  // console.log('WorkActions::receivedItems %o', items);
 	  return {
 	    type: RECEIVED_ITEMS,
 	    items: items
 	  };
 	}
 	
-	function _requestImages() {
-	  //  console.log('WorkActions::_requestImages');
+	function requestImages() {
+	  //  console.log('WorkActions::requestImages');
 	  return {
 	    type: REQUEST_IMAGES
 	  };
 	}
 	
-	function _receivedImages(images) {
-	  //  console.log('WorkActions::_receivedImages %o', images);
+	function receivedImages(images) {
+	  //  console.log('WorkActions::receivedImages %o', images);
 	  return {
 	    type: RECEIVED_IMAGES,
 	    images: images
@@ -43242,18 +43243,22 @@
 	
 	// THUNK METHODS////////////////////////////////////////////////////////////////
 	
+	// TODO these api calls are requesting a file.
+	// - routing for the hapi/node api works without the extensions
+	// - apache isnt yet set up to handle api routes yet
+	
 	// async action made available via redux-thunk as middleware
 	function fetchItems() {
 	  // console.log('WorkActions::fetchItems');
 	  return function (dispatch) {
 	    // let anyone whos listening know we are performing an async
-	    dispatch(_requestItems());
+	    dispatch(requestItems());
 	
 	    // perform the async operation
 	    return fetch('/api/portfolio.json', { method: 'GET' }).then(function (response) {
 	      return response.json();
 	    }).then(function (json) {
-	      return dispatch(_receivedItems(json));
+	      return dispatch(receivedItems(json));
 	    });
 	  };
 	}
@@ -43262,11 +43267,11 @@
 	function fetchImages() {
 	  // console.log('WorkActions::fetchImages');
 	  return function (dispatch) {
-	    dispatch(_requestImages());
+	    dispatch(requestImages());
 	    return fetch('/api/images.json', { method: 'GET' }).then(function (response) {
 	      return response.json();
 	    }).then(function (json) {
-	      return dispatch(_receivedImages(json));
+	      return dispatch(receivedImages(json));
 	    });
 	  };
 	}
@@ -44336,12 +44341,6 @@
 	  value: true
 	});
 	
-	var _WorkActions = __webpack_require__(542);
-	
-	var actionCreators = _interopRequireWildcard(_WorkActions);
-	
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-	
 	// reducer stack for work items
 	var initialState = {
 	  fetching: false,
@@ -44386,6 +44385,11 @@
 	  var item = state.items.filter(function (_item) {
 	    return _item.ID === itemId;
 	  })[0];
+	
+	  if (!item) {
+	    item = { ID: 'NOT_FOUND' };
+	  }
+	
 	  return Object.assign({}, state, {
 	    item: item
 	  });
@@ -44396,17 +44400,18 @@
 	  var state = arguments.length <= 0 || arguments[0] === undefined ? initialState : arguments[0];
 	  var action = arguments[1];
 	
-	  console.log('%s %o %o', action.type, state, action);
+	  // console.log('%s %o %o', action.type, state, action);
+	
 	  switch (action.type) {
-	    case actionCreators.REQUEST_ITEMS:
+	    case 'REQUEST_ITEMS':
 	      return requestItems(state);
-	    case actionCreators.RECEIVED_ITEMS:
+	    case 'RECEIVED_ITEMS':
 	      return receivedItems(state, action.items);
-	    case actionCreators.REQUEST_IMAGES:
+	    case 'REQUEST_IMAGES':
 	      return requestImages(state);
-	    case actionCreators.RECEIVED_IMAGES:
+	    case 'RECEIVED_IMAGES':
 	      return receivedImages(state, action.images);
-	    case actionCreators.SELECT_ITEM:
+	    case 'SELECT_ITEM':
 	      return setItem(state, action.itemId);
 	    default:
 	  }

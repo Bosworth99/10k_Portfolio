@@ -16,6 +16,7 @@ const config = {
   ],
   resolve: {
     extensions: ['', '.js', '.jsx'],
+
     root: rootPath
   },
   output: {
@@ -26,18 +27,40 @@ const config = {
   },
   module: {
     loaders: [
+      // build js
       {
         test: /\.jsx?$/,
         exclude: [path.resolve(__dirname, 'node_modules')],
         loader: 'react-hot!babel',
         include: rootPath
+      },
+      // fonts and svg
+      {
+        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=10000&mimetype=application/font-woff'
       }, {
+        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=10000&mimetype=application/font-woff'
+      }, {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=10000&mimetype=application/octet-stream'
+      }, {
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file'
+      }, {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=10000&mimetype=image/svg+xml'
+      },
+      // images
+      {
+        test: /\.(ico|jpe?g|png|gif)$/,
+        loader: 'file?name=/images/[name].[ext]',
+        include: rootPath
+      },
+      // build sass and extract
+      {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass'),
-        include: rootPath
-      }, {
-        test: /\.(png|jpg|gif)$/,
-        loader: 'file?name=/images/[name].[ext]',
         include: rootPath
       }
     ]

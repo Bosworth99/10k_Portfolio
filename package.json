@@ -7,7 +7,7 @@
     "start": "node pipe.js",
     "build": "webpack",
     "doJSON": "csv2json ./data/porfolio.csv ./data/data.json",
-    "test": "mocha -w ./client/tests/helpers.js ./client/tests/**/*Spec.js"
+    "test": "mocha -w --compilers js:babel-register --require ./client/tests/helpers.js ./client/tests/**/*Spec.js"
   },
   "repository": {
     "type": "git",
