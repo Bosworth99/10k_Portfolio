@@ -6,7 +6,7 @@ import Viewer from 'viewer/ViewerContainer.jsx';
 
 // CLASS ///////////////////////////////////////////////////////////////////////
 const WorkItem = (props) => {
-  //console.log('WorkItem::render item:%o ', props.item);
+  // console.log('WorkItem::render item:%o ', props.item);
 
   // generate some rows
   const itemProps = Object.keys(props.item).map( (result, i) => {

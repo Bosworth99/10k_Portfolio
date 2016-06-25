@@ -6,16 +6,16 @@ import styles from 'viewer/viewer.scss';
 // CLASS ///////////////////////////////////////////////////////////////////////
 class Viewer extends React.Component {
   render() {
-    //console.log('Viewer:render this.props:%o', this.props);
+    // console.log('Viewer:render this.props:%o', this.props);
+
     // the currently selected item
     return (
       <div className={styles.viewerBox}>
         <div
           className={styles.clickPrev}
-          onClick={(e)=>this.props.onClickImg(e, this.props.dir)}
-          dir="prev"
+          onClick={(e) => this.props.onClickImg(e, 'prev')}
         >
-          NEXT
+          PREV
         </div>
 
         <div className={styles.viewerImageContainer} >
@@ -30,12 +30,10 @@ class Viewer extends React.Component {
         <div
           className={styles.clickNext}
           onClick={(e) => {
-            console.log('Viewer::onClick', this);
-            this.props.onClickImg(e, this.props.dir)
+            this.props.onClickImg(e, 'next')
           }}
-          dir="next"
         >
-          NEXT, ALSO
+          NEXT
         </div>
       </div>
     );

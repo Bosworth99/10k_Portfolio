@@ -14,38 +14,38 @@ export const RECEIVED_IMAGES = 'RECEIVED_IMAGES';
 // - or are they consumed outside this class as well?
 
 // useful for a loader screen, for example
-function _requestItems() {
-  // console.log('WorkActions::_requestItems');
+export function requestItems() {
+  // console.log('WorkActions::requestItems');
   return {
     type: REQUEST_ITEMS
   };
 }
 
 // action to emit when json data has been recieved
-function _receivedItems(items) {
-  // console.log('WorkActions::_receivedItems %o', items);
+export function receivedItems(items) {
+  // console.log('WorkActions::receivedItems %o', items);
   return {
     type: RECEIVED_ITEMS,
     items,
   };
 }
 
-function _requestImages() {
-  //  console.log('WorkActions::_requestImages');
+export function requestImages() {
+  //  console.log('WorkActions::requestImages');
   return {
     type: REQUEST_IMAGES
   };
 }
 
-function _receivedImages(images) {
-  //  console.log('WorkActions::_receivedImages %o', images);
+export function receivedImages(images) {
+  //  console.log('WorkActions::receivedImages %o', images);
   return {
     type: RECEIVED_IMAGES,
     images,
   };
 }
 
-function _selectItem(itemId) {
+export function _selectItem(itemId) {
   // console.log('WorkActions::_selectItem %s', itemId);
   return {
     type: SELECT_ITEM,
@@ -55,17 +55,21 @@ function _selectItem(itemId) {
 
 // THUNK METHODS////////////////////////////////////////////////////////////////
 
+// TODO these api calls are requesting a file.
+// - routing for the hapi/node api works without the extensions
+// - apache isnt yet set up to handle api routes yet
+
 // async action made available via redux-thunk as middleware
 export function fetchItems() {
   // console.log('WorkActions::fetchItems');
   return dispatch => {
     // let anyone whos listening know we are performing an async
-    dispatch(_requestItems());
+    dispatch(requestItems());
 
     // perform the async operation
     return fetch('/api/portfolio.json', { method: 'GET' })
       .then(response => response.json())
-      .then(json => dispatch(_receivedItems(json)));
+      .then(json => dispatch(receivedItems(json)));
   };
 }
 
@@ -73,10 +77,10 @@ export function fetchItems() {
 export function fetchImages() {
   // console.log('WorkActions::fetchImages');
   return dispatch => {
-    dispatch(_requestImages());
+    dispatch(requestImages());
     return fetch('/api/images.json', { method: 'GET' })
       .then(response => response.json())
-      .then(json => dispatch(_receivedImages(json)));
+      .then(json => dispatch(receivedImages(json)));
   };
 }
 

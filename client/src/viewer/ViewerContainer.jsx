@@ -27,7 +27,7 @@ class ViewerContainer extends React.Component {
     if (INDEX >= this.props.viewerCollection.length) {
       INDEX = 0;
     } else if (INDEX < 0) {
-      INDEX = this.props.viewerCollection.length;
+      INDEX = this.props.viewerCollection.length - 1;
     }
 
     this.setState({ INDEX });
@@ -89,6 +89,8 @@ const filterViewerCollection = (images, item) => {
 // assign props to connect
 const mapStateToProps = (state) => {
   // console.log('ViewerContainer::mapStateToProps state:%o params:%o', state);
+
+  // we need to assemble a viewable collection, and assign it to props
   const viewerCollection = filterViewerCollection(state.workReducers.images, state.workReducers.item);
   return {
     viewerCollection,

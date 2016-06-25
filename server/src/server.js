@@ -38,20 +38,20 @@ server.register(Inert, (err) => {
 
   server.route({
     method: 'GET',
+    path: '/work/{itemId?}',
+    handler: (request, reply) => {
+      reply.file('./public/index.html');
+    }
+  });
+
+  server.route({
+    method: 'GET',
     path: '/{param*}',
     handler: {
       directory: {
         path: 'public',
         listing: true
       }
-    }
-  });
-
-  server.route({
-    method: 'GET',
-    path: '/work/{itemId?}',
-    handler: (request, reply) => {
-      reply.file('./public/index.html');
     }
   });
 
@@ -103,6 +103,7 @@ new WebpackDevServer(compiler, {
   inline: true,
   hot: false,
   quiet: false,
+  watch: true,
   stats: { colors: true },
   proxy: {
     '*': 'http://localhost:3000'

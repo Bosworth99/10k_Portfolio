@@ -44,6 +44,7 @@ function setItem(state, itemId) {
   const item = state.items.filter((_item) => {
     return _item.ID === itemId;
   })[0];
+
   return Object.assign({}, state, {
     item
   });

@@ -6,9 +6,8 @@
   "scripts": {
     "start": "node pipe.js",
     "build": "webpack",
-    "build-dev-server": "webpack-dev-server",
     "doJSON": "csv2json ./data/porfolio.csv ./data/data.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -w ./client/tests/helpers.js ./client/tests/**/*Spec.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +25,7 @@
     "babel-polyfill": "^6.9.1",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.5.0",
+    "chai": "^3.5.0",
     "csv2json": "^1.1.0",
     "enzyme": "^2.3.0",
     "eslint": "^2.13.0",
@@ -39,6 +39,7 @@
     "good-squeeze": "^4.0.0",
     "hapi": "^13.4.1",
     "inert": "^4.0.0",
+    "jsdom": "^9.2.1",
     "loader": "^2.1.1",
     "mocha": "^2.5.3",
     "piping": "^1.0.0-rc.2",

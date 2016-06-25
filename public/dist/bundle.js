@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "8ff9ded1a65339d21a23"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "b45d915e3ec9f3e6518e"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -43091,10 +43091,15 @@
 	    // the critical bit here, is taht connect() needs to be wired up
 	    // properly or dispatch wont get set on the the props
 	    value: function componentDidMount() {
-	      console.log('WorkContainer::componentDidMount this:%o', this);
+	      // console.log('WorkContainer::componentDidMount this:%o', this);
 	
-	      this.props.dispatch(actionCreators.fetchItems());
-	      this.props.dispatch(actionCreators.fetchImages());
+	      if (this.props.items.length < 1) {
+	        this.props.dispatch(actionCreators.fetchItems());
+	      }
+	
+	      if (this.props.images.length < 1) {
+	        this.props.dispatch(actionCreators.fetchImages());
+	      }
 	    }
 	
 	    // called when the application state updates
@@ -43103,24 +43108,13 @@
 	    key: 'componentWillReceiveProps',
 	    value: function componentWillReceiveProps(nextProps) {
 	      // console.log('WorkContainer::componentWillReceiveProps', nextProps);
+	
 	      // the collection of work items
 	      var items = nextProps.items;
 	      var images = nextProps.images;
 	      this.setState({
 	        items: items,
-	        images: images,
-	        loaded: true
-	      });
-	    }
-	
-	    // not sure if this is stall required. I need to establish a loaded value
-	
-	  }, {
-	    key: 'setInitialState',
-	    value: function setInitialState() {
-	      // console.log('WorkContainer::setInitialState %o', this);
-	      this.setState({
-	        loaded: false
+	        images: images
 	      });
 	    }
 	
@@ -43136,7 +43130,10 @@
 	    key: 'render',
 	    value: function render() {
 	      // console.log('WorkContainer::render', this);
-	      return _react2.default.createElement(_Work2.default, this.props);
+	      return _react2.default.createElement(_Work2.default, {
+	        images: this.props.images,
+	        items: this.props.items
+	      });
 	    }
 	  }]);
 	
@@ -43247,7 +43244,7 @@
 	
 	// async action made available via redux-thunk as middleware
 	function fetchItems() {
-	  console.log('WorkActions::fetchItems');
+	  // console.log('WorkActions::fetchItems');
 	  return function (dispatch) {
 	    // let anyone whos listening know we are performing an async
 	    dispatch(_requestItems());
@@ -43263,7 +43260,7 @@
 	
 	// pick image json
 	function fetchImages() {
-	  console.log('WorkActions::fetchImages');
+	  // console.log('WorkActions::fetchImages');
 	  return function (dispatch) {
 	    dispatch(_requestImages());
 	    return fetch('/api/images.json', { method: 'GET' }).then(function (response) {
@@ -43275,7 +43272,7 @@
 	}
 	
 	function selectItem(itemId) {
-	  console.log('WorkActions::selectItem %s', itemId);
+	  // console.log('WorkActions::selectItem %s', itemId);
 	  return function (dispatch) {
 	
 	    // we already have the item data, just need somethign to filter on
@@ -43715,10 +43712,40 @@
 	  _createClass(WorkItemContainer, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
-	      console.log('WorkItemContainer::componentDidMount this:%o', this);
+	      // console.log('WorkItemContainer::componentDidMount this:%o', this);
 	
-	      this.props.dispatch(actionCreators.fetchItems());
-	      this.props.dispatch(actionCreators.fetchImages());
+	      // here, we might be reloading a deep path
+	      // - need to request data and handle the returns
+	      if (!this.props.item.ID) {
+	        this.props.dispatch(actionCreators.fetchItems());
+	        this.props.dispatch(actionCreators.fetchImages());
+	      }
+	    }
+	
+	    // called when the application state updates
+	
+	  }, {
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      // console.log('WorkItemContainer::componentWillReceiveProps', nextProps);
+	
+	      // the collection of work items
+	      var item = nextProps.item;
+	      var images = nextProps.images;
+	
+	      // here, we just need to know that the item has been selected and is ready for consumption
+	      // - if not (if we loaded on a deep route, call setelctItem
+	      if (images.length > 0 && item.ID) {
+	        this.setState({
+	          item: item,
+	          images: images,
+	          loaded: true
+	        });
+	      } else {
+	        // here, we need to select a valid item from the url
+	        var tempItemID = window.location.pathname.split('/')[2];
+	        this.props.dispatch(actionCreators.selectItem(tempItemID));
+	      }
 	    }
 	  }, {
 	    key: 'render',
@@ -43751,10 +43778,7 @@
 	};
 	
 	// assign props to connect
-	var mapStateToProps = function mapStateToProps(state, _ref) {
-	  var params = _ref.params;
-	
-	  // console.log('WorkItemContainer::mapStateToProps state:%o params:%o', state, params);
+	var mapStateToProps = function mapStateToProps(state) {
 	  return {
 	    item: state.workReducers.item,
 	    images: state.workReducers.images
@@ -43799,7 +43823,7 @@
 	
 	// CLASS ///////////////////////////////////////////////////////////////////////
 	var WorkItem = function WorkItem(props) {
-	  console.log('WorkItem::render item:%o ', props.item);
+	  // console.log('WorkItem::render item:%o ', props.item);
 	
 	  // generate some rows
 	  var itemProps = Object.keys(props.item).map(function (result, i) {
@@ -43923,8 +43947,6 @@
 	  value: true
 	});
 	
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(150);
@@ -43955,9 +43977,9 @@
 	  function ViewerContainer(props) {
 	    _classCallCheck(this, ViewerContainer);
 	
-	    console.log('WorkContainer::constructor', props);
-	
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ViewerContainer).call(this, props));
+	    // console.log('WorkContainer::constructor', props);
+	
 	
 	    _this.state = {
 	      INDEX: 0
@@ -43971,15 +43993,18 @@
 	      var dir = arguments.length <= 1 || arguments[1] === undefined ? 'next' : arguments[1];
 	
 	      console.log('onClickImg e:%o dir:%s', e, dir);
+	
 	      // capture the Index
 	      var INDEX = this.state.INDEX;
+	
 	      // check out next to decide if we want to increment
 	      INDEX = dir === 'next' ? INDEX += 1 : INDEX -= 1;
 	      if (INDEX >= this.props.viewerCollection.length) {
 	        INDEX = 0;
 	      } else if (INDEX < 0) {
-	        INDEX = this.props.viewerCollection.length;
+	        INDEX = this.props.viewerCollection.length - 1;
 	      }
+	
 	      this.setState({ INDEX: INDEX });
 	    }
 	  }, {
@@ -44015,33 +44040,42 @@
 	// here, we need to take the itemId that we've been passed and
 	// make an array of objs, and update the presentational components
 	var filterViewerCollection = function filterViewerCollection(images, item) {
-	  console.log('ViewerContainer::filterViewerCollection', images, item);
+	  // console.log('ViewerContainer::filterViewerCollection', images, item);
 	
-	  if (item) {
-	    var _ret = function () {
+	  var viewerCollection = [];
+	
+	  if (images.length > 0 && typeof item.ID !== 'undefined') {
+	    (function () {
 	      // return array of matchies
 	      var imgList = item.Image.split(',');
-	      return {
-	        v: images.filter(function (img) {
-	          return imgList.indexOf(img.ID) !== -1;
-	        })
-	      };
-	    }();
-	
-	    if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
+	      viewerCollection = images.filter(function (img) {
+	        return imgList.indexOf(img.ID) !== -1;
+	      });
+	    })();
 	  } else {
-	    return [];
+	
+	    // this should probably be set on teh constructro
+	    viewerCollection.push({
+	      'ID': 'NOT_FOUND',
+	      'Title': 'default big image',
+	      'Description': '',
+	      'Full_URI': 'empty.jpg',
+	      'Thumb_URI': 0
+	    });
 	  }
+	
+	  return viewerCollection;
 	};
 	
 	// assign props to connect
-	var mapStateToProps = function mapStateToProps(state, _ref) {
-	  var params = _ref.params;
+	var mapStateToProps = function mapStateToProps(state) {
+	  // console.log('ViewerContainer::mapStateToProps state:%o params:%o', state);
 	
-	  // console.log('ViewerContainer::mapStateToProps state:%o params:%o', state, params);
+	  // we need to assemble a viewable collection, and assign it to props
+	  var viewerCollection = filterViewerCollection(state.workReducers.images, state.workReducers.item);
 	  return {
-	    viewerCollection: filterViewerCollection(state.workReducers.images, state.workReducers.item),
-	    bigImage: state.workReducers.images[0]
+	    viewerCollection: viewerCollection,
+	    bigImage: viewerCollection[0]
 	  };
 	};
 	
@@ -44101,7 +44135,8 @@
 	    value: function render() {
 	      var _this2 = this;
 	
-	      console.log('Viewer:render this.props:%o', this.props);
+	      // console.log('Viewer:render this.props:%o', this.props);
+	
 	      // the currently selected item
 	      return _react2.default.createElement(
 	        'div',
@@ -44111,11 +44146,10 @@
 	          {
 	            className: _viewer2.default.clickPrev,
 	            onClick: function onClick(e) {
-	              return _this2.props.onClickImg(e, _this2.props.dir);
-	            },
-	            dir: 'prev'
+	              return _this2.props.onClickImg(e, 'prev');
+	            }
 	          },
-	          'NEXT'
+	          'PREV'
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -44136,12 +44170,10 @@
 	          {
 	            className: _viewer2.default.clickNext,
 	            onClick: function onClick(e) {
-	              console.log('Viewer::onClick', _this2);
-	              _this2.props.onClickImg(e, _this2.props.dir);
-	            },
-	            dir: 'next'
+	              _this2.props.onClickImg(e, 'next');
+	            }
 	          },
-	          'NEXT, ALSO'
+	          'NEXT'
 	        )
 	      );
 	    }
