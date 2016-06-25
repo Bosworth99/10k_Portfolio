@@ -57,7 +57,7 @@ function _selectItem(itemId) {
 
 // async action made available via redux-thunk as middleware
 export function fetchItems() {
-  console.log('WorkActions::fetchItems');
+  // console.log('WorkActions::fetchItems');
   return dispatch => {
     // let anyone whos listening know we are performing an async
     dispatch(_requestItems());
@@ -71,7 +71,7 @@ export function fetchItems() {
 
 // pick image json
 export function fetchImages() {
-  console.log('WorkActions::fetchImages');
+  // console.log('WorkActions::fetchImages');
   return dispatch => {
     dispatch(_requestImages());
     return fetch('/api/images.json', { method: 'GET' })
@@ -81,7 +81,7 @@ export function fetchImages() {
 }
 
 export function selectItem(itemId) {
-  console.log('WorkActions::selectItem %s', itemId);
+  // console.log('WorkActions::selectItem %s', itemId);
   return dispatch => {
 
     // we already have the item data, just need somethign to filter on

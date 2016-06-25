@@ -6,7 +6,7 @@ import Viewer from 'viewer/ViewerContainer.jsx';
 
 // CLASS ///////////////////////////////////////////////////////////////////////
 const WorkItem = (props) => {
-  console.log('WorkItem::render item:%o ', props.item);
+  //console.log('WorkItem::render item:%o ', props.item);
 
   // generate some rows
   const itemProps = Object.keys(props.item).map( (result, i) => {
@@ -21,13 +21,10 @@ const WorkItem = (props) => {
     <section className="module-layout">
       <div className={styles.container}>
         <div className={styles.panel}>
-
           <div className={styles.close} onClick={props.onClickClose}>X</div>
-
           <div className={styles.imageBox}>
             <Viewer {...props} />
           </div>
-
           <div className={styles.detailsBox}>
             <div className={styles.detail}>
               <h2 className={styles.detailTitle}>Project</h2>

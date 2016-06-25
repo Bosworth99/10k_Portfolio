@@ -11,7 +11,7 @@ class Home extends React.Component {
         <div className={styles.container}>
           <div className={styles.panel} onClick={this.props.onPanelClick}>
             <div className={styles.panelInner}>
-              <h1 className={styles.title}>HANDCRAFTED INTERNET</h1>
+              <h1 className={styles.title}>HANDCRAFTED INTERNETS</h1>
               <p className={styles.subText}>Airtight code. Rock-solid markup. Stylesheets that hum.</p>
             </div>
             <p className={styles.bottomText}>View Work</p>

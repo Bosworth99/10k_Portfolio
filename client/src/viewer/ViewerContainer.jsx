@@ -18,8 +18,10 @@ class ViewerContainer extends React.Component {
 
   onClickImg(e, dir = 'next') {
     console.log('onClickImg e:%o dir:%s', e, dir);
+
     // capture the Index
     let INDEX = this.state.INDEX;
+
     // check out next to decide if we want to increment
     INDEX = (dir === 'next') ? INDEX += 1 : INDEX -= 1;
     if (INDEX >= this.props.viewerCollection.length) {
@@ -27,6 +29,7 @@ class ViewerContainer extends React.Component {
     } else if (INDEX < 0) {
       INDEX = this.props.viewerCollection.length;
     }
+
     this.setState({ INDEX });
   }
 
@@ -59,19 +62,37 @@ const mapDispatchToProps = (dispatch, props) => {
 const filterViewerCollection = (images, item) => {
   // console.log('ViewerContainer::filterViewerCollection', images, item);
 
-  // return array of matchies
-  const imgList = item.Image.split(',');
-  return images.filter(img => {
-    return (imgList.indexOf(img.ID) !== -1);
-  });
+  let viewerCollection = [];
+
+  if (images.length > 0 && typeof item.ID !== 'undefined') {
+    // return array of matchies
+    const imgList = item.Image.split(',');
+    viewerCollection = images.filter(img => {
+      return (imgList.indexOf(img.ID) !== -1);
+    });
+
+  } else {
+
+    // this should probably be set on teh constructro
+    viewerCollection.push({
+      'ID': 'NOT_FOUND',
+      'Title': 'default big image',
+      'Description': '',
+      'Full_URI': 'empty.jpg',
+      'Thumb_URI': 0
+    });
+  }
+
+  return viewerCollection;
 };
 
 // assign props to connect
-const mapStateToProps = (state, { params }) => {
-  // console.log('ViewerContainer::mapStateToProps state:%o params:%o', state, params);
+const mapStateToProps = (state) => {
+  // console.log('ViewerContainer::mapStateToProps state:%o params:%o', state);
+  const viewerCollection = filterViewerCollection(state.workReducers.images, state.workReducers.item);
   return {
-    viewerCollection: filterViewerCollection(state.workReducers.images, state.workReducers.item),
-    bigImage: state.workReducers.images[0]
+    viewerCollection,
+    bigImage: viewerCollection[0]
   };
 };
 

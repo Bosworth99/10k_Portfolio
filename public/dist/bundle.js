@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "b9849ec373a40978bf5b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "8ff9ded1a65339d21a23"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -43091,10 +43091,8 @@
 	    // the critical bit here, is taht connect() needs to be wired up
 	    // properly or dispatch wont get set on the the props
 	    value: function componentDidMount() {
+	      console.log('WorkContainer::componentDidMount this:%o', this);
 	
-	      // console.log('WorkContainer::componentDidMount this:%o', this);
-	      // TODO - kinda jeel like these should happen by default at the start
-	      // of teh application. Wonder what the best way is to do that?
 	      this.props.dispatch(actionCreators.fetchItems());
 	      this.props.dispatch(actionCreators.fetchImages());
 	    }
@@ -43689,6 +43687,12 @@
 	
 	var _WorkItem2 = _interopRequireDefault(_WorkItem);
 	
+	var _WorkActions = __webpack_require__(542);
+	
+	var actionCreators = _interopRequireWildcard(_WorkActions);
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -43709,6 +43713,14 @@
 	  }
 	
 	  _createClass(WorkItemContainer, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      console.log('WorkItemContainer::componentDidMount this:%o', this);
+	
+	      this.props.dispatch(actionCreators.fetchItems());
+	      this.props.dispatch(actionCreators.fetchImages());
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(_WorkItem2.default, {
@@ -43731,6 +43743,7 @@
 	// wire up a click handler for the pComponent
 	var mapDispatchToProps = function mapDispatchToProps(dispatch, props) {
 	  return {
+	    dispatch: dispatch,
 	    onClickClose: function onClickClose(e) {
 	      _reactRouter.browserHistory.push('/work');
 	    }
@@ -43910,6 +43923,8 @@
 	  value: true
 	});
 	
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(150);
@@ -43940,9 +43955,9 @@
 	  function ViewerContainer(props) {
 	    _classCallCheck(this, ViewerContainer);
 	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ViewerContainer).call(this, props));
-	    // console.log('WorkContainer::constructor', props);
+	    console.log('WorkContainer::constructor', props);
 	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ViewerContainer).call(this, props));
 	
 	    _this.state = {
 	      INDEX: 0
@@ -44000,13 +44015,23 @@
 	// here, we need to take the itemId that we've been passed and
 	// make an array of objs, and update the presentational components
 	var filterViewerCollection = function filterViewerCollection(images, item) {
-	  // console.log('ViewerContainer::filterViewerCollection', images, item);
+	  console.log('ViewerContainer::filterViewerCollection', images, item);
 	
-	  // return array of matchies
-	  var imgList = item.Image.split(',');
-	  return images.filter(function (img) {
-	    return imgList.indexOf(img.ID) !== -1;
-	  });
+	  if (item) {
+	    var _ret = function () {
+	      // return array of matchies
+	      var imgList = item.Image.split(',');
+	      return {
+	        v: images.filter(function (img) {
+	          return imgList.indexOf(img.ID) !== -1;
+	        })
+	      };
+	    }();
+	
+	    if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
+	  } else {
+	    return [];
+	  }
 	};
 	
 	// assign props to connect

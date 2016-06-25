@@ -6,7 +6,7 @@ import styles from 'viewer/viewer.scss';
 // CLASS ///////////////////////////////////////////////////////////////////////
 class Viewer extends React.Component {
   render() {
-    console.log('Viewer:render this.props:%o', this.props);
+    //console.log('Viewer:render this.props:%o', this.props);
     // the currently selected item
     return (
       <div className={styles.viewerBox}>
