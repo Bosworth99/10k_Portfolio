@@ -4,14 +4,14 @@ import { expect, assert } from 'chai';
 
 import * as WorkActions from '../../src/work/WorkActions';
 
-describe('requestItems', () => {
+describe('WorkActions.requestItems', () => {
   it('returns an action type REQUEST_ITEMS', () => {
     const action = WorkActions.requestItems();
     expect(action.type).to.equal('REQUEST_ITEMS');
   });
 });
 
-describe('receivedItems', () => {
+describe('WorkActions.receivedItems', () => {
 
   it('returns an action type RECEIVED_ITEMS', () => {
     const items = [{}];
@@ -26,7 +26,7 @@ describe('receivedItems', () => {
   });
 });
 
-describe('requestImages', () => {
+describe('WorkActions.requestImages', () => {
 
   it('returns an action type REQUEST_IMAGES', () => {
     const images = [{}];
@@ -35,7 +35,7 @@ describe('requestImages', () => {
   });
 });
 
-describe('receivedImages', () => {
+describe('WorkActions.receivedImages', () => {
 
   it('returns an action type RECEIVED_IMAGES', () => {
     const images = [{}];
@@ -50,7 +50,7 @@ describe('receivedImages', () => {
   });
 });
 
-describe('_selectItem', () => {
+describe('WorkActions._selectItem', () => {
 
   it('returns an action type SELECT_ITEM', () => {
     const images = [{}];

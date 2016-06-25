@@ -1,4 +1,3 @@
-import * as actionCreators from 'work/WorkActions';
 
 // reducer stack for work items
 const initialState = {
@@ -41,9 +40,13 @@ function receivedImages(state, images) {
 
 function setItem(state, itemId) {
   // console.log('WorkReducers::setItem %o %o', state, itemId);
-  const item = state.items.filter((_item) => {
+  let item = state.items.filter((_item) => {
     return _item.ID === itemId;
   })[0];
+
+  if (!item) {
+    item = { ID: 'NOT_FOUND' };
+  }
 
   return Object.assign({}, state, {
     item
@@ -52,17 +55,18 @@ function setItem(state, itemId) {
 
 // Work Reducers
 function workState(state = initialState, action) {
-  console.log('%s %o %o', action.type, state, action);
+  // console.log('%s %o %o', action.type, state, action);
+
   switch (action.type) {
-    case actionCreators.REQUEST_ITEMS :
+    case 'REQUEST_ITEMS' :
       return requestItems(state);
-    case actionCreators.RECEIVED_ITEMS :
+    case 'RECEIVED_ITEMS' :
       return receivedItems(state, action.items);
-    case actionCreators.REQUEST_IMAGES :
+    case 'REQUEST_IMAGES' :
       return requestImages(state);
-    case actionCreators.RECEIVED_IMAGES :
+    case 'RECEIVED_IMAGES' :
       return receivedImages(state, action.images);
-    case actionCreators.SELECT_ITEM :
+    case 'SELECT_ITEM' :
       return setItem(state, action.itemId);
     default:
   }
