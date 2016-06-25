@@ -38,20 +38,20 @@ server.register(Inert, (err) => {
 
   server.route({
     method: 'GET',
-    path: '/work',
-    handler: (request, reply) => {
-      reply.file('./public/index.html');
-    }
-  });
-
-  server.route({
-    method: 'GET',
     path: '/{param*}',
     handler: {
       directory: {
         path: 'public',
         listing: true
       }
+    }
+  });
+
+  server.route({
+    method: 'GET',
+    path: '/work/{itemId?}',
+    handler: (request, reply) => {
+      reply.file('./public/index.html');
     }
   });
 
@@ -93,21 +93,23 @@ server.register({
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const config = require('../../webpack.config.js');
+const compiler = webpack(config);
 
-if (!isProduction){
-  new WebpackDevServer(webpack(config), {
-    publicPath: 'dist',
-    hot: true,
-    historyApiFallback: true,
-    proxy: {
-      "*": 'http://localhost:3000'
-    },
-    quiet: false,
-    stats: { colors: true }
-  }).listen(3001, 'localhost', (err, result) => {
-    if (err){
-      console.log(err);
-    }
-    console.log('WebpackDevServer[localhost::3001]');
-  });
-}
+new WebpackDevServer(compiler, {
+  port: 3001,
+  publicPath: '/dist/',
+  contentBase: '/dist/',
+  historyApiFallback: true,
+  inline: true,
+  hot: false,
+  quiet: false,
+  stats: { colors: true },
+  proxy: {
+    '*': 'http://localhost:3000'
+  }
+}).listen(3001, 'localhost', (err, result) => {
+  if (err){
+    console.log(err);
+  }
+  console.log('WebpackDevServer[localhost::3001]');
+});

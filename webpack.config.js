@@ -43,10 +43,6 @@ const config = {
     ]
   },
   devtool: '#source-map',
-  devServer: {
-    contentBase: '/dist/',
-    hot: true
-  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
