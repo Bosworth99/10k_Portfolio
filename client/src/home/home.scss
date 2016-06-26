@@ -1,96 +1,129 @@
-@import "~common/styles/variables";
+@import "~common/styles/base";
 
+/*  Panel */
 .container {
-  padding: 0;
-  margin: 0;
-  height:100%;
-  width:100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction:row;
-  flex-wrap: wrap;
+  composes: container;
 }
 
 .panel{
+  composes: grid;
   background-color:$color-lightest;
-  color:$brand-primary;
-  position:relative;
-  width:calc(100% - 200px);
-  max-width:calc(100% - 80px);
   height: calc(100% - 200px);
   max-height: 680px;
-  transition: all 500ms;
+  transition: opacity 350ms;
   box-shadow: 2px 0px 20px rgba(50, 50, 50, .3);
-  opacity:.7;
-
-  display: flex;
-  flex-direction:row;
-  flex-wrap: wrap;
-  flex: 0 1 1440px;
+  opacity:1.0;
 
   &:hover{
-    background-color:$brand-primary;
-    color:$color-lightest;
     opacity: .9;
     box-shadow: 4px 0px 20px rgba(0, 0, 0, .8);
   }
 }
 
-.panelInner{
-  position:absolute;
-  width:100%;
-  margin:auto;
-  top:0px;
-  bottom:0px;
-  height:200px;
-  text-align:center;
-}
+/*  brand box */
+.brandBox{
+  composes: col_half;
+  height: 100%;
 
-.textBase{
-  text-shadow: 1px 0px 4px rgba(50, 50, 50, .2);
+  background-color:$brand-primary;
+  color:$color-lightest;
+  display: flex;
+  align-items:stretch;
+  justify-content:center;
+  flex-direction:column;
+  text-align: center;
+  transition: all 350ms;
+  box-shadow: 2px 0px 5px rgba(50, 50, 50, .5);
+
+  &:hover{
+    background-color:$brand-secondary;
+  }
+
+  @include breakpoint($mobile) {
+    height: 50%;
+  }
+
+  @include breakpoint($tablet) {
+    height: 50%;
+  }
+
 }
 
 .title{
-  font-size:56px;
+  font-size:32px;
   color:inherit;
   margin:0 0 10px 0;
-  composes:textBase;
+  text-shadow: 1px 0px 4px rgba(50, 50, 50, .2);
+
+  @include breakpoint($widescreen) {
+    font-size:48px;
+  }
 }
 
 .subText{
-  font-size: 18px;
   font-weight: bold;
   margin:0;
-  composes:textBase;
+  text-shadow: 1px 0px 4px rgba(50, 50, 50, .2);
 }
 
 .bottomText{
-  position:absolute;
-  bottom:10px;
-  left:0;
-  width:100%;
   text-align: center;
-  composes:textBase;
 }
 
-.workButton{
-  position:relative;
-  display:inline-block;
-  cursor:pointer;
-  background-color: $color-lightest;
-  color: $brand-primary;
-  width:120px;
-  padding:8px 12px;
-  margin-top:30px;
-  border:1px solid $brand-primary;
-  transition:all 250ms;
-  box-shadow: 1px 0px 2px rgba(50,50,50, .3);
+/*  text box */
+.textBox{
+  composes: col_half;
 
-  &:hover{
-    background-color: $brand-primary;
-    color: $color-lightest;
-    border-color: $color-lightest;
+  @include breakpoint($mobile) {
+    height: 50%;
+    overflow-y: scroll;
   }
+
+  @include breakpoint($tablet) {
+    height: 50%;
+    overflow-y: scroll;
+  }
+}
+
+.profilePicBox{
+  margin:40px;
+  text-align: center;
+}
+
+.profilePic{
+  height:80px;
+  width:80px;
+  border-radius:50px;
+  border:2px solid $color-lightest;
+  box-shadow:2px 0 8px rgba(50,50,50,.3);
+}
+
+.projectText{
+  position:relative;
+  margin:40px;
+}
+
+.ul{
+  list-style: none;
+  margin-bottom:20px;
+}
+
+.li{
+  display:inline-block;
+  float:left;
+
+  &:after{
+    content: "  |  ";
+  }
+
+  &:last-child:after{
+    content: "";
+  }
+
+}
+
+/* button */
+.workButton{
+  composes: ghostButton;
+  margin-top:30px;
 }

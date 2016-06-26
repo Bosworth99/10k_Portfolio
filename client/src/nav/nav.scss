@@ -1,8 +1,14 @@
-nav{
+@import "~common/styles/base";
+
+.navigation{
   margin:8px 10px;
 }
 
-li{
+.items{
+
+}
+
+.item{
   float:left;
   display:inline-block;
   padding:4px 8px;

@@ -1,0 +1,21 @@
+@import "~common/styles/variables";
+
+.ghostButton{
+  position:relative;
+  display:inline-block;
+  cursor:pointer;
+  background-color: $color-lightest;
+  color: $brand-primary;
+  padding:8px 12px;
+  border:1px solid $brand-primary;
+  transition:all 250ms;
+  box-shadow: 1px 0px 2px rgba(50,50,50, .3);
+  text-align: center;
+  width:120px;
+
+  &:hover{
+    background-color: $brand-primary;
+    color: $color-lightest;
+    border-color: $color-lightest;
+  }
+}

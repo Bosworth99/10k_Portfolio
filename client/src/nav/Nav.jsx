@@ -7,10 +7,10 @@ import styles from 'nav/Nav.scss';
 class Nav extends React.Component {
   render() {
     return (
-      <nav>
-        <ul>
-          <li><Link className="link" to="/">Home</Link></li>
-          <li><Link className="link" to="/work">Work</Link></li>
+      <nav className={styles.navigation}>
+        <ul className={styles.items}>
+          <li className={styles.item}><Link className="link" to="/">Home</Link></li>
+          <li className={styles.item}><Link className="link" to="/work">Work</Link></li>
         </ul>
       </nav>
     );

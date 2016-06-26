@@ -1,10 +1,25 @@
-$mobile: screen max-width 787px;
-$tablet: screen 788px 980px;
-$desktop: screen 788px;
-$widescreen: screen 981px;
+// configurable globals
+// - this looks like good syntax from teh sass docs, but react-css-modules
+// choke on it. Not sure where syntax crosses over between them.
+//
+// $brand: red !default;
+// //$brand: blue;
+//
+// @if $brand == blue {
+//
+//   $brand-primary: #d11e1e;
+//   $brand-secondary: #46494e;
+//   $brand-tertiary: #9e1515;
+//
+// } @else if $brand == 'red' {
+//
+//   $brand-primary: #d11e1e;
+//   $brand-secondary: #46494e;
+//   $brand-tertiary: #03887c;
+// }
 
 $brand-primary: #d11e1e;
-$brand-secondary: #334849;
+$brand-secondary: #46494e;
 $brand-tertiary: #03887c;
 
 $color-darkest          : #000;
@@ -14,6 +29,11 @@ $color-mid              : #999;
 $color-light            : #ddd;
 $color-lighter          : #eee;
 $color-lightest         : #fff;
+
+$mobile: screen max-width 787px;
+$tablet: screen 788px 980px;
+$desktop: screen 788px;
+$widescreen: screen 981px;
 
 // :export { brandPrimary: $brand-primary; }
 // :export { brandSecondary: $brand-secondary; }

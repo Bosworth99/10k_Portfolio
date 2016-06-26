@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "aee48631bb24eb5684d9"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "601445d894ed372eee34"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -8200,7 +8200,7 @@
 	
 	var _router2 = _interopRequireDefault(_router);
 	
-	var _store = __webpack_require__(554);
+	var _store = __webpack_require__(555);
 	
 	var _store2 = _interopRequireDefault(_store);
 	
@@ -35792,11 +35792,11 @@
 	
 	var _HomeContainer2 = _interopRequireDefault(_HomeContainer);
 	
-	var _WorkContainer = __webpack_require__(541);
+	var _WorkContainer = __webpack_require__(542);
 	
 	var _WorkContainer2 = _interopRequireDefault(_WorkContainer);
 	
-	var _WorkItemContainer = __webpack_require__(548);
+	var _WorkItemContainer = __webpack_require__(549);
 	
 	var _WorkItemContainer2 = _interopRequireDefault(_WorkItemContainer);
 	
@@ -42439,7 +42439,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"appLayout":"layout__appLayout___1-8-W"};
+	module.exports = {"fullscreen":"layout__fullscreen___2wcgS","container":"layout__container___r4aSv","grid":"layout__grid___22FgY","col_half":"layout__col_half___-Ox44","col_third":"layout__col_third___Zp2Ss","appLayout":"layout__appLayout___1-8-W"};
 
 /***/ },
 /* 526 */,
@@ -42797,13 +42797,13 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'nav',
-	        null,
+	        { className: _Nav2.default.navigation },
 	        _react2.default.createElement(
 	          'ul',
-	          null,
+	          { className: _Nav2.default.items },
 	          _react2.default.createElement(
 	            'li',
-	            null,
+	            { className: _Nav2.default.items },
 	            _react2.default.createElement(
 	              _reactRouter.Link,
 	              { className: 'link', to: '/' },
@@ -42812,7 +42812,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'li',
-	            null,
+	            { className: _Nav2.default.items },
 	            _react2.default.createElement(
 	              _reactRouter.Link,
 	              { className: 'link', to: '/work' },
@@ -42837,6 +42837,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
+	module.exports = {"navigation":"Nav__navigation___1bydm","item":"Nav__item___3k1K0"};
 
 /***/ },
 /* 535 */
@@ -42855,7 +42856,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"header":"header__header___25qHu","brand":"header__brand___13oBX","logoWhite":"header__logoWhite___3EsNb","navigation":"header__navigation___2fl8h"};
+	module.exports = {"header":"header__header___25qHu","brand":"header__brand___13oBX","navigation":"header__navigation___2fl8h"};
 
 /***/ },
 /* 538 */
@@ -42961,7 +42962,11 @@
 	
 	var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 	
-	var _home = __webpack_require__(540);
+	var _profile_sm = __webpack_require__(540);
+	
+	var _profile_sm2 = _interopRequireDefault(_profile_sm);
+	
+	var _home = __webpack_require__(541);
 	
 	var _home2 = _interopRequireDefault(_home);
 	
@@ -42997,7 +43002,7 @@
 	            { className: _home2.default.panel },
 	            _react2.default.createElement(
 	              'div',
-	              { className: _home2.default.panelInner },
+	              { className: _home2.default.brandBox },
 	              _react2.default.createElement(
 	                'h1',
 	                { className: _home2.default.title },
@@ -43010,11 +43015,70 @@
 	              ),
 	              _react2.default.createElement(
 	                'div',
-	                { className: _home2.default.workButton, onClick: this.props.onPanelClick },
-	                'View Work'
+	                { className: _home2.default.bottomText },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: _home2.default.workButton, onClick: this.props.onPanelClick },
+	                  'View Work'
+	                )
 	              )
 	            ),
-	            _react2.default.createElement('div', { className: _home2.default.bottomText })
+	            _react2.default.createElement(
+	              'div',
+	              { className: _home2.default.textBox },
+	              _react2.default.createElement(
+	                'div',
+	                { className: _home2.default.profilePicBox },
+	                _react2.default.createElement('img', { className: _home2.default.profilePic, src: _profile_sm2.default, alt: 'Profile Pic' })
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: _home2.default.projectText },
+	                _react2.default.createElement(
+	                  'h2',
+	                  null,
+	                  'React/Redux Demo App'
+	                ),
+	                _react2.default.createElement(
+	                  'p',
+	                  null,
+	                  'This project is the culmination of about a week of work, building a react/redux app from scratch. It was an intensive piece of study and integration of tech that I had mostly a philosophical understanding of. The goal was to create a scalable, maintainable codebase that incorporated a number of critical technologies.',
+	                  _react2.default.createElement('br', null),
+	                  _react2.default.createElement('br', null),
+	                  'The codebase is availble at ',
+	                  _react2.default.createElement(
+	                    'a',
+	                    { href: 'https://github.com/Bosworth99/10k_Portfolio', target: '_blank' },
+	                    'GitHub'
+	                  ),
+	                  '.'
+	                ),
+	                _react2.default.createElement(
+	                  'ul',
+	                  null,
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    'tech stack'
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    'React view components'
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    'Redux state management'
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    'Hapi.js / Webpack-Dev-Server local environment'
+	                  )
+	                )
+	              )
+	            )
 	          )
 	        )
 	      );
@@ -43031,13 +43095,19 @@
 
 /***/ },
 /* 540 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	// removed by extract-text-webpack-plugin
-	module.exports = {"container":"home__container___2Pol8","panel":"home__panel___1jinI","panelInner":"home__panelInner___18H5n","textBase":"home__textBase___1mKvU","title":"home__title___1ClQu home__textBase___1mKvU","subText":"home__subText___1ws4Q home__textBase___1mKvU","bottomText":"home__bottomText___2qOna home__textBase___1mKvU","workButton":"home__workButton___2YQfX"};
+	module.exports = __webpack_require__.p + "/images/profile_sm.jpg";
 
 /***/ },
 /* 541 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"fullscreen":"home__fullscreen___5nHXF","container":"home__container___2Pol8 home__container___2Pol8","grid":"home__grid___2axWQ","col_half":"home__col_half___eHjnM","col_third":"home__col_third___3shPM","appLayout":"home__appLayout___3PZfc","ghostButton":"home__ghostButton___34sWn","panel":"home__panel___1jinI home__grid___2axWQ","brandBox":"home__brandBox___1DOr5 home__col_half___eHjnM","title":"home__title___1ClQu","subText":"home__subText___1ws4Q","bottomText":"home__bottomText___2qOna","textBox":"home__textBox___12Ib8 home__col_half___eHjnM","profilePicBox":"home__profilePicBox___1r16I","profilePic":"home__profilePic___1ecsq","projectText":"home__projectText___3Hmnc","workButton":"home__workButton___2YQfX home__ghostButton___34sWn"};
+
+/***/ },
+/* 542 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -43056,11 +43126,11 @@
 	
 	var _reactRedux = __webpack_require__(314);
 	
-	var _WorkActions = __webpack_require__(542);
+	var _WorkActions = __webpack_require__(543);
 	
 	var actionCreators = _interopRequireWildcard(_WorkActions);
 	
-	var _Work = __webpack_require__(543);
+	var _Work = __webpack_require__(544);
 	
 	var _Work2 = _interopRequireDefault(_Work);
 	
@@ -43171,7 +43241,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 542 */
+/* 543 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -43299,7 +43369,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 543 */
+/* 544 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -43320,11 +43390,11 @@
 	
 	var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 	
-	var _Items = __webpack_require__(544);
+	var _Items = __webpack_require__(545);
 	
 	var _Items2 = _interopRequireDefault(_Items);
 	
-	var _work = __webpack_require__(547);
+	var _work = __webpack_require__(548);
 	
 	var _work2 = _interopRequireDefault(_work);
 	
@@ -43372,7 +43442,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 544 */
+/* 545 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -43393,11 +43463,11 @@
 	
 	var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 	
-	var _ItemContainer = __webpack_require__(545);
+	var _ItemContainer = __webpack_require__(546);
 	
 	var _ItemContainer2 = _interopRequireDefault(_ItemContainer);
 	
-	var _work = __webpack_require__(547);
+	var _work = __webpack_require__(548);
 	
 	var _work2 = _interopRequireDefault(_work);
 	
@@ -43462,7 +43532,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 545 */
+/* 546 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -43483,11 +43553,11 @@
 	
 	var _reactRouter = __webpack_require__(253);
 	
-	var _WorkActions = __webpack_require__(542);
+	var _WorkActions = __webpack_require__(543);
 	
 	var actionCreators = _interopRequireWildcard(_WorkActions);
 	
-	var _Item = __webpack_require__(546);
+	var _Item = __webpack_require__(547);
 	
 	var _Item2 = _interopRequireDefault(_Item);
 	
@@ -43570,7 +43640,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 546 */
+/* 547 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -43591,7 +43661,7 @@
 	
 	var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 	
-	var _work = __webpack_require__(547);
+	var _work = __webpack_require__(548);
 	
 	var _work2 = _interopRequireDefault(_work);
 	
@@ -43662,14 +43732,14 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 547 */
+/* 548 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"workItems":"work__workItems___1mC_p","item":"work__item___3L-xe","itemInner":"work__itemInner___1JHPd","itemImg":"work__itemImg___32hpL","itemDetails":"work__itemDetails___1Lif_","itemDetailField":"work__itemDetailField___1tyV0","itemDetailFieldSpan":"work__itemDetailFieldSpan___3J_z1"};
 
 /***/ },
-/* 548 */
+/* 549 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -43690,11 +43760,11 @@
 	
 	var _reactRouter = __webpack_require__(253);
 	
-	var _WorkItem = __webpack_require__(549);
+	var _WorkItem = __webpack_require__(550);
 	
 	var _WorkItem2 = _interopRequireDefault(_WorkItem);
 	
-	var _WorkActions = __webpack_require__(542);
+	var _WorkActions = __webpack_require__(543);
 	
 	var actionCreators = _interopRequireWildcard(_WorkActions);
 	
@@ -43802,7 +43872,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 549 */
+/* 550 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -43821,11 +43891,11 @@
 	
 	var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 	
-	var _workItem = __webpack_require__(550);
+	var _workItem = __webpack_require__(551);
 	
 	var _workItem2 = _interopRequireDefault(_workItem);
 	
-	var _ViewerContainer = __webpack_require__(551);
+	var _ViewerContainer = __webpack_require__(552);
 	
 	var _ViewerContainer2 = _interopRequireDefault(_ViewerContainer);
 	
@@ -43939,14 +44009,14 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 550 */
+/* 551 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"container":"workItem__container___OJeF6","panel":"workItem__panel___nIIgV","imageBox":"workItem__imageBox___15XkQ","detailsBox":"workItem__detailsBox___3VqvM","detail":"workItem__detail___2nlQ2","detailTitle":"workItem__detailTitle___V9Yp0","detailTextBox":"workItem__detailTextBox____ZP69","close":"workItem__close___2kQ2D"};
 
 /***/ },
-/* 551 */
+/* 552 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -43967,7 +44037,7 @@
 	
 	var _reactRouter = __webpack_require__(253);
 	
-	var _Viewer = __webpack_require__(552);
+	var _Viewer = __webpack_require__(553);
 	
 	var _Viewer2 = _interopRequireDefault(_Viewer);
 	
@@ -44096,7 +44166,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 552 */
+/* 553 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -44117,7 +44187,7 @@
 	
 	var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 	
-	var _viewer = __webpack_require__(553);
+	var _viewer = __webpack_require__(554);
 	
 	var _viewer2 = _interopRequireDefault(_viewer);
 	
@@ -44198,14 +44268,14 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 553 */
+/* 554 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"viewerBox":"viewer__viewerBox___33mKV","viewerImageContainer":"viewer__viewerImageContainer___zgG-6","viewerImage":"viewer__viewerImage___3f72P","viewerDescription":"viewer__viewerDescription___1is4r","click":"viewer__click___323Ca","clickPrev":"viewer__clickPrev___3NsCW viewer__click___323Ca","clickNext":"viewer__clickNext____XiVb viewer__click___323Ca"};
 
 /***/ },
-/* 554 */
+/* 555 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -44219,11 +44289,11 @@
 	
 	var _redux = __webpack_require__(321);
 	
-	var _reduxThunk = __webpack_require__(555);
+	var _reduxThunk = __webpack_require__(556);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
-	var _reducers = __webpack_require__(556);
+	var _reducers = __webpack_require__(557);
 	
 	var _reducers2 = _interopRequireDefault(_reducers);
 	
@@ -44239,8 +44309,8 @@
 	
 	  // Enable Webpack hot module replacement for reducers
 	  if (true) {
-	    module.hot.accept(556, function () {
-	      var nextReducer = __webpack_require__(556);
+	    module.hot.accept(557, function () {
+	      var nextReducer = __webpack_require__(557);
 	      store.replaceReducer(nextReducer);
 	    });
 	  }
@@ -44252,7 +44322,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 555 */
+/* 556 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -44280,7 +44350,7 @@
 	exports['default'] = thunk;
 
 /***/ },
-/* 556 */
+/* 557 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -44293,7 +44363,7 @@
 	
 	var _redux = __webpack_require__(321);
 	
-	var _WorkReducers = __webpack_require__(557);
+	var _WorkReducers = __webpack_require__(558);
 	
 	var _WorkReducers2 = _interopRequireDefault(_WorkReducers);
 	
@@ -44335,7 +44405,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 557 */
+/* 558 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(150); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {

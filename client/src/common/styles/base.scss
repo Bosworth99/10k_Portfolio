@@ -1,4 +1,8 @@
 @import "~common/styles/variables";
+@import "~common/styles/variables";
+@import "~common/styles/layout";
+@import "~common/styles/buttons";
+@import "~common/styles/grid";
 
 *{
   box-sizing: border-box;
@@ -48,7 +52,7 @@ ul{
 }
 
 ul > li{
-  padding:4px;
+  padding:2px;
 }
 
 img{

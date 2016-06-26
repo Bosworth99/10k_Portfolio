@@ -1,6 +1,20 @@
-@import "~common/styles/variables";
+// TODO composes is throwing error here.
+// - not sure why
+// :global(body){
+//   composes: fullscreen;
+// }
+//
+// :global(html){
+//   composes: fullscreen;
+// }
+//
+// :global(#app){
+//   composes: fullscreen;
+//   background-image: url('/dist/images/desktop.v6.jpg');
+//   background-position: center center;
+//   background-size: cover;
+// }
 
-// cant get composes: working, here
 :global(.bignwide){
   position:fixed;
   margin: 0;
@@ -26,7 +40,7 @@
 }
 
 :global(#app){
-  background-image: url('/dist/images/desktop.v2.jpg');
+  background-image: url('/dist/images/desktop.v6.jpg');
   background-position: center center;
   background-size: cover;
   position:fixed;

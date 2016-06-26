@@ -57,16 +57,17 @@
     "webpack-validator": "^2.2.0"
   },
   "dependencies": {
+    "breakpoint-sass": "^2.7.0",
     "file": "^0.2.2",
+    "file-loader": "^0.8.5",
     "loader": "^2.1.1",
+    "react": "^15.1.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.4.1",
     "redux": "^3.5.2",
-    "react": "^15.1.0",
-    "style-loader": "^0.13.1",
     "resolve-url": "^0.2.1",
     "resolve-url-loader": "^1.4.3",
-    "file-loader": "^0.8.5"
+    "style-loader": "^0.13.1"
   },
   "babel": {
     "presets": [
