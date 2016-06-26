@@ -20,7 +20,7 @@ class Header extends React.Component {
           <img className={styles.logoWhite} src={LogoWhite} alt="10k-Interactive Brand white" />
         </div>
         <div className={styles.navigation}>
-
+          <Nav />
         </div>
       </header>
     );

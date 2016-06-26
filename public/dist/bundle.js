@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "9ebf48634ec26ed744ab"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "aee48631bb24eb5684d9"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -42730,7 +42730,11 @@
 	          },
 	          _react2.default.createElement('img', { className: _header2.default.logoWhite, src: _k_325x131_wht2.default, alt: '10k-Interactive Brand white' })
 	        ),
-	        _react2.default.createElement('div', { className: _header2.default.navigation })
+	        _react2.default.createElement(
+	          'div',
+	          { className: _header2.default.navigation },
+	          _react2.default.createElement(_Nav2.default, null)
+	        )
 	      );
 	    }
 	  }]);
@@ -42990,7 +42994,7 @@
 	          { className: _home2.default.container },
 	          _react2.default.createElement(
 	            'div',
-	            { className: _home2.default.panel, onClick: this.props.onPanelClick },
+	            { className: _home2.default.panel },
 	            _react2.default.createElement(
 	              'div',
 	              { className: _home2.default.panelInner },
@@ -43003,13 +43007,14 @@
 	                'p',
 	                { className: _home2.default.subText },
 	                'Airtight code. Rock-solid markup. Stylesheets that hum.'
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: _home2.default.workButton, onClick: this.props.onPanelClick },
+	                'View Work'
 	              )
 	            ),
-	            _react2.default.createElement(
-	              'p',
-	              { className: _home2.default.bottomText },
-	              'View Work'
-	            )
+	            _react2.default.createElement('div', { className: _home2.default.bottomText })
 	          )
 	        )
 	      );
@@ -43029,7 +43034,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"container":"home__container___2Pol8","panel":"home__panel___1jinI","panelInner":"home__panelInner___18H5n","textBase":"home__textBase___1mKvU","title":"home__title___1ClQu home__textBase___1mKvU","subText":"home__subText___1ws4Q home__textBase___1mKvU","bottomText":"home__bottomText___2qOna home__textBase___1mKvU"};
+	module.exports = {"container":"home__container___2Pol8","panel":"home__panel___1jinI","panelInner":"home__panelInner___18H5n","textBase":"home__textBase___1mKvU","title":"home__title___1ClQu home__textBase___1mKvU","subText":"home__subText___1ws4Q home__textBase___1mKvU","bottomText":"home__bottomText___2qOna home__textBase___1mKvU","workButton":"home__workButton___2YQfX"};
 
 /***/ },
 /* 541 */

@@ -9,12 +9,15 @@ class Home extends React.Component {
     return (
       <section className="module-layout">
         <div className={styles.container}>
-          <div className={styles.panel} onClick={this.props.onPanelClick}>
+          <div className={styles.panel} >
             <div className={styles.panelInner}>
               <h1 className={styles.title}>HANDCRAFTED INTERNET</h1>
               <p className={styles.subText}>Airtight code. Rock-solid markup. Stylesheets that hum.</p>
+              <div className={styles.workButton} onClick={this.props.onPanelClick}>
+                View Work
+              </div>
             </div>
-            <p className={styles.bottomText}>View Work</p>
+            <div className={styles.bottomText}></div>
           </div>
         </div>
       </section>
