@@ -19,3 +19,23 @@
     border-color: $color-lightest;
   }
 }
+
+.closeButton{
+  position: absolute;
+  display:inline-block;
+  background-color: $brand-primary;
+  cursor:pointer;
+  color:$color-lightest;
+  top:0px;
+  right:0px;
+  height:40px;
+  width:40px;
+  text-align: center;
+  font-size: 24px;
+  z-index: 99;
+  transition: background-color 150ms;
+
+  &:hover{
+    background-color: lighten($brand-primary,10%);
+  }
+}

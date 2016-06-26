@@ -1,59 +1,57 @@
 @import "~common/styles/base";
 
-/* outer container */
+/*  Panel */
 .container {
-  padding: 0;
-  margin: 0;
-  height:100%;
-  width:100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  composes: container;
 }
 
-/* center floating panel */
 .panel{
+  composes: grid;
   background-color:$color-lightest;
-  position:relative;
-  width:calc(100% - 120px);
-  max-width:calc(100% - 80px);
-  height:calc(100% - 200px);
-  max-height:680px;
-  overflow: hidden;
-
-  transition: all 250ms;
-  box-shadow: 4px 0px 20px rgba(0, 0, 0, .3);
-
-  display: flex;
-  align-items: top;
-  justify-content: center;
-  flex-direction:row;
-  flex-wrap: wrap;
-  flex: 0 1 1440px;
+  height: calc(100% - 200px);
+  max-height: 680px;
+  transition: all 350ms;
+  box-shadow: 2px 0px 20px rgba(50, 50, 50, .3);
+  opacity:.95;
 
   &:hover{
-    background-color:$color-lightest;
-    color:$brand-primary;
+    opacity: 1.0;
     box-shadow: 4px 0px 20px rgba(0, 0, 0, .8);
   }
 }
 
+/*  Image box - container for Viewer component */
 .imageBox{
-  position:relative;
-  display:inline-block;
-  width:50%;
-  height:100%;
+  composes: col_half;
+  height: 100%;
   z-index: 1;
+
+  @include breakpoint($mobile) {
+    height: 50%;
+  }
+
+  @include breakpoint($tablet) {
+    height: 50%;
+  }
 }
 
+/*  details box */
 .detailsBox{
+  composes: col_half;
+  height:100%;
   background-color: $color-lightest;
   box-shadow: 2px 0px 10px rgba(50, 50, 50, .40);
-  position:relative;
-  display:inline-block;
-  width:50%;
   z-index: 2;
+
+  @include breakpoint($mobile) {
+    height: 50%;
+    overflow-y: scroll;
+  }
+
+  @include breakpoint($tablet) {
+    height: 50%;
+    overflow-y: scroll;
+  }
 }
 
 .detail{
@@ -72,26 +70,20 @@
 }
 
 .detailTextBox{
-  max-height:300px;
+  max-height:250px;
   overflow-y: scroll;
+
+  @include breakpoint($mobile) {
+    max-height:100%;
+    overflow-y:auto;
+  }
+
+  @include breakpoint($tablet) {
+    max-height:100%;
+    overflow-y:auto;
+  }
 }
 
 .close{
-  position: absolute;
-  display:inline-block;
-  background-color: lighten($brand-primary, 40%);
-  cursor:pointer;
-  color:$color-lightest;
-  top:0px;
-  right:0px;
-  height:40px;
-  width:40px;
-  text-align: center;
-  font-size: 24px;
-  z-index: 99;
-  transition: background-color 150ms;
-
-  &:hover{
-    background-color: $brand-primary;
-  }
+  composes: closeButton;
 }

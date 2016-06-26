@@ -1,8 +1,7 @@
 import React from 'react';
 import CSSModules from 'react-css-modules';
 
-import styles from 'common/styles/layout.scss';
-import base from 'common/styles/base.scss';
+import styles from 'common/styles/base.scss';
 
 // APP ROOT ////////////////////////////////////////////////////////////////////
 // - components are exposed to this top level component, as props

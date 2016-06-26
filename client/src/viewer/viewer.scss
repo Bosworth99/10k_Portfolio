@@ -1,7 +1,7 @@
 @import "~common/styles/base";
 
 .viewerBox{
-  background-color: $color-dark;
+  background-color: lighten($brand-secondary, 10%);
   position:relative;
   height:100%;
   width:100%;
@@ -19,7 +19,9 @@
 }
 
 .viewerImage{
-  border:20px solid $color-lightest;
+  border:20px solid lighten($brand-secondary, 10%);
+  width:100%;
+  height:auto;
 }
 
 .viewerDescription{
@@ -40,31 +42,54 @@
 .click{
   position:absolute;
   display:inline-block;
-  left:0;
-  right:0;
-  width:100%;
-  padding:20px;
-  background-color: $brand-primary;
+  background-color: $brand-secondary;
   color: $color-lightest;
   cursor: pointer;
+  margin:auto 0;
+  height:150px;
+  width:40px;
+  opacity:.7;
+  padding:50px 10px;
   font-weight: bold;
+  font-size:26px;
   text-align: center;
   transition: all 150ms;
   box-shadow: 2px 0px 10px rgba(50, 50, 50, .50);
   z-index: 10;
 
   &:hover{
-    background-color: lighten($brand-primary,10%);
-    box-shadow: 2px 0px 15px rgba(50, 50, 50, .80);
+    background-color: $color-lightest;
+    color:$brand-primary;
+    opacity: 1.0;
+  }
+
+  @include breakpoint($mobile) {
+    padding:10px;
+    margin:auto 0;
+    width:40px;
+    height:70px;
+  }
+
+  @include breakpoint($tablet) {
+    padding:10px;
+    margin:auto 0;
+    width:40px;
+    height:70px;
   }
 }
 
 .clickPrev{
   composes: click;
   top:0;
+  bottom:0;
+  left:auto;
+  right:0;
 }
 
 .clickNext{
   composes: click;
+  top:0;
   bottom:0;
+  left:0;
+  right:auto;
 }

@@ -13,9 +13,9 @@ class Viewer extends React.Component {
       <div className={styles.viewerBox}>
         <div
           className={styles.clickPrev}
-          onClick={(e) => this.props.onClickImg(e, 'prev')}
+          onClick={(e) => this.props.onClickImg(e, 'next')}
         >
-          PREV
+          +
         </div>
 
         <div className={styles.viewerImageContainer} >
@@ -30,10 +30,10 @@ class Viewer extends React.Component {
         <div
           className={styles.clickNext}
           onClick={(e) => {
-            this.props.onClickImg(e, 'next')
+            this.props.onClickImg(e, 'prev')
           }}
         >
-          NEXT
+          -
         </div>
       </div>
     );
