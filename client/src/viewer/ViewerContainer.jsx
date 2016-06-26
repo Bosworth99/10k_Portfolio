@@ -12,12 +12,13 @@ class ViewerContainer extends React.Component {
     super(props);
 
     this.state = {
-      INDEX: 0
+      INDEX: 0,
+      modal: false,
     };
   }
 
-  onClickImg(e, dir = 'next') {
-    console.log('onClickImg e:%o dir:%s', e, dir);
+  onClickDir(e, dir = 'next') {
+    console.log('onClickDir e:%o dir:%s', e, dir);
 
     // capture the Index
     let INDEX = this.state.INDEX;
@@ -33,6 +34,10 @@ class ViewerContainer extends React.Component {
     this.setState({ INDEX });
   }
 
+  onClickImg(e) {
+    console.log('onClickImg [put modal here] e:%o', e);
+  }
+
   getBigImage() {
     return this.props.viewerCollection[this.state.INDEX];
   }
@@ -42,6 +47,7 @@ class ViewerContainer extends React.Component {
     return (
       <Viewer
         bigImage={this.getBigImage()}
+        onClickDir={this.onClickDir.bind(this)}
         onClickImg={this.onClickImg.bind(this)}
       />
     );

@@ -13,7 +13,7 @@ class Viewer extends React.Component {
       <div className={styles.viewerBox}>
         <div
           className={styles.clickPrev}
-          onClick={(e) => this.props.onClickImg(e, 'next')}
+          onClick={(e) => this.props.onClickDir(e, 'next')}
         >
           +
         </div>
@@ -23,14 +23,15 @@ class Viewer extends React.Component {
             className={styles.viewerImage}
             src={`/dist/images/work/${this.props.bigImage.Full_URI}`}
             alt="Screenshot"
+            onClick={(e) => this.props.onClickImg(e)}
           />
-          <p className={styles.viewerDescription}>{this.props.bigImage.Description}</p>
+          <p className={styles.viewerDescription}>{this.props.bigImage.Title} - {this.props.bigImage.Description}</p>
         </div>
 
         <div
           className={styles.clickNext}
           onClick={(e) => {
-            this.props.onClickImg(e, 'prev')
+            this.props.onClickDir(e, 'prev')
           }}
         >
           -

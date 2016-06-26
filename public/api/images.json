@@ -44,231 +44,203 @@
   {
     "ID": "K10_02__01",
     "Title": "SMC Inbox",
-    "Description": "Inbox",
+    "Description": "Primary message list with interactions",
     "Full_URI": "SMC_Inbox.jpg",
     "Thumb_URI": 0
   },
   {
     "ID": "K10_02__02",
     "Title": "SMC Inbox, mobile layout",
-    "Description": "Inbox, mobile layout",
+    "Description": "Responsive layout and improved interactions",
     "Full_URI": "SMC_Inbox_Mobile.jpg",
     "Thumb_URI": 0
   },
   {
     "ID": "K10_02__03",
     "Title": "SMC Thread view",
-    "Description": "Thread view",
+    "Description": "Individual view for a thread; editor to add new messages",
     "Full_URI": "SMC_Thread.jpg",
     "Thumb_URI": 0
   },
   {
     "ID": "K10_02__04",
     "Title": "SMC Attachment uploader",
-    "Description": "Attachment uploader",
+    "Description": "Custom functionality to interact with idiosynratic LNI systems",
     "Full_URI": "SMC_Thread_Uploader.jpg",
     "Thumb_URI": 0
   },
   {
     "ID": "K10_02__05",
     "Title": "SMC Settings",
-    "Description": "Settings",
+    "Description": "Settings page for messaing interactions",
     "Full_URI": "SMC_Settings.jpg",
     "Thumb_URI": 0
   },
   {
     "ID": "K10_02__06",
     "Title": "SMC Help",
-    "Description": "Help",
+    "Description": "List of help topics; hide and show interactions",
     "Full_URI": "SMC_Help.jpg",
     "Thumb_URI": 0
   },
   {
-    "ID": "K10_05__01",
-    "Title": 0,
-    "Description": 0,
-    "Full_URI": "10k_red.png",
-    "Thumb_URI": 0
-  },
-  {
-    "ID": "K10_05__02",
-    "Title": 0,
-    "Description": 0,
-    "Full_URI": "10k_black.png",
-    "Thumb_URI": 0
-  },
-  {
-    "ID": "K10_05__03",
-    "Title": 0,
-    "Description": 0,
-    "Full_URI": "10k_white.png",
-    "Thumb_URI": 0
-  },
-  {
-    "ID": "K10_05__04",
-    "Title": 0,
-    "Description": 0,
-    "Full_URI": "10k_stack.png",
-    "Thumb_URI": 0
-  },
-  {
     "ID": "Wax_01",
-    "Title": "Title",
-    "Description": "Description",
+    "Title": "N8 Login",
+    "Description": "Login screen to the admin section",
     "Full_URI": "N8_01_Login.png",
     "Thumb_URI": 0
   },
   {
     "ID": "Wax_02",
-    "Title": "Title",
-    "Description": "Description",
+    "Title": "N8 Pages Table",
+    "Description": "Users gain access to page entities, here",
     "Full_URI": "N8_04_Pages.png",
     "Thumb_URI": 0
   },
   {
     "ID": "Wax_03",
-    "Title": "Title",
-    "Description": "Description",
+    "Title": "N8 Page Editor",
+    "Description": "Interface to edit page attributes",
     "Full_URI": "N8_05_Page_Builder.png",
     "Thumb_URI": 0
   },
   {
     "ID": "Wax_04",
-    "Title": "Title",
-    "Description": "Description",
+    "Title": "N8 Forms",
+    "Description": "Contextual menus to edit page attributes",
     "Full_URI": "N8_06_Page_Attr.png",
     "Thumb_URI": 0
   },
   {
     "ID": "Wax_05",
-    "Title": "Title",
-    "Description": "Description",
+    "Title": "N8 Text Editor",
+    "Description": "Contextual interface to edit numerous block types",
     "Full_URI": "N8_08_Text_Editor.png",
     "Thumb_URI": 0
   },
   {
     "ID": "Wax_06",
-    "Title": "Title",
-    "Description": "Description",
+    "Title": "N8 Terms",
+    "Description": "Tags and Categories interface",
     "Full_URI": "N8_14_Terms.png",
     "Thumb_URI": 0
   },
   {
     "ID": "Wax_07",
-    "Title": "Title",
-    "Description": "Description",
+    "Title": "N8 Media Table",
+    "Description": "List of images in the use\\'s file system",
     "Full_URI": "N8_20_Media.png",
     "Thumb_URI": 0
   },
   {
     "ID": "Wax_08",
-    "Title": "Title",
-    "Description": "Description",
+    "Title": "N8 Media Preview",
+    "Description": "Enable viewing full size images",
     "Full_URI": "N8_21_Media_Preview.png",
     "Thumb_URI": 0
   },
   {
     "ID": "Wax_09",
-    "Title": "Title",
-    "Description": "Description",
+    "Title": "N8 User Media",
+    "Description": "Contextual interface to browse all availlable media items",
     "Full_URI": "N8_22_User_Media.png",
     "Thumb_URI": 0
   },
   {
     "ID": "Wax_10",
-    "Title": "Title",
-    "Description": "Description",
+    "Title": "N8 User Media Item",
+    "Description": "Secondary popup to view image information",
     "Full_URI": "N8_24_User_Media_Item.png",
     "Thumb_URI": 0
   },
   {
     "ID": "Wax_11",
-    "Title": "Title",
-    "Description": "Description",
+    "Title": "N8 Users",
+    "Description": "Interface to view and manage users in the system",
     "Full_URI": "N8_24_Users.png",
     "Thumb_URI": 0
   },
   {
     "ID": "Wax_12",
-    "Title": "Title",
-    "Description": "Description",
+    "Title": "N8 User Profile",
+    "Description": "Interface to view and manage user profile information",
     "Full_URI": "N8_27_User_Profile.png",
     "Thumb_URI": 0
   },
   {
     "ID": "Wax_13",
-    "Title": "Title",
-    "Description": "Description",
+    "Title": "N8 User Profile Settings",
+    "Description": "Interface to view and manage user settings",
     "Full_URI": "N8_28_User_Update.png",
     "Thumb_URI": 0
   },
   {
     "ID": "Wax_14",
-    "Title": "Title",
-    "Description": "Description",
+    "Title": "N8 Theme",
+    "Description": "View and enable system themes",
     "Full_URI": "N8_30_Theme.png",
     "Thumb_URI": 0
   },
   {
     "ID": "Wax_15",
-    "Title": "Title",
-    "Description": "Description",
+    "Title": "N8 Theme Builder",
+    "Description": "Interface to configure theme attributes - colors, fonts, etc.",
     "Full_URI": "N8_31_Theme_Builder.png",
     "Thumb_URI": 0
   },
   {
     "ID": "Wax_16",
-    "Title": "Title",
-    "Description": "Description",
+    "Title": "N8 Site Profile",
+    "Description": "Website settings interface",
     "Full_URI": "N8_42_Site_Profile.png",
     "Thumb_URI": 0
   },
   {
     "ID": "Wax_17",
-    "Title": "Title",
-    "Description": "Description",
+    "Title": "N8 Support",
+    "Description": "Communicate with ChiroHosting user support",
     "Full_URI": "N8_44_Support.png",
     "Thumb_URI": 0
   },
   {
     "ID": "Wax_18",
-    "Title": "Title",
-    "Description": "Description",
+    "Title": "N8 Promo Header",
+    "Description": "Marketing efforts for the site builder",
     "Full_URI": "N8_Promo_Header.png",
     "Thumb_URI": 0
   },
   {
     "ID": "Wax_19",
-    "Title": "Title",
-    "Description": "Description",
+    "Title": "N8 Promo Theme",
+    "Description": "Marketing effort for the 700 theme",
     "Full_URI": "N8_Promo_Theme_700.png",
     "Thumb_URI": 0
   },
   {
     "ID": "Wax_20",
-    "Title": "Title",
-    "Description": "Description",
+    "Title": "N8 Promo Themes",
+    "Description": "Highly configurable websites",
     "Full_URI": "N8_Promo_Themes.png",
     "Thumb_URI": 0
   },
   {
     "ID": "Wax_21",
-    "Title": "Title",
-    "Description": "Description",
+    "Title": "N8 Theme 300",
+    "Description": "Example of the 300 theme",
     "Full_URI": "N8_Theme_300_Home.png",
     "Thumb_URI": 0
   },
   {
     "ID": "Wax_22",
-    "Title": "Title",
-    "Description": "Description",
+    "Title": "N8 Theme 400",
+    "Description": "Example of the 400 theme",
     "Full_URI": "N8_Theme_400_Home.png",
     "Thumb_URI": 0
   },
   {
     "ID": "Wax_23",
-    "Title": "Title",
-    "Description": 0,
+    "Title": "N8 Theme 700",
+    "Description": "Example of the 700 theme",
     "Full_URI": "N8_Theme_700_Home.png",
     "Thumb_URI": 0
   }

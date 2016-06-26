@@ -28,12 +28,14 @@ const WorkItem = (props) => {
           <div className={styles.detailsBox}>
             <div className={styles.detail}>
               <h2 className={styles.detailTitle}>Project</h2>
-              {props.item.Title}
+              <strong>{props.item.Title}</strong>
             </div>
             <div className={styles.detail}>
               <h2 className={styles.detailTitle}>Description</h2>
-              <div className={styles.detailTextBox}>
-                {props.item.Description}
+              <div
+                className={styles.detailTextBox}
+                dangerouslySetInnerHTML={{ __html: props.item.Description }}
+              >
               </div>
             </div>
             <div className={styles.detail}>
@@ -45,7 +47,7 @@ const WorkItem = (props) => {
               {props.item.Tech}
             </div>
             <div className={styles.detail}>
-              <h2 className={styles.detailTitle}>Context</h2>
+              <h2 className={styles.detailTitle}>Client</h2>
               {props.item.Context}
             </div>
           </div>

@@ -10,12 +10,13 @@
   background-color:$color-lightest;
   height: calc(100% - 200px);
   max-height: 680px;
-  transition: opacity 350ms;
+  transition: all 350ms;
   box-shadow: 2px 0px 20px rgba(50, 50, 50, .3);
-  opacity:1.0;
+  overflow: hidden;
+  opacity:.9;
 
   &:hover{
-    opacity: .9;
+    opacity: 1.0;
     box-shadow: 4px 0px 20px rgba(0, 0, 0, .8);
   }
 }
@@ -101,11 +102,11 @@
 .projectText{
   position:relative;
   margin:40px;
+  padding-bottom:20px;
 }
 
 .ul{
   list-style: none;
-  margin-bottom:20px;
 }
 
 .li{
