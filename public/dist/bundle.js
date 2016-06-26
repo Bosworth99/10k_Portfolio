@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "305b684e76fd68df877b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "40eef363938d35923a19"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -42435,7 +42435,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"appLayout":"base__appLayout___2nj_k","ghostButton":"base__ghostButton___1SaOY","fullscreen":"base__fullscreen___1fKWa","container":"base__container___1Kkm-","grid":"base__grid___R-Fy0","col_half":"base__col_half___19FGh","col_third":"base__col_third___3h4ri"};
+	module.exports = {"appLayout":"base__appLayout___2nj_k","ghostButton":"base__ghostButton___1SaOY","closeButton":"base__closeButton___2gYdA","fullscreen":"base__fullscreen___1fKWa","container":"base__container___1Kkm-","grid":"base__grid___R-Fy0","col_half":"base__col_half___19FGh","col_third":"base__col_third___3h4ri"};
 
 /***/ },
 /* 526 */,
@@ -42827,7 +42827,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"appLayout":"Nav__appLayout___x924U","ghostButton":"Nav__ghostButton___2mx-b","fullscreen":"Nav__fullscreen___2p4G-","container":"Nav__container___3cBO1","grid":"Nav__grid___3NFvm","col_half":"Nav__col_half___6D5sm","col_third":"Nav__col_third___12IKB","navigation":"Nav__navigation___1bydm","item":"Nav__item___3k1K0"};
+	module.exports = {"appLayout":"Nav__appLayout___x924U","ghostButton":"Nav__ghostButton___2mx-b","closeButton":"Nav__closeButton___1yWkA","fullscreen":"Nav__fullscreen___2p4G-","container":"Nav__container___3cBO1","grid":"Nav__grid___3NFvm","col_half":"Nav__col_half___6D5sm","col_third":"Nav__col_third___12IKB","navigation":"Nav__navigation___1bydm","item":"Nav__item___3k1K0"};
 
 /***/ },
 /* 534 */
@@ -42846,7 +42846,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"appLayout":"header__appLayout___6V4d2","ghostButton":"header__ghostButton___1Ejm0","fullscreen":"header__fullscreen___1rSqQ","container":"header__container___2gorC","grid":"header__grid___1SUPv","col_half":"header__col_half___1p3S9","col_third":"header__col_third___1brD-","header":"header__header___25qHu","brand":"header__brand___13oBX","navigation":"header__navigation___2fl8h"};
+	module.exports = {"appLayout":"header__appLayout___6V4d2","ghostButton":"header__ghostButton___1Ejm0","closeButton":"header__closeButton___1qqHC","fullscreen":"header__fullscreen___1rSqQ","container":"header__container___2gorC","grid":"header__grid___1SUPv","col_half":"header__col_half___1p3S9","col_third":"header__col_third___1brD-","header":"header__header___25qHu","brand":"header__brand___13oBX","navigation":"header__navigation___2fl8h"};
 
 /***/ },
 /* 537 */
@@ -43032,7 +43032,7 @@
 	                _react2.default.createElement(
 	                  'p',
 	                  null,
-	                  'This project is intended to be a portfolio module for a business website. It is the culmination of about a week of work, an intensive piece of study and integration of tech that I had mostly a philosophical understanding of. The goal was to create a scalable, maintainable codebase, from scratch, that incorporated a number of critical technologies.',
+	                  'This project is intended to be an eventual portfolio module for my company website. It is the culmination of about a week of work and study on the React/Redux stack. The goal was to create a complete application; a scalable, maintainable codebase, from scratch, that incorporated a number of critical technologies.',
 	                  _react2.default.createElement('br', null),
 	                  _react2.default.createElement('br', null),
 	                  'The codebase is availble at ',
@@ -43054,7 +43054,7 @@
 	                  _react2.default.createElement(
 	                    'li',
 	                    { className: _home2.default.li },
-	                    'React view components'
+	                    'Complex view layer with React'
 	                  ),
 	                  _react2.default.createElement(
 	                    'li',
@@ -43070,6 +43070,11 @@
 	                    'li',
 	                    { className: _home2.default.li },
 	                    'React CSS modules with SCSS for crazy specificity'
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    { className: _home2.default.li },
+	                    'Responsive layout for mobile devices'
 	                  ),
 	                  _react2.default.createElement(
 	                    'li',
@@ -43124,7 +43129,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"appLayout":"home__appLayout___3PZfc","ghostButton":"home__ghostButton___34sWn","fullscreen":"home__fullscreen___5nHXF","container":"home__container___2Pol8 home__container___2Pol8","grid":"home__grid___2axWQ","col_half":"home__col_half___eHjnM","col_third":"home__col_third___3shPM","panel":"home__panel___1jinI home__grid___2axWQ","brandBox":"home__brandBox___1DOr5 home__col_half___eHjnM","title":"home__title___1ClQu","subText":"home__subText___1ws4Q","bottomText":"home__bottomText___2qOna","textBox":"home__textBox___12Ib8 home__col_half___eHjnM","profilePicBox":"home__profilePicBox___1r16I","profilePic":"home__profilePic___1ecsq","projectText":"home__projectText___3Hmnc","ul":"home__ul___gObVJ","li":"home__li___2J7Bf","workButton":"home__workButton___2YQfX home__ghostButton___34sWn"};
+	module.exports = {"appLayout":"home__appLayout___3PZfc","ghostButton":"home__ghostButton___34sWn","closeButton":"home__closeButton___3D3v_","fullscreen":"home__fullscreen___5nHXF","container":"home__container___2Pol8 home__container___2Pol8","grid":"home__grid___2axWQ","col_half":"home__col_half___eHjnM","col_third":"home__col_third___3shPM","panel":"home__panel___1jinI home__grid___2axWQ","brandBox":"home__brandBox___1DOr5 home__col_half___eHjnM","title":"home__title___1ClQu","subText":"home__subText___1ws4Q","bottomText":"home__bottomText___2qOna","textBox":"home__textBox___12Ib8 home__col_half___eHjnM","profilePicBox":"home__profilePicBox___1r16I","profilePic":"home__profilePic___1ecsq","projectText":"home__projectText___3Hmnc","ul":"home__ul___gObVJ","li":"home__li___2J7Bf","workButton":"home__workButton___2YQfX home__ghostButton___34sWn"};
 
 /***/ },
 /* 541 */
@@ -43756,7 +43761,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"appLayout":"work__appLayout___1SUwR","ghostButton":"work__ghostButton___3ZbSx","fullscreen":"work__fullscreen___1sRIN","container":"work__container___DD9dJ","grid":"work__grid___1oiPT","col_half":"work__col_half___16AMs","col_third":"work__col_third___1WxvW","workItems":"work__workItems___1mC_p","item":"work__item___3L-xe","itemInner":"work__itemInner___1JHPd","itemImg":"work__itemImg___32hpL","itemDetails":"work__itemDetails___1Lif_","itemDetailField":"work__itemDetailField___1tyV0","itemDetailFieldSpan":"work__itemDetailFieldSpan___3J_z1"};
+	module.exports = {"appLayout":"work__appLayout___1SUwR","ghostButton":"work__ghostButton___3ZbSx","closeButton":"work__closeButton___cf7Np","fullscreen":"work__fullscreen___1sRIN","container":"work__container___DD9dJ","grid":"work__grid___1oiPT","col_half":"work__col_half___16AMs","col_third":"work__col_third___1WxvW","workItems":"work__workItems___1mC_p","item":"work__item___3L-xe","itemInner":"work__itemInner___1JHPd","itemImg":"work__itemImg___32hpL","itemDetails":"work__itemDetails___1Lif_","itemDetailField":"work__itemDetailField___1tyV0","itemDetailFieldSpan":"work__itemDetailFieldSpan___3J_z1"};
 
 /***/ },
 /* 548 */
@@ -43969,7 +43974,11 @@
 	              { className: _workItem2.default.detailTitle },
 	              'Project'
 	            ),
-	            props.item.Title
+	            _react2.default.createElement(
+	              'strong',
+	              null,
+	              props.item.Title
+	            )
 	          ),
 	          _react2.default.createElement(
 	            'div',
@@ -43979,11 +43988,10 @@
 	              { className: _workItem2.default.detailTitle },
 	              'Description'
 	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: _workItem2.default.detailTextBox },
-	              props.item.Description
-	            )
+	            _react2.default.createElement('div', {
+	              className: _workItem2.default.detailTextBox,
+	              dangerouslySetInnerHTML: { __html: props.item.Description }
+	            })
 	          ),
 	          _react2.default.createElement(
 	            'div',
@@ -44011,7 +44019,7 @@
 	            _react2.default.createElement(
 	              'h2',
 	              { className: _workItem2.default.detailTitle },
-	              'Context'
+	              'Client'
 	            ),
 	            props.item.Context
 	          )
@@ -44033,7 +44041,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"appLayout":"workItem__appLayout___9_3yq","ghostButton":"workItem__ghostButton___lJ6e0","fullscreen":"workItem__fullscreen___2vme8","container":"workItem__container___OJeF6","grid":"workItem__grid___2_FxE","col_half":"workItem__col_half___3qqQ6","col_third":"workItem__col_third___3R4dT","panel":"workItem__panel___nIIgV","imageBox":"workItem__imageBox___15XkQ","detailsBox":"workItem__detailsBox___3VqvM","detail":"workItem__detail___2nlQ2","detailTitle":"workItem__detailTitle___V9Yp0","detailTextBox":"workItem__detailTextBox____ZP69","close":"workItem__close___2kQ2D"};
+	module.exports = {"appLayout":"workItem__appLayout___9_3yq","ghostButton":"workItem__ghostButton___lJ6e0","closeButton":"workItem__closeButton___17OeW","fullscreen":"workItem__fullscreen___2vme8","container":"workItem__container___OJeF6 workItem__container___OJeF6","grid":"workItem__grid___2_FxE","col_half":"workItem__col_half___3qqQ6","col_third":"workItem__col_third___3R4dT","panel":"workItem__panel___nIIgV workItem__grid___2_FxE","imageBox":"workItem__imageBox___15XkQ workItem__col_half___3qqQ6","detailsBox":"workItem__detailsBox___3VqvM workItem__col_half___3qqQ6","detail":"workItem__detail___2nlQ2","detailTitle":"workItem__detailTitle___V9Yp0","detailTextBox":"workItem__detailTextBox____ZP69","close":"workItem__close___2kQ2D workItem__closeButton___17OeW"};
 
 /***/ },
 /* 551 */
@@ -44082,17 +44090,18 @@
 	
 	
 	    _this.state = {
-	      INDEX: 0
+	      INDEX: 0,
+	      modal: false
 	    };
 	    return _this;
 	  }
 	
 	  _createClass(ViewerContainer, [{
-	    key: 'onClickImg',
-	    value: function onClickImg(e) {
+	    key: 'onClickDir',
+	    value: function onClickDir(e) {
 	      var dir = arguments.length <= 1 || arguments[1] === undefined ? 'next' : arguments[1];
 	
-	      console.log('onClickImg e:%o dir:%s', e, dir);
+	      console.log('onClickDir e:%o dir:%s', e, dir);
 	
 	      // capture the Index
 	      var INDEX = this.state.INDEX;
@@ -44108,6 +44117,11 @@
 	      this.setState({ INDEX: INDEX });
 	    }
 	  }, {
+	    key: 'onClickImg',
+	    value: function onClickImg(e) {
+	      console.log('onClickImg [put modal here] e:%o', e);
+	    }
+	  }, {
 	    key: 'getBigImage',
 	    value: function getBigImage() {
 	      return this.props.viewerCollection[this.state.INDEX];
@@ -44118,6 +44132,7 @@
 	      // console.log('ViewerContainer:render this:%o', this);
 	      return _react2.default.createElement(_Viewer2.default, {
 	        bigImage: this.getBigImage(),
+	        onClickDir: this.onClickDir.bind(this),
 	        onClickImg: this.onClickImg.bind(this)
 	      });
 	    }
@@ -44246,10 +44261,10 @@
 	          {
 	            className: _viewer2.default.clickPrev,
 	            onClick: function onClick(e) {
-	              return _this2.props.onClickImg(e, 'prev');
+	              return _this2.props.onClickDir(e, 'next');
 	            }
 	          },
-	          'PREV'
+	          '+'
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -44257,11 +44272,16 @@
 	          _react2.default.createElement('img', {
 	            className: _viewer2.default.viewerImage,
 	            src: '/dist/images/work/' + this.props.bigImage.Full_URI,
-	            alt: 'Screenshot'
+	            alt: 'Screenshot',
+	            onClick: function onClick(e) {
+	              return _this2.props.onClickImg(e);
+	            }
 	          }),
 	          _react2.default.createElement(
 	            'p',
 	            { className: _viewer2.default.viewerDescription },
+	            this.props.bigImage.Title,
+	            ' - ',
 	            this.props.bigImage.Description
 	          )
 	        ),
@@ -44270,10 +44290,10 @@
 	          {
 	            className: _viewer2.default.clickNext,
 	            onClick: function onClick(e) {
-	              _this2.props.onClickImg(e, 'next');
+	              _this2.props.onClickDir(e, 'prev');
 	            }
 	          },
-	          'NEXT'
+	          '-'
 	        )
 	      );
 	    }
@@ -44292,7 +44312,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"appLayout":"viewer__appLayout___1r_ie","ghostButton":"viewer__ghostButton___2fvXL","fullscreen":"viewer__fullscreen___32bi4","container":"viewer__container___3LDgF","grid":"viewer__grid___3O3lE","col_half":"viewer__col_half___2eFNS","col_third":"viewer__col_third___2FhYy","viewerBox":"viewer__viewerBox___33mKV","viewerImageContainer":"viewer__viewerImageContainer___zgG-6","viewerImage":"viewer__viewerImage___3f72P","viewerDescription":"viewer__viewerDescription___1is4r","click":"viewer__click___323Ca","clickPrev":"viewer__clickPrev___3NsCW viewer__click___323Ca","clickNext":"viewer__clickNext____XiVb viewer__click___323Ca"};
+	module.exports = {"appLayout":"viewer__appLayout___1r_ie","ghostButton":"viewer__ghostButton___2fvXL","closeButton":"viewer__closeButton___ysxLC","fullscreen":"viewer__fullscreen___32bi4","container":"viewer__container___3LDgF","grid":"viewer__grid___3O3lE","col_half":"viewer__col_half___2eFNS","col_third":"viewer__col_third___2FhYy","viewerBox":"viewer__viewerBox___33mKV","viewerImageContainer":"viewer__viewerImageContainer___zgG-6","viewerImage":"viewer__viewerImage___3f72P","viewerDescription":"viewer__viewerDescription___1is4r","click":"viewer__click___323Ca","clickPrev":"viewer__clickPrev___3NsCW viewer__click___323Ca","clickNext":"viewer__clickNext____XiVb viewer__click___323Ca"};
 
 /***/ },
 /* 554 */
