@@ -12,6 +12,6 @@
     </head>
     <body>
         <div id="app">[APP ELEMENT]</div>
-        <script src="/dist/bundle.js"></script>
+        <script>document.write("<script type='text/javascript' src='/dist/bundle.js?v=" + Date.now() + "'><\/script>");</script>
     </body>
 </html>
