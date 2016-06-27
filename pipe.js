@@ -1,4 +1,4 @@
-require('piping')({
-  main: './server/src/server.js',
-  hook: true
-});
+// require('piping')({
+//   main: './server/src/server.js',
+//   hook: true
+// });

@@ -1,7 +1,6 @@
+# 10k Portfolio | Redux/React Demo app
 
 ![alt text][logo]
-
-# 10k Portfolio | Redux/React Demo app
 
 This project is intended to be an eventual portfolio module for my company website.    
 It is the culmination of several days of work and study on the React/Redux stack.     
@@ -11,15 +10,16 @@ from scratch, which incorporated a number of critical technologies.
  - Complex view layer with React
  - Application state management with Redux
  - Route management with React-router
+ - Async API interactions with Redux-Thunk
+ - ES6 syntax, using a variety of features
  - React CSS modules with SCSS for crazy specificity
  - Responsive layout for mobile devices
- - Async API interactions with Redux-Thunk
- - Version control with Git
  - Unit testing with Mocha, Chai, and Enzyme
  - Asset and script compilation with Webpack
  - Hapi.js / Webpack-Dev-Server local development environment
  - NPM piping to keep Node up and running
- - Coherent editor linting with Atom and ESlint
+ - Version control with Git
+ - Realtime JS linting with Atom and ESlint
 
 ## Tooling
 This project started with research. My goal was to build the stack up from scratch   

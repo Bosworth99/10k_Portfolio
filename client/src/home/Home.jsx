@@ -40,15 +40,16 @@ class Home extends React.Component {
                   <li className={styles.li}>Complex view layer with React</li>
                   <li className={styles.li}>Redux state management</li>
                   <li className={styles.li}>Route management with React-router</li>
+                  <li className={styles.li}>Async API interactions with Redux-Thunk</li>
+                  <li className={styles.li}>ES6 syntax, using a variety of features</li>
                   <li className={styles.li}>React CSS modules with SCSS for crazy specificity</li>
                   <li className={styles.li}>Responsive layout for mobile devices</li>
-                  <li className={styles.li}>Async API interactions with Redux-Thunk</li>
-                  <li className={styles.li}>Version control with Git</li>
                   <li className={styles.li}>Unit testing with Mocha, Chai, and Enzyme</li>
-                  <li className={styles.li}>Asset and script compilation with Webpack</li>
+                  <li className={styles.li}>Asset and script compilation with Webpack and Babel</li>
                   <li className={styles.li}>Hapi.js / Webpack-Dev-Server local development environment</li>
                   <li className={styles.li}>NPM piping to keep Node up and running</li>
-                  <li className={styles.li}>NPM piping to keep Node up and running</li>
+                  <li className={styles.li}>Version control with Git</li>
+                  <li className={styles.li}>Realtime JS linting with Atom and ESlint</li>
                 </ul>
               </div>
             </div>
