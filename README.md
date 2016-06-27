@@ -98,7 +98,7 @@ This project will likely be the prototype for a more elaborate website for my sC
 10k Interactive. From here, I would like to develop the API out to include basic CRUD operations  
 on a couple different data types (work items and pages). I'll need to generate   
 some interfaces to make this happen, and, ultimately smart front-end to handle page  
-requests and SEO concerns. At that point, I have an efficient foundation for a growing website.
+requests and SEO concerns. At that point, I'll have an efficient foundation for a growing website.
 
 Thank you for your interest -   
 Josh
