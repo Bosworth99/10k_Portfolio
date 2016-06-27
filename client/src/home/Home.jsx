@@ -29,8 +29,8 @@ class Home extends React.Component {
                 <p>
                   This project is intended to be an eventual portfolio module for my company website.
                   It is the culmination of several days of work and study on the React/Redux stack.
-                  The goal was to create a complete application; a scalable, maintainable codebase,
-                  from scratch, that incorporated a number of critical technologies.
+                  The goal was to create a complete application; a scalable, maintainable codebase
+                  from scratch, which incorporated a number of critical technologies.
                   <br />
                   <br />
                   The codebase is availble at <a href="https://github.com/Bosworth99/10k_Portfolio" target="_blank">GitHub</a>.
@@ -47,6 +47,8 @@ class Home extends React.Component {
                   <li className={styles.li}>Unit testing with Mocha, Chai, and Enzyme</li>
                   <li className={styles.li}>Asset and script compilation with Webpack</li>
                   <li className={styles.li}>Hapi.js / Webpack-Dev-Server local development environment</li>
+                  <li className={styles.li}>NPM piping to keep Node up and running</li>
+                  <li className={styles.li}>NPM piping to keep Node up and running</li>
                 </ul>
               </div>
             </div>
