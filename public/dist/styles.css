@@ -764,10 +764,12 @@ img {
     box-shadow: 1px 1px 2px rgba(50, 50, 50, 0.5); }
   @media screen and (max-width: 787px) {
     .header__brand___13oBX {
-      width: 80px; } }
+      width: 80px;
+      padding: 4px 8px 4px 4px; } }
   @media screen and (min-width: 788px) and (max-width: 980px) {
     .header__brand___13oBX {
-      width: 100px; } }
+      width: 100px;
+      padding: 5px 10px 5px 5px; } }
 
 .header__navigation___2fl8h {
   position: absolute;

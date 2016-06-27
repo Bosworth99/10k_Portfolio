@@ -26,10 +26,12 @@
 
   @include breakpoint($mobile) {
     width: 80px;
+    padding:4px 8px 4px 4px;
   }
 
   @include breakpoint($tablet) {
     width: 100px;
+    padding:5px 10px 5px 5px;
   }
 }
 
