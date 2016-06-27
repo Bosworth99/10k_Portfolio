@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "5c7184bc6babec7d6c59"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "42180decf61f6814c0bd"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -43069,6 +43069,16 @@
 	                  _react2.default.createElement(
 	                    'li',
 	                    { className: _home2.default.li },
+	                    'Async API interactions with Redux-Thunk'
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    { className: _home2.default.li },
+	                    'ES6 syntax, using a variety of features'
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    { className: _home2.default.li },
 	                    'React CSS modules with SCSS for crazy specificity'
 	                  ),
 	                  _react2.default.createElement(
@@ -43079,22 +43089,12 @@
 	                  _react2.default.createElement(
 	                    'li',
 	                    { className: _home2.default.li },
-	                    'Async API interactions with Redux-Thunk'
-	                  ),
-	                  _react2.default.createElement(
-	                    'li',
-	                    { className: _home2.default.li },
-	                    'Version control with Git'
-	                  ),
-	                  _react2.default.createElement(
-	                    'li',
-	                    { className: _home2.default.li },
 	                    'Unit testing with Mocha, Chai, and Enzyme'
 	                  ),
 	                  _react2.default.createElement(
 	                    'li',
 	                    { className: _home2.default.li },
-	                    'Asset and script compilation with Webpack'
+	                    'Asset and script compilation with Webpack and Babel'
 	                  ),
 	                  _react2.default.createElement(
 	                    'li',
@@ -43109,7 +43109,12 @@
 	                  _react2.default.createElement(
 	                    'li',
 	                    { className: _home2.default.li },
-	                    'NPM piping to keep Node up and running'
+	                    'Version control with Git'
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    { className: _home2.default.li },
+	                    'Realtime JS linting with Atom and ESlint'
 	                  )
 	                )
 	              )
