@@ -21,7 +21,9 @@
     justify-content:center;
     flex-direction:column;
     flex-wrap:nowrap;
-    height:calc(100% - 80px);
+    height: calc(100% - 120px);
+    width: calc(100% - 80px);
+    margin: auto;
   }
 
 }
@@ -49,7 +51,7 @@
 
   @include breakpoint($mobile){
     height: 250px;
-    width: 400px;
+    max-width: calc(100% - 10px);
     margin: 10px;
   }
 }

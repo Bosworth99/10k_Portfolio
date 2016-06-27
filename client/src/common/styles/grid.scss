@@ -35,18 +35,18 @@ $widescreen: screen 1221px;
   position:relative;
 
   @include breakpoint($mobile) {
-      width:calc(100% - 40px);
-      max-width:480px;
+      width:calc(100% - 60px);
+      max-width:580px;
   }
 
   @include breakpoint($tablet) {
-      width:calc(100% - 40px);
+      width:calc(100% - 80px);
       max-width:760px;
   }
 
   @include breakpoint($desktop) {
-      width:calc(100% - 80px);
-      max-width:980px;
+      width:calc(100% - 100px);
+      max-width:1220px;
 
       display:flex;
       align-items:flex-start;

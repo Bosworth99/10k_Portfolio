@@ -28,7 +28,7 @@ class Home extends React.Component {
                 <h1>React/Redux Demo App | Portfolio Module</h1>
                 <p>
                   This project is intended to be an eventual portfolio module for my company website.
-                  It is the culmination of about a week of work and study on the React/Redux stack.
+                  It is the culmination of several days of work and study on the React/Redux stack.
                   The goal was to create a complete application; a scalable, maintainable codebase,
                   from scratch, that incorporated a number of critical technologies.
                   <br />

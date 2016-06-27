@@ -12,12 +12,24 @@
   max-height: 680px;
   transition: all 350ms;
   box-shadow: 2px 0px 20px rgba(50, 50, 50, .3);
-  opacity:.95;
+  overflow: hidden;
+  opacity:.9;
 
   &:hover{
     opacity: 1.0;
     box-shadow: 4px 0px 20px rgba(0, 0, 0, .8);
   }
+
+  @include breakpoint($mobile) {
+    height: calc(100% - 120px);
+    max-height: 100%;
+  }
+
+  @include breakpoint($tablet) {
+    height: calc(100% - 120px);
+    max-height: 100%;
+  }
+
 }
 
 /*  Image box - container for Viewer component */
