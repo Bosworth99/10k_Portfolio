@@ -1037,11 +1037,11 @@ img {
   @media screen and (max-width: 787px) {
     .home__panel___1jinI {
       height: calc(100% - 120px);
-      max-height: auto; } }
+      max-height: 100%; } }
   @media screen and (min-width: 788px) and (max-width: 980px) {
     .home__panel___1jinI {
       height: calc(100% - 120px);
-      max-height: auto; } }
+      max-height: 100%; } }
 
 /*  brand box */
 .home__brandBox___1DOr5 {
@@ -1388,7 +1388,7 @@ img {
       justify-content: center;
       flex-direction: column;
       flex-wrap: nowrap;
-      height: calc(100% - 80px);
+      height: calc(100% - 120px);
       width: calc(100% - 80px);
       margin: auto; } }
 

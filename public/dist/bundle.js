@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "c097c0fc9f640543d630"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "5c7184bc6babec7d6c59"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -43032,7 +43032,7 @@
 	                _react2.default.createElement(
 	                  'p',
 	                  null,
-	                  'This project is intended to be an eventual portfolio module for my company website. It is the culmination of about a week of work and study on the React/Redux stack. The goal was to create a complete application; a scalable, maintainable codebase, from scratch, that incorporated a number of critical technologies.',
+	                  'This project is intended to be an eventual portfolio module for my company website. It is the culmination of several days of work and study on the React/Redux stack. The goal was to create a complete application; a scalable, maintainable codebase from scratch, which incorporated a number of critical technologies.',
 	                  _react2.default.createElement('br', null),
 	                  _react2.default.createElement('br', null),
 	                  'The codebase is availble at ',
@@ -43100,6 +43100,16 @@
 	                    'li',
 	                    { className: _home2.default.li },
 	                    'Hapi.js / Webpack-Dev-Server local development environment'
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    { className: _home2.default.li },
+	                    'NPM piping to keep Node up and running'
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    { className: _home2.default.li },
+	                    'NPM piping to keep Node up and running'
 	                  )
 	                )
 	              )
